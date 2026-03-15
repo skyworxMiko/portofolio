@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMIKO ARSHAL | CORE ARCHITECT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --bg-deep: #020617;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--bg-deep);
+            color: #94a3b8;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .h1-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+        }
+
+        .terminal-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .terminal-card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .btn-live {
+            background: linear-gradient(45deg, #0f172a, #1e293b);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-live:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .exp-line {
+            position: relative;
+            border-left: 2px solid rgba(0, 243, 255, 0.2);
+            padding-left: 2rem;
+        }
+
+        .exp-dot {
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+    </style>
+</head>
+
+<body class="cyber-grid">
+
+    <canvas id="matrix-bg"></canvas>
+
+    <nav
+        class="fixed top-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md border-b border-cyan-500/10">
+        <div class="h1-orbitron text-cyan-400 font-black tracking-widest text-xl uppercase">Jamiko.Arshal</div>
+        <div class="hidden md:flex gap-8 text-[10px] tracking-widest uppercase font-bold">
+            <a href="#profile" class="hover:text-cyan-400">Profile</a>
+            <a href="#active-deploy" class="hover:text-cyan-400">Deployments</a>
+            <a href="#experience" class="hover:text-cyan-400">Experience</a>
+            <a href="#skills" class="hover:text-cyan-400">Matrix</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 px-6">
+        <section id="profile" class="max-w-7xl mx-auto mb-24 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 mb-24">
+                <div class="flex-1">
+                    <h1
+                        class="h1-orbitron text-6xl md:text-8xl text-white font-black mb-6 leading-none tracking-tighter">
+                        JAMIKO <br> <span class="text-cyan-400 italic">ARSHAL</span>
+                    </h1>
+                    <p class="text-lg mb-8 max-w-xl leading-relaxed italic border-l-4 border-cyan-500 pl-6">
+                        Senior Fullstack Developer & IT Supervisor. Spesialis dalam arsitektur otomatisasi dan
+                        pengembangan
+                        sistem enterprise berskala nasional.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#active-deploy" class="btn-live px-8 py-4 font-bold uppercase tracking-widest text-xs">
+                            Access Live Projects
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 terminal-card p-8 rounded-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-2 text-[8px] bg-cyan-500/10 text-cyan-400 mono">PROFILE
+                    </div>
+                    <h3 class="text-cyan-400 font-bold mb-6 mono uppercase tracking-widest">Identity</h3>
+                    <div class="space-y-4 text-xs mono">
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Full Name:</span> <span class="text-white">Jamiko Arshal</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Current Role:</span> <span class="text-white">IT Supervisor</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Operation Base:</span> <span class="text-white">Padang, Indonesia</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Enterprise:</span> <span class="text-cyan-400 font-bold">CV DCODING TECH INDONESIA</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Email:</span> <span class="text-white">arshaljamiko@gmail.com</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Contact Person:</span> <span class="text-white">0822-8748--3950</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Current Education:</span> <span class="text-white">S1 - Sistem Informasi</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="terminal-card bg-gradient-to-r from-blue-900/20 to-transparent p-10 border-r-4 border-r-cyan-500">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="flex-1">
+                        <div class="text-cyan-400 font-bold mb-2 uppercase tracking-widest text-xs">
+                            Innovation Spotlight
+                        </div>
+                        <h2 class="h1-orbitron text-4xl text-white mb-6">AUTO-LAYOUT BUILDER</h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Mesin revolusioner yang mentransformasi metadata backend menjadi antarmuka dinamis
+                            secara
+                            instan. Menghilangkan kebutuhan untuk menulis kode manual untuk Form atau DataTable.
+                        </p>
+                        <a href="http://110.239.67.31:9100/login" target="_blank"
+                            class="btn-live px-6 py-3 text-xs font-bold inline-block">
+                            <i class="fas fa-terminal mr-2"></i> Launch Engine Testbed
+                        </a>
+                    </div>
+                    <div class="p-6 border border-cyan-500/20 bg-cyan-500/5 rounded text-[10px] mono space-y-2">
+                        <div class="text-cyan-400">-- ARCHITECTURE --</div>
+                        <div>> Spring Boot Core</div>
+                        <div>> Vue Dynamic Rendering</div>
+                        <div>> Reactive Identity Security</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="active-deploy" class="max-w-7xl mx-auto mb-24">
+            <h3 class="h1-orbitron text-2xl text-white mb-12 flex items-center gap-4 uppercase">
+                <span class="h-px w-12 bg-cyan-500"></span> Mission Critical Deployments
+            </h3>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <div class="terminal-card p-6 border-l-4 border-l-red-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-red-400 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Next-gen Scoring System
+                        </div>
+                        <h4 class="text-white font-bold text-lg leading-tight border-b border-red-500/50 pb-4 mb-4">
+                            CBAS - Credit Bureau Application System (Robotic SLIK)
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Bukan sekadar aplikasi, ini adalah <b class="text-gray-200">Robotic Process Automation
+                                (RPA)</b> yang mengeliminasi proses manual penilaian kredit. Terintegrasi <i
+                                class="text-cyan-400 italic">deep-level</i> dengan SLIK OJK.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Vue Dynamic Rendering</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> Playwright & Selenium</li>
+                                <li>> PostgreSQL</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi Bank:
+                            </span>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="http://110.239.67.31:9122/login" target="_blank"
+                                    class="p-2 text-[9px] font-bold bg-red-500/5 text-red-500 border border-red-500/30 hover:bg-red-500 hover:text-black transition flex items-center justify-center">
+                                    > BANK INDEX
+                                </a>
+                                <a href="http://110.239.67.31:9142/login" target="_blank"
+                                    class="p-2 text-[9px] font-bold bg-red-500/5 text-red-500 border border-red-500/30 hover:bg-red-500 hover:text-black transition flex items-center justify-center">
+                                    > BANK SKBF
+                                </a>
+                                <a href="http://110.239.67.31:9132/login" target="_blank"
+                                    class="p-2 text-[9px] font-bold bg-red-500/5 text-red-500 border border-red-500/30 hover:bg-red-500 hover:text-black transition flex items-center justify-center">
+                                    > BANK BMS
+                                </a>
+                                <a href="http://110.239.67.31:9112/login" target="_blank"
+                                    class="p-2 text-[9px] font-bold bg-red-500/5 text-red-500 border border-red-500/30 hover:bg-red-500 hover:text-black transition flex items-center justify-center">
+                                    > BANK OCBC
+                                </a>
+                                <a href="http://110.239.67.31:9152/login" target="_blank"
+                                    class="p-2 text-[8px] font-bold bg-red-500/5 text-red-500 border border-red-500/30 hover:bg-red-500 hover:text-black transition flex items-center justify-center col-span-2 text-center uppercase">
+                                    > BANK MANDIRI TASPEN
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-indigo-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-indigo-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Customer Info System - Finance
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-indigo-500/50 pb-4 mb-4 uppercase">
+                            Litecore BCAF
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Pengembangan sistem yang bertujuan untuk menyederhanakan manajemen data pelanggan dengan
+                            mengkonsolidasikan beberapa sistem lama menjadi satu platform yang terintegrasi, terpadu,
+                            dan cerdas. CIS baru ini tidak hanya akan meningkatkan efisiensi operasional tetapi juga
+                            memberdayakan BCAF dengan pengambilan keputusan yang lebih cepat, akurasi data yang lebih
+                            besar, dan kepatuhan regulasi yang lebih kuat — pada akhirnya meningkatkan keunggulan
+                            layanan bagi jutaan pelanggan. Sebagai salah satu perusahaan multi-finance terkemuka di
+                            Indonesia, BCA Finance dikenal dengan fondasi yang kuat, inovasi, dan komitmen terhadap
+                            kepuasan pelanggan.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> SQL Server</li>
+                                <li>> Angular</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="https://litecore-dev.idofocus.co.id:25443/" target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-indigo-500/5 text-indigo-500 border border-indigo-500/30 hover:bg-indigo-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-yellow-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-yellow-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Official Service & Landing Page
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-yellow-500/50 pb-4 mb-4 uppercase">
+                            Pegadaian Canme</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Sistem layanan informasi dan pengajuan produk Pegadaian berbasis QR Code. Memungkinkan
+                            nasabah bertransaksi dari mana saja dengan respon petugas secara real-time.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> PostgreSQL</li>
+                                <li>> Vue3 Typescript</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="https://canme.pegadaian.co.id/?key=d2ddea18f00665ce8623e36bd4e3c7c5"
+                                target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-yellow-500/5 text-yellow-500 border border-yellow-500/30 hover:bg-yellow-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-green-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-green-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Education Management System
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-green-500/50 pb-4 mb-4 uppercase">
+                            System Absensi + Integrasi WhatsApp
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Automasi absensi sekolah berbasis QR Code. Integrasi otomatis mengirim notifikasi ke orang
+                            tua, guru, dan kepala sekolah melalui WhatsApp serta sinkronisasi ke Dinas Pendidikan.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> PostgreSQL</li>
+                                <li>> Engine Whatsapp</li>
+                                <li>> Vue3 Typescript</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="https://sdn35jembatanbabuai.sch.id/" target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-green-500/5 text-green-500 border border-green-500/30 hover:bg-green-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-purple-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-purple-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Sistem Pengelolaan Data Petani
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-purple-500/50 pb-4 mb-4 uppercase">
+                            SIHI Farm
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Mengembangkan sistem pengelolaan data petani dan lahan serta monitoring tanaman berbasis web
+                            dan mobile. Terintegrasi dengan Google Maps untuk visualisasi denah lahan menggunakan
+                            poligon.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> PostgreSQL</li>
+                                <li>> Vue3 Typescript</li>
+                                <li>> Flutter</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="https://sihifarm.id/login" target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-purple-500/5 text-purple-500 border border-purple-500/30 hover:bg-purple-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-orange-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-orange-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Sistem Pengelolaan SIMRS
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-orange-500/50 pb-4 mb-4 uppercase">
+                            SIMRS Mitra
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            Membuat sistem informasi berbasis digital yang dirancang untuk mengelola seluruh proses
+                            bisnis
+                            rumah sakit, mulai dari pendaftaran pasien, rekam medis, penagihan, hingga pelaporan. Sistem
+                            ini juga terintegrasi dengan BPJS Kesehatan untuk memudahkan klaim dan pembayaran.
+                            Sistem ini juga dilengkapi dengan fitur mobile untuk pasien yang memungkinkan pasien untuk
+                            melihat rekam medis, jadwal dokter, dan informasi kesehatan lainnya.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> Spring Boot Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> PostgreSQL</li>
+                                <li>> Vue3 Typescript</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="https://poc-simrs.ilkeiapps.com/login" target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-orange-500/5 text-orange-500 border border-orange-500/30 hover:bg-orange-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card p-6 border-l-4 border-l-pink-500 flex flex-col shadow-lg">
+                    <div class="mb-6">
+                        <div class="text-pink-500 font-bold mb-2 uppercase tracking-widest text-[10px]">
+                            Patriosa Boga Group
+                        </div>
+                        <h4
+                            class="text-white font-bold text-lg leading-tight border-b border-pink-500/50 pb-4 mb-4 uppercase">
+                            Patriosa Boga Group
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed min-h-[60px]">
+                            PT Patriosa Boga Grup sudah dikenal sebagai perusahaan Food and Beverage pertama di
+                            Indonesia yang mengusung konsep Home Service. PT Patriosa Boga Grup memiliki beberapa
+                            brand seperti, Kambing Gulingku, Teppanku, Partyku, Eskrimku, dan La Speciale.
+
+                            PT Patriosa Boga Grup telah menjadi layanan Home Service yang sukses dalam
+                            beragam acara hingga saat ini. Dengan harga terjangkau dan pelayanan berkualitas yang
+                            memuaskan, Sejak didirikan pada tahun 2018 dengan brand pertamanya Teppanku, PT Patriosa
+                            Boga Group dikenal sebagai perusahaan Food and Beverage (F&B) pertama di Indonesia yang
+                            memperkenalkan konsep home service. Home service sendiri adalah layanan catering dengan
+                            atraksi memasak langsung di tempat customer oleh chef yang handal atau bisa disebut live
+                            cooking.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-auto">
+                        <div class="p-4 border border-cyan-500/20 bg-cyan-500/5 rounded flex flex-col h-full">
+                            <div class="text-cyan-400 font-bold text-[10px] mb-3 tracking-tighter uppercase">
+                                -- Architecture --
+                            </div>
+                            <ul class="text-[10px] mono text-gray-400 space-y-1.5">
+                                <li>> CodeIgniter Core</li>
+                                <li>> Reactive Identity Security</li>
+                                <li>> PostgreSQL</li>
+                                <li>> Vue3 Typescript</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <span class="text-cyan-400 font-bold mb-3 block text-[10px] uppercase tracking-tighter">
+                                Implementasi:
+                            </span>
+                            <a href="http://order.pbg.com/" target="_blank"
+                                class="mt-auto p-4 text-xs font-bold bg-pink-500/5 text-pink-500 border border-pink-500/30 hover:bg-pink-500 hover:text-black transition flex items-center justify-center">
+                                <i class="fas fa-terminal mr-2"></i> LAUNCH OFFICIAL
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="max-w-7xl mx-auto mb-24">
+            <h3 class="h1-orbitron text-2xl text-white mb-12 flex items-center gap-4 uppercase">
+                <span class="h-px w-12 bg-cyan-500"></span> Career Log Analysis
+            </h3>
+            <div class="space-y-12">
+                <div class="exp-line">
+                    <div class="exp-dot"></div>
+                    <div class="text-cyan-400 font-bold mb-1">Jun 2024 - Present</div>
+                    <h4 class="text-white text-xl font-bold uppercase">IT Supervisor | Skyworx Indonesia</h4>
+                    <p class="text-sm text-gray-400 mt-2 max-w-3xl leading-relaxed">
+                        Memimpin dan mengelola tim pengembangan perangkat lunak, bertanggung jawab atas standar kualitas
+                        proyek, serta memberikan bimbingan teknis untuk efisiensi tim.
+                    </p>
+                </div>
+                <div class="exp-line">
+                    <div class="exp-dot"></div>
+                    <div class="text-cyan-400 font-bold mb-1">Jun 2023 - Jun 2024</div>
+                    <h4 class="text-white text-xl font-bold uppercase">Programmer | Skyworx Indonesia</h4>
+                    <p class="text-sm text-gray-400 mt-2 max-w-3xl leading-relaxed">
+                        Menangani proyek-proyek strategis di lingkup Project Management, termasuk pengembangan sistem
+                        untuk institusi perbankan dan gadai (BTN & Pegadaian).
+                    </p>
+                </div>
+                <div class="exp-line">
+                    <div class="exp-dot"></div>
+                    <div class="text-cyan-400 font-bold mb-1">Sep 2016 - Mei 2023</div>
+                    <h4 class="text-white text-xl font-bold uppercase">Pegawai Honorer | Dinas Pendidikan Kota Padang
+                    </h4>
+                    <p class="text-sm text-gray-400 mt-2 max-w-3xl leading-relaxed">
+                        Pengembangan sistem **SIGUPENDA** untuk pengelolaan data dan gaji honorer Kota Padang yang masih
+                        aktif digunakan hingga saat ini.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="max-w-7xl mx-auto mb-24">
+            <h3 class="h1-orbitron text-2xl text-white mb-12 flex items-center gap-4 uppercase">
+                <span class="h-px w-12 bg-cyan-500"></span> Technical Skill Matrix
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-java text-4xl text-orange-500 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">Java Spring Boot</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-vuejs text-4xl text-green-400 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">Vue.js Ecosystem</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">PostgreSQL & MSSQL</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-php text-4xl text-indigo-400 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">Laravel / CI</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-react text-4xl text-cyan-400 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">React & NextJS</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-microsoft text-4xl text-blue-500 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">.NET Framework</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fab fa-docker text-4xl text-blue-600 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">Docker / DevOps</div>
+                </div>
+                <div class="terminal-card p-6 text-center">
+                    <i class="fas fa-code-branch text-4xl text-gray-400 mb-4"></i>
+                    <div class="text-xs font-bold text-white uppercase">Git & Jenkins</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-cyan-500/10 text-center mono text-[10px]">
+            <p class="text-gray-500">JAMIKO ARSHAL | CV DCODING TECH INDONESIA | PADANG, SUMATERA BARAT</p>
+            <p class="text-cyan-500 mt-2">[arshaljamiko@gmail.com] | 082287483950</p>
+        </footer>
+    </main>
+
+    <script>
+        // Matrix Background Logic
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const letters = "JAMIKO ARSHAL";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function draw() {
+            ctx.fillStyle = "rgba(2, 6, 23, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#00f3ff";
+            ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+    </script>
+</body>
+
+</html>
