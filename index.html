@@ -209,17 +209,19 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.25rem;
+            flex-wrap: nowrap;
         }
 
         .nav-links a {
             position: relative;
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            letter-spacing: 0.04em;
-            padding: 0.4rem 0.2rem;
+            letter-spacing: 0.03em;
+            padding: 0.4rem 0.25rem;
+            white-space: nowrap;
             transition: color 0.25s ease;
         }
 
@@ -848,8 +850,183 @@
 
         .topology-pillars-grid {
             display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        /* Architecture Interconnection Matrix */
+        .architecture-matrix-box {
+            background: #0b1120;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .architecture-matrix-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8 0%, #1d4ed8 50%, #d97706 100%);
+        }
+
+        .matrix-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .matrix-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .matrix-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .matrix-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: all 0.25s ease;
+        }
+
+        .matrix-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .matrix-route {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #38bdf8;
+            flex-wrap: wrap;
+        }
+
+        .matrix-route .route-arrow {
+            color: var(--accent-gold);
+            font-weight: 800;
+        }
+
+        .matrix-desc {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Trans Padang Modules Grid */
+        .psm-modules-grid {
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .psm-module-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.6rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .psm-module-card:hover {
+            background: #ffffff;
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-4px);
+        }
+
+        .psm-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(2, 132, 199, 0.1);
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.1rem;
+        }
+
+        .psm-module-card h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .psm-module-card p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .psm-module-card.span-wide {
+            grid-column: span 2;
+        }
+
+        .psm-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: auto;
+            padding-top: 0.9rem;
+        }
+
+        .psm-tag {
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            padding: 0.22rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(2, 132, 199, 0.08);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(2, 132, 199, 0.22);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .pillar-card {
@@ -1183,6 +1360,72 @@
             text-align: center;
             max-width: 820px;
             margin: 0 auto 3.5rem;
+        }
+
+        /* Executive Case Study Badges */
+        .case-badge-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            margin: 0.85rem auto 1.35rem auto;
+            flex-wrap: wrap;
+        }
+
+        .case-badge,
+        .spot-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.38rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            border: 1px solid transparent;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            white-space: nowrap;
+        }
+
+        .case-badge:hover,
+        .spot-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-badge i,
+        .spot-badge i {
+            width: 14px;
+            height: 14px;
+            stroke-width: 2.2;
+            flex-shrink: 0;
+        }
+
+        .case-badge.badge-cyan {
+            background: rgba(2, 132, 199, 0.08);
+            color: #0284c7;
+            border-color: rgba(2, 132, 199, 0.24);
+        }
+
+        .case-badge.badge-blue {
+            background: rgba(29, 78, 216, 0.08);
+            color: #1d4ed8;
+            border-color: rgba(29, 78, 216, 0.24);
+        }
+
+        .case-badge.badge-emerald {
+            background: rgba(5, 150, 105, 0.08);
+            color: #059669;
+            border-color: rgba(5, 150, 105, 0.24);
+        }
+
+        .case-badge.badge-amber {
+            background: rgba(217, 119, 6, 0.08);
+            color: #d97706;
+            border-color: rgba(217, 119, 6, 0.24);
         }
 
         .case-study-hero h3 {
@@ -2056,7 +2299,11 @@
             }
 
             .topology-pillars-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .psm-modules-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .testimonial-container {
@@ -2087,7 +2334,23 @@
             }
         }
 
-        @media(max-width: 768px) {
+        @media(max-width: 1280px) {
+            .nav-links {
+                gap: 0.85rem;
+            }
+
+            .nav-links a {
+                font-size: 0.78rem;
+                padding: 0.35rem 0.15rem;
+            }
+
+            .btn-wa {
+                padding: 0.55rem 0.95rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media(max-width: 1024px) {
             .nav-links {
                 display: none;
             }
@@ -2109,7 +2372,9 @@
             .nav-toggle-btn {
                 display: block;
             }
+        }
 
+        @media(max-width: 768px) {
             .stats-block {
                 grid-template-columns: 1fr;
                 padding: 2rem;
@@ -2124,6 +2389,22 @@
             .stat-item:last-child {
                 border-bottom: none;
                 padding-bottom: 0;
+            }
+
+            .topology-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .psm-modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .psm-module-card.span-wide {
+                grid-column: span 1;
             }
 
             .case-study-card {
@@ -2180,8 +2461,10 @@
             </a>
 
             <div class="nav-links" id="navLinks">
-                <a href="#proyek">EKOSISTEM & PROYEK</a>
-                <a href="#cbas-case-study">CASE STUDY</a>
+                <a href="#proyek">EKOSISTEM</a>
+                <a href="#cbas-case-study">SLIK OJK</a>
+                <a href="#los">LOS CORE</a>
+                <a href="#psm-transpadang">TRANS PADANG</a>
                 <a href="#pengalaman">PENGALAMAN</a>
                 <a href="#keahlian">KEAHLIAN</a>
                 <a href="#kontak">KONTAK</a>
@@ -2220,9 +2503,10 @@
                 </p>
 
                 <div class="hero-badges-strip">
-                    <div class="hero-pill"><i data-lucide="shield-check"></i> Sistem Perbankan Live</div>
-                    <div class="hero-pill"><i data-lucide="bot"></i> Autonomous SLIK OJK</div>
-                    <div class="hero-pill"><i data-lucide="layers"></i> High-Throughput Core API</div>
+                    <div class="hero-pill"><i data-lucide="bot"></i> Engine Automation Playwrigth (SLIK OJK)</div>
+                    <div class="hero-pill"><i data-lucide="layers"></i> Loan Origination System & CBAS</div>
+                    <div class="hero-pill"><i data-lucide="layout"></i> UI/UX Dynamic & Workflow BPMN</div>
+                    <div class="hero-pill"><i data-lucide="bus"></i> Trans Padang</div>
                 </div>
 
                 <div class="hero-actions">
@@ -2343,33 +2627,52 @@
         <!-- Ecosystem Section -->
         <section id="proyek">
             <div class="section-header fade-in">
-                <div class="section-tag">Arsitektur Terintegrasi</div>
-                <h2 class="section-title">Ekosistem Perbankan Utama</h2>
+                <div class="section-tag">Arsitektur Terintegrasi & Pipeline Ekosistem</div>
+                <h2 class="section-title">Ekosistem 4-Core Perbankan</h2>
                 <p class="section-subtitle">
-                    Kombinasi 4 pilar arsitektur yang saling terhubung secara reaktif untuk men-<i>deliver</i> solusi
-                    perbankan masif, compliance OJK, dan efisiensi pemrosesan kredit.
+                    Arsitektur multi-engine berskala enterprise yang mengintegrasikan otomatisasi antarmuka, orkestrasi
+                    workflow dinamis, permohonan kredit (LOS), dan robotika SLIK OJK dari hulu ke hilir.
                 </p>
             </div>
 
             <!-- System Topology Banner -->
             <div class="topology-card fade-in">
                 <div class="topology-header">
-                    <h3>Kesatuan Arsitektur Terintegrasi</h3>
+                    <h3>Kesatuan Arsitektur Terintegrasi 4-Core</h3>
                     <p>
-                        Pilar-pilar di bawah ini bukanlah aplikasi terpisah yang berdiri sendiri, melainkan
-                        <strong>satu kesatuan topologi arsitektur yang saling menopang</strong> untuk mengeksekusi
-                        produk perbankan kritikal seperti <strong>CBAS</strong> dan <strong>LOS</strong>.
+                        Keempat pilar backend di bawah ini dirancang saling menopang dan terintegrasi secara reaktif untuk
+                        mengeksekusi produk perbankan berskala masif seperti <strong>CBAS</strong> dan <strong>LOS</strong>.
                     </p>
                 </div>
 
                 <div class="topology-pillars-grid">
                     <div class="pillar-card">
                         <div class="pillar-icon-box">
-                            <i data-lucide="database"></i>
+                            <i data-lucide="layout"></i>
                         </div>
                         <div class="pillar-info">
-                            <h4>Central Core API</h4>
-                            <span>Tier 1: Core Banking Engine</span>
+                            <h4>UI/UX Dynamic</h4>
+                            <span>UI/UX & Form Generator</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="workflow"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Workflow BPMN</h4>
+                            <span>Dynamic BPMN Orchestrator</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Loan Origination System</h4>
+                            <span>Loan Origination Core</span>
                         </div>
                     </div>
 
@@ -2378,18 +2681,64 @@
                             <i data-lucide="bot"></i>
                         </div>
                         <div class="pillar-info">
-                            <h4>Autonomous RPA Matrix</h4>
-                            <span>Tier 2: Scraper Engine</span>
+                            <h4>CBAS ➔ ENGINE-ROBOT</h4>
+                            <span>SLIK OJK & iDeb Parser</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="pillar-card">
-                        <div class="pillar-icon-box">
-                            <i data-lucide="layout"></i>
+                <!-- Architecture Interconnection Matrix -->
+                <div class="architecture-matrix-box">
+                    <div class="matrix-header">
+                        <div class="matrix-title">
+                            <i data-lucide="network"></i> Matriks Hubungan & Aliran Data Antar-Sistem
                         </div>
-                        <div class="pillar-info">
-                            <h4>Dynamic UI Engine</h4>
-                            <span>Tier 3: Platform Form / UI</span>
+                        <span class="matrix-badge">INTERCONNECTED TOPOLOGY</span>
+                    </div>
+
+                    <div class="matrix-grid">
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>CBAS</span>
+                                <span class="route-arrow">➔</span>
+                                <span>Engine Automation Playwrigth</span>
+                            </div>
+                            <p class="matrix-desc">
+                                CBAS mengorkestrasi robot perayap web OJK untuk pengajuan, approval, dan download file iDeb terenkripsi. Berkas iDeb yang diterima langsung diekstrak oleh CBAS menjadi laporan PDF resmi dan data terstruktur JSON scoring.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>Loan Origination System</span>
+                                <span class="route-arrow">➔</span>
+                                <span>CBAS</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Saat nasabah mengajukan pinjaman kredit di LOS, petugas perbankan dapat menginput debitur baru dari nol atau menarik data debitur secara instan dari CBAS yang telah dilengkapi scoring risiko SLIK.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>Workflow BPMN</span>
+                                <span class="route-arrow">➔</span>
+                                <span>Loan Origination System</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Seluruh alur proses bisnis perbankan, hierarki persetujuan bertingkat (approval), dan transisi status kredit di LOS dikendalikan secara dinamis dari workflow yang dibuat dan dikonfigurasi langsung oleh pengguna.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>UI/UX Dynamic</span>
+                                <span class="route-arrow">➔</span>
+                                <span>LOS & CBAS (Frontend UI/UX)</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Seluruh antarmuka pengguna (Dynamic Form, DataTable analitik, validasi input) pada project CBAS dan LOS digenerate dan dikonfigurasi terpusat dari Auto-Layout. Frontend berperan sebagai lapisan UI/UX rendering responsif.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -2398,111 +2747,102 @@
             <!-- Spotlight Cards -->
             <div class="spotlights-wrapper">
 
-                <!-- Spotlight 1: Dynamic Builder -->
+                <!-- Spotlight 1: UI/UX Dynamic -->
                 <div class="spotlight-card fade-in">
                     <div>
                         <div class="spot-tier-badge">
-                            <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> INNOVATION SPOTLIGHT · FRONTEND AUTO-LAYOUT
+                            <i data-lucide="layout-template" style="width: 14px; height: 14px;"></i> CORE ENGINE · UNIVERSAL UI/UX AUTO-LAYOUT
                         </div>
                         <h3 class="spot-title">
-                            Dynamic UI Engine
-                            <span class="spot-subheading">Auto-Layout Builder Platform</span>
+                            UI/UX Dynamic
+                            <span class="spot-subheading">Dynamic Layout & Form Configuration Platform (Powers CBAS & LOS)</span>
                         </h3>
                         <p class="spot-desc">
-                            Mesin revolusioner yang mentransformasi metadata backend menjadi antarmuka dinamis secara
-                            instan — menghilangkan kebutuhan menulis kode manual untuk Form atau DataTable. Satu skema
-                            metadata mampu merefleksikan ribuan tampilan antarmuka perbankan dengan keamanan role-based
-                            terpadu.
+                            Mesin sentral yang mengatur dan mengonfigurasi seluruh antarmuka untuk proyek <strong>CBAS</strong> dan <strong>Loan Origination System</strong>. Semua formulir input dinamis, DataTable interaktif, skema validasi, serta aturan tampilan diatur terpusat di Auto-Layout tanpa coding manual per halaman. Lapisan Frontend bertindak sebagai UI/UX renderer yang menyajikan antarmuka dinamis dan responsif secara real-time.
                         </p>
                     </div>
                     <div class="stack-box">
                         <div class="stack-title">Core Technology Stack</div>
                         <ul class="stack-list">
-                            <li><i data-lucide="server"></i> Spring Boot Core</li>
-                            <li><i data-lucide="layout-template"></i> Vue Dynamic Rendering</li>
-                            <li><i data-lucide="shield-check"></i> Reactive Identity Security</li>
-                            <li><i data-lucide="code-2"></i> Auto Schema Generator</li>
+                            <li><i data-lucide="server"></i> Spring Boot Core API</li>
+                            <li><i data-lucide="code-2"></i> Auto Layout Schema Generator</li>
+                            <li><i data-lucide="layout"></i> Dynamic Form & DataTable Config</li>
+                            <li><i data-lucide="palette"></i> Frontend Reactive UI/UX Layer</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Spotlight 2: Central Core API -->
+                <!-- Spotlight 2: Workflow BPMN -->
                 <div class="spotlight-card fade-in">
                     <div>
                         <div class="spot-tier-badge">
-                            <i data-lucide="database" style="width: 14px; height: 14px;"></i> ENTERPRISE BACKEND · SLIK PROCESSING
+                            <i data-lucide="workflow" style="width: 14px; height: 14px;"></i> PROCESS ORCHESTRATION · BUSINESS PROCESS ENGINE
                         </div>
                         <h3 class="spot-title">
-                            Central Core API
-                            <span class="spot-subheading">SLIK Core Processing Engine</span>
+                            Workflow BPMN
+                            <span class="spot-subheading">Configurable Dynamic Workflow Engine (Orchestrator for Loan Origination System)</span>
                         </h3>
                         <p class="spot-desc">
-                            Jantung ekosistem pemroses data skala besar. Mengandalkan Rule Engine tingkat lanjut agar
-                            ribuan regulasi OJK dan verifikasi scoring kredit nasabah dapat dieksekusi secara otomatis,
-                            deterministik, dan dinamis tanpa harus memodifikasi kode inti backend.
+                            Mesin penggerak alur kerja dinamis yang menopang seluruh proses bisnis perbankan pada <strong>Loan Origination System</strong>. Setiap tahapan pengajuan pembiayaan, verifikasi kepatuhan, matriks persetujuan berjenjang (*multi-tier approval*), hingga keputusan komite kredit bersumber dari alur kerja yang dirancang sendiri oleh user secara visual tanpa perlu memodifikasi kode inti backend.
                         </p>
                     </div>
                     <div class="stack-box">
                         <div class="stack-title">Core Technology Stack</div>
                         <ul class="stack-list">
-                            <li><i data-lucide="cpu"></i> Java 21 Spring Boot</li>
-                            <li><i data-lucide="git-merge"></i> Drools Rule Engine</li>
-                            <li><i data-lucide="workflow"></i> Flowable BPMN</li>
-                            <li><i data-lucide="database"></i> Blaze-Persistence</li>
+                            <li><i data-lucide="git-merge"></i> Java Spring Boot Core</li>
+                            <li><i data-lucide="cpu"></i> BPMN Workflow Engine</li>
+                            <li><i data-lucide="check-circle"></i> Dynamic Approval Matrix</li>
+                            <li><i data-lucide="shield-check"></i> Enterprise Audit Compliance</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Spotlight 3: RPA Robot -->
+                <!-- Spotlight 3: CBAS & Engine Automation Playwrigth -->
                 <div class="spotlight-card fade-in">
                     <div>
                         <div class="spot-tier-badge">
-                            <i data-lucide="bot" style="width: 14px; height: 14px;"></i> AUTONOMOUS RPA · ROBOTIC AGGREGATOR
+                            <i data-lucide="bot" style="width: 14px; height: 14px;"></i> AUTONOMOUS RPA · SLIK OJK & iDeb EXTRACTOR
                         </div>
                         <h3 class="spot-title">
-                            Autonomous RPA Matrix
-                            <span class="spot-subheading">Engine Robot Data Aggregator</span>
+                            CBAS ➔ Engine Automation Playwrigth
+                            <span class="spot-subheading">Robotic SLIK Scraper & Automated iDeb Data Extractor (PDF & JSON Scoring)</span>
                         </h3>
                         <p class="spot-desc">
-                            Robot otomatis (crawler) berkecepatan tinggi yang menavigasi portal OJK secara otonom.
-                            Dilengkapi kemampuan Computer Vision untuk menembus tantangan visual, captcha interaktif,
-                            dan mengirim data profil kredit konsumen langsung ke dalam sistem inti perbankan.
+                            Sistem robotika perbankan otonom berkecepatan tinggi. <strong>CBAS</strong> berkolaborasi dengan robot web scraper <strong>Engine Automation Playwrigth</strong> untuk menavigasi portal OJK secara mandiri — mengeksekusi pengajuan debitur, approval otorisasi, dan mendownload berkas iDeb (Informasi Debitur). CBAS kemudian mengekstrak data iDeb tersebut menjadi dokumen laporan PDF resmi dan format terstruktur JSON scoring siap pakai.
                         </p>
                     </div>
                     <div class="stack-box">
                         <div class="stack-title">Core Technology Stack</div>
                         <ul class="stack-list">
-                            <li><i data-lucide="terminal"></i> Selenium v4 & Playwright</li>
-                            <li><i data-lucide="eye"></i> OpenCV (Computer Vision)</li>
-                            <li><i data-lucide="check-square"></i> AShot Visual Audit</li>
-                            <li><i data-lucide="code"></i> Java High-Performance RPA</li>
+                            <li><i data-lucide="terminal"></i> Selenium v4 & Playwright RPA</li>
+                            <li><i data-lucide="eye"></i> OpenCV Computer Vision</li>
+                            <li><i data-lucide="file-text"></i> iDeb Parsing & PDF Generator</li>
+                            <li><i data-lucide="activity"></i> Structured JSON Scoring Matrix</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Spotlight 4: CBAS Portal -->
+                <!-- Spotlight 4: Loan Origination System -->
                 <div class="spotlight-card fade-in">
                     <div>
                         <div class="spot-tier-badge">
-                            <i data-lucide="monitor" style="width: 14px; height: 14px;"></i> CLIENT PORTAL · ROBOTIC SLIK
+                            <i data-lucide="layers" style="width: 14px; height: 14px;"></i> ENTERPRISE CORE · LOAN ORIGINATION SYSTEM
                         </div>
                         <h3 class="spot-title">
-                            CBAS | Credit Bureau Application System
-                            <span class="spot-subheading">Robotic SLIK Management Platform</span>
+                            Loan Origination System
+                            <span class="spot-subheading">Loan Origination System (Connected to CBAS Ingestion & Dynamic Workflow)</span>
                         </h3>
                         <p class="spot-desc">
-                            Antarmuka utama (portal) yang di-generate langsung oleh Dynamic Builder. Mengintegrasikan
-                            teknologi real-time WebSocket dan media player canggih untuk menyuguhkan dashboard klien
-                            perbankan yang responsif, visualisasi data kredit komprehensif, dan pemantauan pergerakan robot.
+                            Platform inti pemrosesan siklus kredit perbankan komprehensif. Ketika nasabah mengajukan pinjaman, analis perbankan dapat menginput data debitur dari awal atau cukup sekali klik menarik profil debitur langsung dari <strong>CBAS</strong> yang telah memuat hasil scoring dan riwayat kredit lengkap. Seluruh proses pengajuan berjalan di atas alur kerja <strong>Workflow BPMN</strong> dan dirender dinamis via <strong>UI/UX Dynamic</strong>.
                         </p>
                     </div>
                     <div class="stack-box">
                         <div class="stack-title">Core Technology Stack</div>
                         <ul class="stack-list">
-                            <li><i data-lucide="layout"></i> Vue 3 & Vite</li>
-                            <li><i data-lucide="zap"></i> Socket.IO (Real-time Stream)</li>
-                            <li><i data-lucide="palette"></i> Modern CSS System</li>
-                            <li><i data-lucide="play-circle"></i> Shaka Player / Uppy Media</li>
+                            <li><i data-lucide="server"></i> Java 21 Spring Boot</li>
+                            <li><i data-lucide="database"></i> CBAS Scoring Ingestion Connector</li>
+                            <li><i data-lucide="workflow"></i> Workflow Engine Listener</li>
+                            <li><i data-lucide="lock"></i> Reactive Identity & RBAC</li>
                         </ul>
                     </div>
                 </div>
@@ -2551,210 +2891,338 @@
             </div>
         </div>
 
-        <!-- Featured Case Study 1: CBAS -->
-        <section id="cbas-case-study" class="case-study-card fade-in">
+        <!-- Featured Case Study 1: CBAS & ENGINE ROBOT -->
+        <section id="cbas-case-study" class="case-study-card card-zoom-fade fade-in">
             <div class="case-study-hero">
                 <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 01</div>
-                <h3>CBAS | Credit Bureau Application System</h3>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="bot"></i> Engine Automation Playwrigth
+                    </span>
+                    <span class="case-badge badge-blue">
+                        <i data-lucide="file-check"></i> CBAS
+                    </span>
+                    <span class="case-badge badge-emerald">
+                        <i data-lucide="shield-check"></i> SLIK OJK Automation
+                    </span>
+                </div>
+                <h3>CBAS ➔ Engine Automation Playwrigth</h3>
                 <p>
-                    Platform Robotic Process Automation (RPA) cerdas yang terintegrasi <i>deep-level</i> dengan portal SLIK
-                    OJK untuk mengotomatisasi pencarian identitas, pemantauan riwayat kredit, hingga ekstraksi dokumen
-                    secara instan.
+                    Arsitektur otomasi biro kredit perbankan berkinerja tinggi. <strong>CBAS</strong> bertindak sebagai orkestrator bisnis SLIK OJK yang terhubung langsung dengan <strong>Engine Automation Playwrigth</strong>—mesin robotik otonom yang bertugas melakukan <i>web scraping</i> portal OJK untuk siklus pengajuan debitur, pemrosesan persetujuan (approval), hingga download file iDeb terenkripsi. Berkas iDeb yang didapatkan kemudian diekstrak secara otomatis oleh CBAS guna menghasilkan dokumen ringkasan PDF analitik resmi dan payload data JSON scoring kredit terstruktur yang siap dikonsumsi langsung oleh sistem perbankan.
                 </p>
             </div>
 
             <div class="benefits-section-title">
-                <i data-lucide="target" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan CBAS
+                <i data-lucide="target" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan CBAS (Robotic SLIK OJK)
             </div>
 
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="shield-check"></i>
+                        <i data-lucide="bot"></i>
                     </div>
-                    <h5>Eliminasi Human Error</h5>
-                    <p>Robot RPA menavigasi dan membaca data portal OJK secara mandiri tanpa risiko kekeliruan input manual.</p>
+                    <h5>Otomasi Web Scraping OJK</h5>
+                    <p><strong>Engine Automation Playwrigth</strong> menavigasi web OJK secara mandiri untuk pengisian formulir pengajuan debitur dan tahapan approval tanpa risiko human error.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="zap"></i>
+                        <i data-lucide="file-down"></i>
                     </div>
-                    <h5>Efisiensi Waktu Drastis</h5>
-                    <p>Proses pengecekan skor kredit SLIK yang sebelumnya memakan waktu berjam-jam kini tuntas dalam hitungan detik.</p>
+                    <h5>Download & Ekstraksi File iDeb</h5>
+                    <p>Mengunduh file iDeb resmi OJK dan mengekstrak seluruh rekaman kredit menjadi laporan PDF analitik resmi serta payload JSON scoring terstruktur.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="file-spreadsheet"></i>
+                        <i data-lucide="database"></i>
                     </div>
-                    <h5>Otomatisasi Laporan</h5>
-                    <p>Sistem secara otomatis merangkum hasil tarikan data ke dalam format siap pakai: PDF, Excel, dan TXT terenkripsi.</p>
+                    <h5>Penyedia Scoring Siap Pakai untuk LOS</h5>
+                    <p>Hasil scoring dan profil debitur yang diproses CBAS siap ditarik langsung secara instan oleh sistem pembiayaan <strong>Loan Origination System</strong> dengan satu kali klik.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
                         <i data-lucide="activity"></i>
                     </div>
-                    <h5>Monitoring Real-time</h5>
-                    <p>Transparansi penuh melalui dashboard interaktif untuk memantau status aktivitas robot dan antrean request langsung.</p>
+                    <h5>Live Monitoring & Status Approval</h5>
+                    <p>Transparansi penuh melalui pemantauan status antrean robot, progres pengajuan di portal OJK, serta verifikasi approval secara real-time.</p>
                 </div>
             </div>
 
             <div class="benefits-section-title">
-                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End CBAS (Robotic SLIK)
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End: CBAS ➔ Engine Robot ➔ Ekstraksi PDF & JSON
             </div>
 
             <div class="pipeline-grid">
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">1</div>
                     <div class="pipeline-text">
-                        <h5>Penginputan Data Awal</h5>
-                        <p>Pengguna atau sistem eksternal memasukkan parameter identitas nasabah yang akan ditarik datanya.</p>
+                        <h5>Input Parameter Permohonan</h5>
+                        <p>User memasukkan identitas debitur melalui form dinamis CBAS yang dikonfigurasi via <strong>UI/UX Dynamic</strong>.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">2</div>
                     <div class="pipeline-text">
-                        <h5>Eksekusi Engine Robot</h5>
-                        <p>Robot RPA otomatis login ke web OJK, menavigasi menu, dan mengisi formulir parameter pencarian.</p>
+                        <h5>Eksekusi Web Scraping OJK</h5>
+                        <p><strong>Engine Automation Playwrigth</strong> otomatis login ke portal OJK, menavigasi menu, dan mengisi parameter formulir pencarian debitur.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">3</div>
                     <div class="pipeline-text">
-                        <h5>Live Monitoring</h5>
-                        <p>Klien dapat memantau progres pergerakan robot secara visual dan real-time lewat antarmuka web.</p>
+                        <h5>Approval & Live Monitoring</h5>
+                        <p>Robot memantau antrean dan mengeksekusi tahapan approval kuota pencarian iDeb di portal OJK secara transparan.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">4</div>
                     <div class="pipeline-text">
-                        <h5>Ekstraksi Data (Scraping)</h5>
-                        <p>Setelah hasil ditemukan di portal OJK, robot menarik dan melakukan <i>parsing</i> mendalam terhadap data SLIK.</p>
+                        <h5>Download File Arsip iDeb</h5>
+                        <p>Setelah pengajuan disetujui di portal OJK, engine robot secara otomatis mengunduh berkas file iDeb resmi terenkripsi.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">5</div>
                     <div class="pipeline-text">
-                        <h5>Output Dokumen Multi-Format</h5>
-                        <p>Sistem mengonversi hasil mentah menjadi dokumen terstruktur siap pakai (PDF resmi, Excel analitik, dan TXT).</p>
+                        <h5>Ekstraksi Data (PDF & JSON)</h5>
+                        <p><strong>CBAS</strong> mengekstrak file iDeb tersebut menjadi berkas laporan PDF resmi dan struktur payload JSON scoring.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">6</div>
                     <div class="pipeline-text">
-                        <h5>Integrasi Kesimpulan Akhir</h5>
-                        <p>Data SLIK terstruktur diserahkan kembali ke dashboard CBAS atau diteruskan otomatis ke sistem LOS.</p>
+                        <h5>Kesiapan Ingesti ke Loan Origination System</h5>
+                        <p>Data scoring dan profil kredit siap dikonsumsi langsung secara otomatis oleh sistem <strong>Loan Origination System</strong> untuk proses kredit.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Featured Case Study 2: LOS -->
-        <section id="los" class="case-study-card fade-in">
+        <section id="los" class="case-study-card card-zoom-fade fade-in">
             <div class="case-study-hero">
                 <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 02</div>
-                <h3>Loan Origination System (LOS)</h3>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-blue">
+                        <i data-lucide="layers"></i> Loan Origination System
+                    </span>
+                    <span class="case-badge badge-amber">
+                        <i data-lucide="workflow"></i> Powered by Workflow BPMN
+                    </span>
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="layout"></i> UI via UI/UX Dynamic
+                    </span>
+                </div>
+                <h3>Loan Origination System</h3>
                 <p>
-                    Sistem perbankan inti yang mengotomatisasi siklus pembiayaan dan kredit secara menyeluruh dari hulu ke hilir,
-                    memastikan kecepatan verifikasi, mitigasi risiko yang presisi, dan kepatuhan penuh regulasi perbankan.
+                    Platform perbankan inti yang mengotomatisasi siklus pembiayaan dan kredit secara menyeluruh dari hulu ke hilir. Sistem ini terintegrasi erat dengan <strong>CBAS</strong>: ketika nasabah mengajukan permohonan pinjaman, petugas perbankan dapat menginput data debitur dari awal lagi atau cukup sekali klik menarik data debitur langsung dari CBAS yang telah memuat informasi scoring iDeb lengkap. Seluruh proses bisnis pengajuan bersumber dari workflow dinamis yang dibuat langsung oleh user pada <strong>Workflow BPMN</strong>, sedangkan seluruh antarmuka frontend (form input dan datatable) dihasilkan serta dikonfigurasi terpusat dari <strong>UI/UX Dynamic</strong>.
                 </p>
             </div>
 
             <div class="benefits-section-title">
-                <i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan LOS
+                <i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan Ekosistem LOS
             </div>
 
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="clock-4"></i>
+                        <i data-lucide="database"></i>
                     </div>
-                    <h5>Proses Lebih Cepat</h5>
-                    <p>Otomatisasi workflow digital memangkas birokrasi manual dan mempercepat keputusan persetujuan kredit nasabah.</p>
+                    <h5>Dual-Mode Ingesti Debitur</h5>
+                    <p>Opsi fleksibel bagi analis perbankan: input debitur baru dari awal atau sekali klik tarik profil debitur beserta scoring langsung dari CBAS.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="crosshair"></i>
+                        <i data-lucide="workflow"></i>
                     </div>
-                    <h5>Keputusan Lebih Akurat</h5>
-                    <p>Integrasi analitik multi-sumber dan Rule Engine membantu penilaian profil risiko kredit secara objektif dan konsisten.</p>
+                    <h5>Alur Bisnis Dinamis (Workflow)</h5>
+                    <p>Semua proses bisnis, hierarki otorisasi, dan tahapan approval kredit 100% bersumber dari skema workflow yang dikonfigurasi langsung oleh user.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="shield-alert"></i>
+                        <i data-lucide="layout"></i>
                     </div>
-                    <h5>Kepatuhan Regulasi Terjaga</h5>
-                    <p>Menjamin kepatuhan standar OJK dengan audit trail menyeluruh dan kontrol otorisasi berjenjang yang aman.</p>
+                    <h5>UI/UX Terpusat (Auto-Layout)</h5>
+                    <p>Seluruh antarmuka formulir permohonan dan datatable administrasi diatur konfigurasinya dari UI/UX Dynamic tanpa penulisan kode ulang.</p>
                 </div>
 
-                <div class="benefit-card">
+                <div class="benefit-card card-zoom-fade">
                     <div class="benefit-icon-box">
-                        <i data-lucide="award"></i>
+                        <i data-lucide="shield-check"></i>
                     </div>
-                    <h5>Pengalaman Nasabah Prima</h5>
-                    <p>Pengalaman digital yang transparan dan efisien, memungkinkan pelacakan progres pembiayaan secara langsung.</p>
+                    <h5>Mitigasi Risiko & Audit Trail</h5>
+                    <p>Kombinasi scoring CBAS dan alur workflow menjamin kepatuhan regulasi OJK dengan log audit trail yang transparan dan anti-manipulasi.</p>
                 </div>
             </div>
 
             <div class="benefits-section-title">
-                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End LOS
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End Pemrosesan Kredit (LOS)
             </div>
 
             <div class="pipeline-grid">
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">1</div>
                     <div class="pipeline-text">
-                        <h5>Pengajuan Kredit</h5>
-                        <p>Nasabah mengajukan permohonan kredit melalui kanal digital terintegrasi atau agen lapangan perbankan.</p>
+                        <h5>Permohonan & Seleksi Debitur</h5>
+                        <p>User dapat menginput debitur baru dari awal atau langsung menarik data debitur yang sudah memiliki informasi scoring dari <strong>CBAS</strong>.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">2</div>
                     <div class="pipeline-text">
-                        <h5>Pengumpulan Data & Dokumen</h5>
-                        <p>Sistem secara otomatis mengumpulkan, mengenali, dan memverifikasi dokumen persyaratan pendukung.</p>
+                        <h5>Render Form Dinamis (Auto-Layout)</h5>
+                        <p>Formulir pengajuan kredit, validasi data diri, dan persyaratan dokumen dirender secara otomatis dari konfigurasi <strong>UI/UX Dynamic</strong>.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">3</div>
                     <div class="pipeline-text">
-                        <h5>Analisis & Penilaian Kredit</h5>
-                        <p>Rule Engine dan model analitik memproses data historis untuk mengukur kelayakan batas pembiayaan.</p>
+                        <h5>Eksekusi Alur Kerja (Workflow)</h5>
+                        <p>Pengajuan diproses mengikuti alur bisnis yang telah dibuat oleh user di <strong>Workflow BPMN</strong>, termasuk validasi limit dan penugasan analis.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">4</div>
                     <div class="pipeline-text">
-                        <h5>Keputusan Kredit</h5>
-                        <p>Persetujuan dilakukan secara otomatis berbasis scoring aturan atau dialihkan ke komite kredit sesuai limit.</p>
+                        <h5>Analisis Scoring & Keputusan Kredit</h5>
+                        <p>Analisis kelayakan kredit berdasarkan scoring iDeb CBAS dan rekomendasi sistem diteruskan ke komite kredit sesuai matriks wewenang.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">5</div>
                     <div class="pipeline-text">
-                        <h5>Dokumentasi & Perjanjian</h5>
-                        <p>Pembuatan kontrak digital otomatis dengan integrasi tanda tangan elektronik resmi berstandar hukum.</p>
+                        <h5>Dokumentasi & Kontrak Digital</h5>
+                        <p>Penerbitan surat persetujuan kredit (SPK) otomatis dan penandatanganan akad perjanjian pinjaman secara elektronik resmi.</p>
                     </div>
                 </div>
 
-                <div class="pipeline-card">
+                <div class="pipeline-card card-zoom-fade">
                     <div class="pipeline-step-badge">6</div>
                     <div class="pipeline-text">
-                        <h5>Pencairan Dana</h5>
-                        <p>Instruksi pencairan dana dieksekusi secara aman dan instan langsung ke rekening nasabah terpilih.</p>
+                        <h5>Pencairan Dana & Integrasi Core</h5>
+                        <p>Instruksi pencairan fasilitas pinjaman dieksekusi secara instan, aman, dan tercatat otomatis ke sistem pembukuan inti perbankan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Showcase: Trans Padang (Trans Padang) -->
+        <section id="psm-transpadang" class="case-study-card card-zoom-fade fade-in" style="margin-top: 3.5rem;">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Sistem Kontrol Transportasi Publik Kota</div>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="bus"></i> Trans Padang
+                    </span>
+                    <span class="case-badge badge-emerald">
+                        <i data-lucide="check-circle"></i> Live BRT Production System
+                    </span>
+                    <span class="case-badge badge-amber">
+                        <i data-lucide="map-pin"></i> Trans Padang
+                    </span>
+                </div>
+                <h3>Trans Padang | Sistem Controlling Transportasi Bus Trans Padang</h3>
+                <p>
+                    Platform <i>backend & central controlling</i> operasional armada Bus Rapid Transit (Trans Padang) skala metropolitan. Dirancang untuk mengawasi dan mengendalikan mobilitas transportasi publik secara terintegrasi—mengakomodir presensi personel operasional, pencatatan ketepatan jadwal armada (timetable), rekonsiliasi settlement multi-metode pembayaran dan kategori tarif, audit jarak tempuh (KM) ritase operasional, hingga inspeksi kepatuhan Standar Pelayanan Minimal (SPM) harian.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="layers" style="width: 16px; height: 16px;"></i> 5 Modul Inti Operasional Trans Padang Trans Padang
+            </div>
+
+            <div class="psm-modules-grid">
+                <!-- Modul 1: Absensi -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="user-check"></i>
+                    </div>
+                    <h5>1. Presensi & Absensi Kru</h5>
+                    <p>
+                        Pencatatan absensi digital dan verifikasi kehadiran seluruh kru operasional Bus Trans Padang (sopir, pramugara/pramugari, serta pengawas lapangan) dengan validasi shift kerja harian, lokasi pos tugas, dan rekapitulasi kehadiran real-time.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Validasi Shift Kru</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Sopir & Pramugara</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Log Presensi Real-time</span>
+                    </div>
+                </div>
+
+                <!-- Modul 2: Timetable -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h5>2. Timetable Kedatangan & Keberangkatan</h5>
+                    <p>
+                        Pencatatan presisi waktu datang (arrival) dan waktu berangkat (departure) armada bus di setiap halte dan terminal koridor secara real-time guna memastikan kepatuhan jarak waktu antar-bus (headway) dan ketepatan jadwal perjalanan bagi masyarakat.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Waktu Datang & Berangkat</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Kepatuhan Headway</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Log Halte Koridor</span>
+                    </div>
+                </div>
+
+                <!-- Modul 3: Settlement Transaksi -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <h5>3. Settlement Transaksi Multi-Pembayaran</h5>
+                    <p>
+                        Rekonsiliasi otomatis dan pencatatan transaksi tiket bus nontunai (QRIS, Kartu Debit, Kartu Kredit) dengan diferensiasi perhitungan tarif resmi yang fleksibel untuk 3 kategori penumpang: <strong>Lansia</strong>, <strong>Umum</strong>, dan <strong>Pelajar</strong>.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> QRIS / Debit / CC</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Tarif Lansia, Umum & Pelajar</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Auto Rekonsiliasi</span>
+                    </div>
+                </div>
+
+                <!-- Modul 4: KM -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="gauge"></i>
+                    </div>
+                    <h5>4. Pencatatan KM Bus & Ritase Operasional</h5>
+                    <p>
+                        Pencatatan dan audit kilometer tempuh (KM) armada bus pada setiap ritase perjalanan rute koridor sebagai dasar akurat perhitungan pembayaran subsidi Biaya Operasional Kendaraan (BOK rupiah/KM) dan jadwal perawatan armada.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Audit KM per Ritase</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Verifikasi Biaya (Rp/KM)</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Utilisasi Armada</span>
+                    </div>
+                </div>
+
+                <!-- Modul 5: SPM dan Checklist Harian -->
+                <div class="psm-module-card span-wide card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="clipboard-check"></i>
+                    </div>
+                    <h5>5. SPM & Checklist Harian (Kondisi Bus, Atribut, Pramugara, Sopir & Halte)</h5>
+                    <p>
+                        Sistem audit kepatuhan Standar Pelayanan Minimal (SPM) harian terpadu: verifikasi kelaikan teknis & fisik bus, kelengkapan atribut keselamatan kendaraan, kesiapan seragam & etika kru (sopir dan pramugara), serta kebersihan dan kelaikan fasilitas fisik halte di sepanjang koridor operasional Bus Trans Padang.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Standar Pelayanan Minimal (SPM)</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Pengecekan Fisik & Kelaikan Bus</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Atribut Bus, Sopir & Pramugara</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Kesiapan & Kebersihan Halte</span>
                     </div>
                 </div>
             </div>
@@ -2764,14 +3232,28 @@
         <section class="fade-in">
             <div class="section-header">
                 <div class="section-tag">Portofolio Produksi</div>
-                <h2 class="section-title">Implementasi & Deployments Lainnya</h2>
+                <h2 class="section-title">Implementasi & Deployments Produksi</h2>
                 <p class="section-subtitle">
                     Solusi kustom berskala besar yang dirancang dan dioperasikan untuk institusi terkemuka di Indonesia.
                 </p>
             </div>
 
             <div class="deploy-grid">
-                <div class="dep-card">
+                <!-- Highlight: Trans Padang Trans Padang -->
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">TRANSPORTASI PUBLIK · TRANS PADANG</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Trans Padang Trans Padang BRT</h4>
+                        <p class="dep-desc">
+                            Sistem controlling terpadu armada Bus Trans Padang yang mengakomodir absensi kru, timetable keberangkatan & kedatangan, settlement transaksi pembayaran (QRIS, Debit, CC untuk kategori lansia, umum, pelajar), audit KM armada, serta checklist SPM harian (bus, atribut kru, dan halte).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">BCA FINANCE</span>
@@ -2785,7 +3267,7 @@
                     </div>
                 </div>
 
-                <div class="dep-card">
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">PEGADAIAN</span>
@@ -2799,7 +3281,7 @@
                     </div>
                 </div>
 
-                <div class="dep-card">
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">PENDIDIKAN</span>
@@ -2813,7 +3295,7 @@
                     </div>
                 </div>
 
-                <div class="dep-card">
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">HEALTHCARE (PMI)</span>
@@ -2827,7 +3309,7 @@
                     </div>
                 </div>
 
-                <div class="dep-card">
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">DINAS PENDIDIKAN KOTA PADANG</span>
@@ -2841,7 +3323,7 @@
                     </div>
                 </div>
 
-                <div class="dep-card">
+                <div class="dep-card card-zoom-fade">
                     <div>
                         <div class="dep-header">
                             <span class="dep-client-tag">PERTANIAN (SIHI)</span>
@@ -3079,6 +3561,7 @@
                         <li><a href="#proyek"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Ekosistem Perbankan Utama</a></li>
                         <li><a href="#cbas-case-study"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: CBAS (Robotic SLIK)</a></li>
                         <li><a href="#los"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: Loan Origination System</a></li>
+                        <li><a href="#psm-transpadang"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Controlling Trans Padang (Trans Padang)</a></li>
                         <li><a href="#pengalaman"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Riwayat Karier & Kepemimpinan</a></li>
                         <li><a href="#keahlian"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Keahlian Teknis</a></li>
                     </ul>
@@ -3268,6 +3751,7 @@
             '.spotlight-card',
             '.benefit-card',
             '.pipeline-card',
+            '.psm-module-card',
             '.dep-card',
             '.time-card',
             '.skill-card',
