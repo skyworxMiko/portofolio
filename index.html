@@ -4,34 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamiko Arshal | Portofolio</title>
+    <title>Jamiko Arshal | Enterprise Solutions Architect & Tech Lead</title>
+    <meta name="description"
+        content="Portofolio Jamiko Arshal - Enterprise Solutions Architect & Tech Lead spesialis arsitektur perbankan, otomatisasi SLIK OJK, Core API, dan sistem enterprise nasional.">
 
-    <!-- Fonts -->
+    <!-- Fonts: Plus Jakarta Sans for sleek enterprise tech & JetBrains Mono for technical specifications -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
         rel="stylesheet">
+
+    <!-- Lucide Vector Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Lenis Smooth Scroll Engine -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <style>
         :root {
-            --primary: #1d4ed8;
-            --primary-light: #eff6ff;
-            --dark: #0b0f19;
-            /* Footer background */
-            --darker: #050810;
-            --gold: #dcb348;
-            /* Quote background */
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-500: #64748b;
-            --gray-800: #1e293b;
-            --success: #10b981;
+            /* Palette: High-End Enterprise Slate, Deep Cobalt, Champagne Gold */
+            --bg-canvas: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f1f5f9;
+            --bg-dark: #070a13;
+            --bg-dark-elevated: #0f172a;
+            --bg-dark-card: #141e33;
 
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --primary-light: #eff6ff;
+            --primary-subtle: rgba(29, 78, 216, 0.08);
+            --primary-border: rgba(37, 99, 235, 0.2);
+
+            --accent-gold: #d97706;
+            --accent-gold-light: #fef3c7;
+            --accent-gold-border: rgba(217, 119, 6, 0.25);
+            --accent-cyan: #0284c7;
+
+            --success: #059669;
+            --success-light: #ecfdf5;
+
+            --text-dark: #0b1120;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+
+            --border-light: #e2e8f0;
+            --border-focus: #cbd5e1;
+
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-serif: 'Playfair Display', Georgia, serif;
+
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+            --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.09), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+            --shadow-glow: 0 0 30px rgba(29, 78, 216, 0.18);
         }
 
         * {
@@ -43,43 +72,76 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 90px;
         }
 
         body {
-            font-family: var(--font-body);
-            color: var(--gray-800);
-            background-color: #ffffff;
-            line-height: 1.6;
+            font-family: var(--font-sans);
+            color: var(--text-body);
+            background-color: var(--bg-canvas);
+            background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+            background-size: 28px 28px;
+            line-height: 1.65;
             overflow-x: hidden;
         }
 
+        /* Top Reading Progress Bar */
+        #scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #1d4ed8 0%, #0284c7 50%, #d97706 100%);
+            z-index: 10001;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+            transition: width 0.08s ease-out;
+        }
+
+        ::selection {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1220px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* --- Navigation --- */
+        /* Ambient Lighting Header Mesh */
+        .ambient-mesh {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 680px;
+            background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.03) 45%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            border-bottom: 1px solid transparent;
-            padding: 1.5rem 0;
-            background: transparent;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 1.25rem 0;
+            background: rgba(248, 250, 252, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         nav.scrolled {
-            padding: 1rem 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            padding: 0.85rem 0;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
         }
 
         .nav-inner {
@@ -88,207 +150,414 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--dark);
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
-        .logo span {
-            color: var(--gray-500);
+        .logo-symbol {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links a {
             position: relative;
             text-decoration: none;
-            color: var(--gray-500);
+            color: var(--text-muted);
             font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
+            letter-spacing: 0.04em;
+            padding: 0.4rem 0.2rem;
+            transition: color 0.25s ease;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-cyan) 100%);
+            border-radius: 2px;
             transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-links a:hover {
-            color: var(--dark);
+            color: var(--text-dark);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Buttons System */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.95rem;
+            gap: 0.6rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.2s;
-            gap: 0.5rem;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: -0.01em;
+            white-space: nowrap;
         }
 
         .btn-dark {
-            background-color: var(--dark);
-            color: #fff;
-            border: 1px solid var(--dark);
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .btn-dark:hover {
-            background-color: #000;
-        }
-
-        .btn-outline {
-            background-color: #fff;
-            color: var(--gray-800);
-            border: 1px solid var(--gray-200);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--gray-500);
+            background: #020617;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+            color: #ffffff;
         }
 
         .btn-primary {
-            background-color: var(--primary);
-            color: #fff;
-            border: 1px solid var(--primary);
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
         }
 
         .btn-primary:hover {
-            background-color: #1e40af;
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(29, 78, 216, 0.35);
+            color: #ffffff;
         }
 
-        /* --- Hero Section --- */
+        .btn-wa {
+            background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+        }
+
+        .btn-wa:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: #ffffff;
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--border-focus);
+            background: #f8fafc;
+            transform: translateY(-2px);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
         .hero {
-            padding: 5rem 0;
+            position: relative;
+            padding: 8rem 0 5rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.15fr 0.85fr;
             gap: 4rem;
             align-items: center;
+            z-index: 1;
         }
 
-        .availability-badge {
+        .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
+            gap: 0.65rem;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 0.45rem 1rem;
             border-radius: 50px;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+            margin-bottom: 1.75rem;
         }
 
-        .dot-group {
-            display: flex;
-            gap: 4px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
+        .status-beacon {
+            position: relative;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-        }
-
-        .dot-green {
             background-color: var(--success);
         }
 
-        .dot-blue {
-            background-color: var(--primary);
+        .status-beacon::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background-color: rgba(16, 185, 129, 0.4);
+            animation: pulse-ring 2s infinite cubic-bezier(0.24, 0, 0.38, 1);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.9;
+            }
+
+            70% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
         }
 
         .hero-title {
-            font-family: var(--font-heading);
-            font-size: 4.5rem;
-            line-height: 1.1;
-            color: var(--dark);
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            letter-spacing: -0.035em;
         }
 
-        .hero-title i {
-            color: var(--primary);
+        .hero-title .title-accent {
+            font-family: var(--font-serif);
             font-style: italic;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
-            color: var(--gray-500);
-            margin-bottom: 2.5rem;
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            margin-bottom: 2.25rem;
             line-height: 1.8;
-            max-width: 90%;
+            max-width: 92%;
+        }
+
+        .hero-badges-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--border-light);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-body);
+        }
+
+        .hero-pill i {
+            color: var(--primary);
         }
 
         .hero-actions {
             display: flex;
+            align-items: center;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        /* --- Identity Card --- */
+        /* Executive Identity Card */
+        .id-card-wrapper {
+            position: relative;
+        }
+
+        .id-card-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(217, 119, 6, 0.08) 100%);
+            border-radius: 24px;
+            filter: blur(16px);
+            z-index: 0;
+        }
+
         .id-card {
-            background-color: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: relative;
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 20px;
+            padding: 2.25rem;
+            box-shadow: var(--shadow-card);
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .id-avatar {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
-            color: #fff;
-            border-radius: 12px;
+        .id-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .id-card-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .id-name {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 0.2rem;
+        .id-profile-group {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
         }
 
-        .id-role {
-            font-size: 0.8rem;
+        .id-avatar-box {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .id-avatar-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+        }
+
+        .id-header-info h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .id-header-info .id-role-tag {
+            font-size: 0.74rem;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            display: block;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+
+        .architect-seal {
+            background: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold-border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .id-list {
@@ -300,9 +569,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--gray-200);
-            font-size: 0.95rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(241, 245, 249, 1);
+            font-size: 0.92rem;
         }
 
         .id-item:last-child {
@@ -311,321 +580,988 @@
         }
 
         .id-label {
-            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .id-label i {
+            color: var(--text-light);
+            width: 16px;
+            height: 16px;
         }
 
         .id-value {
             font-weight: 600;
-            color: var(--dark);
+            color: var(--text-dark);
+            text-align: right;
         }
 
         .id-value.highlight {
             color: var(--primary);
             background: var(--primary-light);
-            padding: 0.2rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            border: 1px solid var(--primary-border);
+            padding: 0.2rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        /* Interactive Direct Action Links for Email & WhatsApp */
+        .id-action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 8px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .id-action-link:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+        }
+
+        .id-action-link.wa-link {
+            color: #059669;
+            background: #ecfdf5;
+            border-color: rgba(5, 150, 105, 0.25);
+        }
+
+        .id-action-link.wa-link:hover {
+            background: #059669;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+        }
+
+        .id-action-link .action-icon {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        .id-action-link:hover .action-icon {
+            transform: translate(2px, -2px);
+        }
+
+        .id-copy-mini-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem;
+            color: var(--text-light);
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .id-copy-mini-btn:hover {
+            color: var(--primary);
+            background: rgba(15, 23, 42, 0.06);
+            transform: scale(1.1);
         }
 
         .id-value.success {
             color: var(--success);
-            display: flex;
+            background: var(--success-light);
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-flex;
             align-items: center;
             gap: 0.4rem;
         }
 
-        /* --- Stats Block --- */
+        .id-value.success .micro-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--success);
+        }
+
+        /* Executive Stats Block */
+        .stats-block-wrapper {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 6rem;
+        }
+
         .stats-block {
-            background-color: var(--darker);
+            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            padding: 4rem;
+            padding: 3.5rem 3rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
-            margin-bottom: 5rem;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 400px;
+            height: 100%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .stat-item {
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding-right: 2rem;
         }
 
         .stat-item:last-child {
             border-right: none;
+            padding-right: 0;
         }
 
         .stat-num {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            color: #fff;
+            font-size: clamp(2.8rem, 4vw, 3.8rem);
+            font-weight: 800;
+            color: #ffffff;
             line-height: 1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             display: flex;
-            align-items: center;
+            align-items: baseline;
+            letter-spacing: -0.04em;
         }
 
         .stat-num span {
-            color: var(--primary);
+            color: var(--accent-gold);
             font-size: 2rem;
-            font-family: var(--font-body);
-            font-weight: 300;
-            margin-left: 2px;
+            font-weight: 400;
+            margin-left: 4px;
         }
 
         .stat-label {
-            color: var(--gray-500);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #94a3b8;
+            font-size: 0.84rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             line-height: 1.5;
-            padding-right: 2rem;
         }
 
-        /* --- Section Shared --- */
+        /* Section Shared Headers */
         .section-header {
+            margin-bottom: 3.5rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 18px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-top: 0.75rem;
+        }
+
+        /* Architecture Topology */
+        .topology-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topology-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-cyan) 50%, var(--accent-gold) 100%);
+        }
+
+        .topology-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .topology-header h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .topology-header p {
+            font-size: 1.02rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .topology-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pillar-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pillar-card:hover {
+            background: #ffffff;
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-3px);
+        }
+
+        .pillar-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pillar-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .pillar-info span {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Innovation Spotlight Grid */
+        .spotlights-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .spotlight-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2.75rem;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 2.5rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .spotlight-card:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .spot-tier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .spot-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        .spot-title .spot-subheading {
+            font-weight: 500;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.3rem;
+            letter-spacing: normal;
+        }
+
+        .spot-desc {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+
+        .stack-box {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stack-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stack-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--primary);
+        }
+
+        .stack-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .stack-list li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+        }
+
+        .stack-list li i {
+            color: var(--primary);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Executive Testimonial Section */
+        .testimonial-container {
+            margin-bottom: 6rem;
+            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 4rem;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-container::after {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: var(--font-serif);
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.03);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testi-quote-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            color: var(--accent-gold);
+            margin-bottom: 1.75rem;
+        }
+
+        .testi-headline {
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+        }
+
+        .testi-headline .highlight-name {
+            color: var(--accent-gold);
+        }
+
+        .testi-author-info {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 3rem;
-            margin-top: 4rem;
         }
 
-        .section-header::before {
-            content: '';
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary);
+        .testi-author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1e293b;
+            border: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ffffff;
+            font-size: 1.1rem;
         }
 
-        .section-header h2 {
-            font-size: 0.85rem;
+        .testi-author-meta strong {
+            display: block;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .testi-author-meta .role {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.88rem;
+        }
+
+        .testi-author-meta .company {
+            display: block;
+            color: var(--accent-gold);
+            font-size: 0.82rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gray-500);
+            letter-spacing: 0.05em;
+            margin-top: 0.2rem;
         }
 
-        /* --- Skills Grid --- */
-        .skills-grid {
+        .testi-side-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            padding: 2.25rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .testi-side-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testi-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .testi-bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .testi-check-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--success);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Featured Case Studies */
+        .case-study-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 5rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-hero {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .case-study-hero h3 {
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .case-study-hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .benefits-section-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .benefit-card:hover {
+            background: #ffffff;
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .benefit-card h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Pipeline Workflow (6 Steps) */
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .pipeline-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pipeline-card:hover {
+            background: #ffffff;
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-3px);
+        }
+
+        .pipeline-step-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.88rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+        }
+
+        .pipeline-text h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+        }
+
+        .pipeline-text p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Other Deployments Grid */
+        .deploy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-bottom: 6rem;
         }
 
-        .skill-card {
-            background: #fff;
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        .dep-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .skill-card.active {
-            border-color: var(--primary);
-            background-color: var(--primary-light);
-        }
-
-        .skill-card:hover {
+        .dep-card:hover {
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-hover);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
-        .skill-icon {
-            font-size: 2rem;
+        .dep-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
         }
 
-        .skill-title {
+        .dep-client-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .dep-status-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.68rem;
             font-weight: 700;
-            color: var(--dark);
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
+            color: var(--success);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .skill-desc {
-            font-size: 0.8rem;
-            color: var(--gray-500);
+        .dep-status-live .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--success);
         }
 
-        /* --- Timeline & Deployments --- */
-        .timeline {
-            border-left: 2px solid var(--gray-200);
-            padding-left: 2rem;
+        .dep-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .dep-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Career Timeline */
+        .timeline-section {
+            margin-bottom: 6rem;
+        }
+
+        .timeline-wrap {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 2px solid var(--border-light);
             margin-left: 1rem;
         }
 
         .time-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .time-item:last-child {
             margin-bottom: 0;
         }
 
-        .time-dot {
+        .time-dot-node {
             position: absolute;
-            left: -2.6rem;
-            top: 5px;
-            width: 16px;
-            height: 16px;
+            left: -3.05rem;
+            top: 4px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: #fff;
-            border: 3px solid var(--primary);
+            background: #ffffff;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
         }
 
-        .time-role {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 0.2rem;
+        .time-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .time-meta {
-            font-size: 0.85rem;
-            color: var(--gray-500);
+        .time-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-focus);
+            transform: translateY(-3px);
+        }
+
+        .time-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-role-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .time-period-badge {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+        }
+
+        .time-company-tag {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-muted);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .time-company-tag i {
+            color: var(--primary);
+            width: 15px;
+            height: 15px;
         }
 
         .time-desc {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            max-width: 700px;
+            font-size: 0.98rem;
+            color: var(--text-body);
+            line-height: 1.75;
         }
 
-        .deploy-grid {
+        /* Technical Skills Grid */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 6rem;
         }
 
-        .dep-card {
-            background: #fff;
-            border: 1px solid var(--gray-200);
+        .skill-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-icon-wrap {
+            width: 52px;
+            height: 52px;
             border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .dep-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-color: var(--primary);
-        }
-
-        .dep-client {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .dep-title {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark);
-        }
-
-        .dep-desc {
-            font-size: 0.9rem;
-            color: var(--gray-500);
-            line-height: 1.6;
-        }
-
-        /* --- Innovation Spotlight --- */
-        .spotlight-card {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: 20px;
-            padding: 3rem;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .spot-label {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
             color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .spot-title {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .spot-desc {
-            font-size: 1.1rem;
-            color: var(--gray-500);
-            line-height: 1.8;
-        }
-
-        .stack-box {
-            background: #fff;
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .stack-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .stack-list {
-            list-style: none;
-        }
-
-        .stack-list li {
-            position: relative;
-            padding-left: 1.5rem;
             margin-bottom: 1rem;
-            font-weight: 500;
-            color: var(--dark);
-            font-size: 0.95rem;
+            transition: all 0.25s ease;
         }
 
-        .stack-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 6px;
-            height: 6px;
-            background-color: var(--primary);
-            border-radius: 50%;
+        .skill-card:hover .skill-icon-wrap {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
         }
 
-        /* --- Architect Quote Section --- */
+        .skill-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-desc {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Executive Architect Quote Section (Dark Obsidian) */
         .quote-section {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, #050810 0%, #0b1120 100%);
             padding: 8rem 0;
             position: relative;
             overflow: hidden;
             margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .watermark {
@@ -633,181 +1569,374 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-family: var(--font-body);
-            font-size: clamp(8rem, 20vw, 18rem);
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.15);
+            font-family: var(--font-sans);
+            font-size: clamp(6rem, 16vw, 15rem);
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
             pointer-events: none;
             white-space: nowrap;
-            z-index: 1;
-            letter-spacing: -2px;
+            letter-spacing: 0.1em;
+            user-select: none;
         }
 
         .quote-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
-            text-align: left;
+        }
+
+        .quote-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
         }
 
         .quote-text {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            color: #1a1a1a;
-            line-height: 1.3;
+            font-family: var(--font-serif);
+            font-size: clamp(2.1rem, 4vw, 3.4rem);
+            color: #ffffff;
+            line-height: 1.32;
             margin-bottom: 2rem;
             font-style: italic;
             font-weight: 600;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.01em;
         }
 
         .quote-text strong {
             font-style: normal;
             font-weight: 800;
+            color: var(--accent-gold);
+            background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .quote-author-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .quote-author {
-            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #94a3b8;
+        }
+
+        .quote-author span {
+            color: #ffffff;
+            margin-left: 0.5rem;
+        }
+
+        .btn-gold-executive {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #ffffff;
+            padding: 1rem 2.2rem;
+            border-radius: 10px;
             font-weight: 700;
+            font-size: 0.88rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1rem;
-            color: #1a1a1a;
-            text-align: right;
-            margin-bottom: 3rem;
-            padding-right: 2rem;
-        }
-
-        .quote-action {
-            text-align: right;
-        }
-
-        .btn-gold-dark {
-            background-color: #0b0f19;
-            color: var(--gold);
-            padding: 1.2rem 2.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.08em;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
             transition: all 0.3s;
         }
 
-        .btn-gold-dark:hover {
-            background-color: #000;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .btn-gold-executive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(217, 119, 6, 0.4);
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
         }
 
-        /* --- Footer Reference Match --- */
+        /* Formal Executive Footer */
         footer {
-            background-color: var(--dark);
-            padding: 6rem 0 2rem;
+            background-color: var(--bg-dark);
+            padding: 6rem 0 2.5rem;
             color: #94a3b8;
+            position: relative;
         }
 
         .footer-top {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 6rem;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 5rem;
+            margin-bottom: 5rem;
         }
 
-        .footer-logo {
-            font-family: var(--font-body);
-            font-size: 2.2rem;
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
+            letter-spacing: -0.02em;
         }
 
-        .footer-logo span {
-            color: var(--gold);
+        .footer-logo-text span {
+            color: var(--accent-gold);
         }
 
         .footer-bio {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             line-height: 1.8;
-            max-width: 350px;
-            margin-bottom: 3rem;
+            max-width: 440px;
+            margin-bottom: 2.5rem;
+            color: #94a3b8;
         }
 
         .footer-heading {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             font-weight: 800;
-            letter-spacing: 3px;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #475569;
-            margin-bottom: 2rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
         }
 
-        /* Nav List in Footer */
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: fit-content;
+        }
+
+        .contact-row:hover {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .contact-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            transition: all 0.2s ease;
+        }
+
+        .contact-row:hover .contact-icon-box {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .contact-row.wa-footer:hover .contact-icon-box {
+            background: #059669;
+            color: #ffffff;
+            border-color: #059669;
+        }
+
         .footer-nav-list {
             list-style: none;
-        }
-
-        .footer-nav-list li {
-            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .footer-nav-list a {
             color: #94a3b8;
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .footer-nav-list a:hover {
             color: #ffffff;
+            transform: translateX(4px);
         }
 
-        /* Contact List in Footer */
-        .footer-contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .contact-row {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-row i {
-            color: #475569;
-        }
-
-        .contact-row span {
-            color: #cbd5e1;
-        }
-
-        /* Footer Bottom Bar */
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
             color: #64748b;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        /* --- Animations --- */
+        .footer-verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .footer-verified-badge i {
+            color: var(--success);
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Floating Quick Controls (WhatsApp & Back-to-Top) */
+        .floating-controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            z-index: 999;
+        }
+
+        .floating-wa-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #10b981;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .floating-wa-btn:hover {
+            background: #059669;
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 12px 28px rgba(5, 150, 105, 0.45);
+            color: #ffffff;
+        }
+
+        .wa-tooltip {
+            position: absolute;
+            right: 64px;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(10px);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-wa-btn:hover .wa-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .back-to-top {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Toast Notification for Copy Action */
+        #copy-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.85rem 1.4rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        #copy-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Smooth Reveal Animation System */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(32px) scale(0.985);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
 
         .fade-in.visible {
@@ -815,53 +1944,220 @@
             transform: translateY(0) scale(1);
         }
 
-        @media(max-width: 900px) {
+        /* --- Card Animation Suite: Smooth Fade In/Out & Zoom In/Out --- */
+        .card-zoom-fade {
+            opacity: 0;
+            transform: translateY(35px) scale(0.92);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* In Viewport: Smooth Zoom-In & Fade-In */
+        .card-zoom-fade.card-in-view {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Hover Zoom In & Glow Elevation */
+        .card-zoom-fade.card-in-view:hover {
+            transform: translateY(-8px) scale(1.025);
+            border-color: rgba(37, 99, 235, 0.45);
+            box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.12), 0 0 30px rgba(37, 99, 235, 0.16);
+            z-index: 2;
+        }
+
+        /* Interactive Cursor-Tracking Radial Spotlight */
+        .card-zoom-fade::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.1), transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: 1;
+        }
+
+        .card-zoom-fade:hover::before {
+            opacity: 1;
+        }
+
+        /* Micro-zoom on Card Icons when card is hovered */
+        .card-zoom-fade:hover .pillar-icon-box,
+        .card-zoom-fade:hover .benefit-icon-box,
+        .card-zoom-fade:hover .skill-icon-wrap,
+        .card-zoom-fade:hover .contact-icon-box {
+            transform: scale(1.15) rotate(4deg);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-zoom-fade:hover .pipeline-step-badge {
+            transform: scale(1.15);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.45);
+            transition: all 0.3s ease;
+        }
+
+        /* Floating levitation for Identity Card */
+        @keyframes idCardLevitate {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        .id-card-wrapper {
+            position: relative;
+            perspective: 1200px;
+            animation: idCardLevitate 6s ease-in-out infinite;
+        }
+
+        .id-card-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .id-card {
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+            transform-style: preserve-3d;
+        }
+
+        .id-card:hover {
+            box-shadow: 0 25px 50px -10px rgba(15, 23, 42, 0.15), 0 0 35px rgba(37, 99, 235, 0.2);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        /* Responsive Media Queries */
+        @media(max-width: 1024px) {
             .hero {
                 grid-template-columns: 1fr;
-                padding: 3rem 0;
+                padding-top: 6.5rem;
+                gap: 3.5rem;
             }
 
             .stats-block {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
-                padding: 2rem;
+                padding: 2.5rem;
             }
 
-            .stat-item {
+            .stat-item:nth-child(2) {
                 border-right: none;
             }
 
             .spotlight-card {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+            }
+
+            .topology-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .deploy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .footer-top {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 3.5rem;
             }
+        }
 
+        @media(max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
-            .quote-text {
-                font-size: 2rem;
-            }
-
-            .quote-author,
-            .quote-action {
-                text-align: left;
-            }
-
-            .watermark {
-                font-size: 8rem;
-            }
-
-            .footer-bottom {
+            .nav-links.mobile-open {
+                display: flex;
                 flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                padding: 1.5rem 2rem;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                gap: 1.25rem;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+            }
+
+            .stats-block {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 1.5rem;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .case-study-card {
+                padding: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deploy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quote-author-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .floating-controls {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .wa-tooltip {
+                display: none;
             }
         }
     </style>
@@ -869,16 +2165,37 @@
 
 <body>
 
-    <nav>
+    <div id="scroll-progress-bar"></div>
+    <div class="ambient-mesh"></div>
+
+    <!-- Navigation Header -->
+    <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#" class="logo">Jamiko <span>Arshal</span></a>
-            <div class="nav-links">
-                <a href="#proyek">PROYEK</a>
+            <a href="#" class="logo-wrap">
+                <div class="logo-symbol">JA</div>
+                <div class="logo-text">
+                    <span class="logo-title">Jamiko Arshal</span>
+                    <span class="logo-subtitle">Solutions Architect</span>
+                </div>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#proyek">EKOSISTEM & PROYEK</a>
+                <a href="#cbas-case-study">CASE STUDY</a>
                 <a href="#pengalaman">PENGALAMAN</a>
                 <a href="#keahlian">KEAHLIAN</a>
                 <a href="#kontak">KONTAK</a>
             </div>
-            <a href="#kontak" class="btn btn-dark">Hubungi Saya</a>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                    target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                    <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> Chat WhatsApp
+                </a>
+                <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle Navigation">
+                    <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -887,725 +2204,1018 @@
         <!-- Hero Section -->
         <section class="hero fade-in">
             <div class="hero-content">
-                <div class="availability-badge">
-                    <div class="dot-group">
-                        <div class="dot dot-green"></div>
-                        <div class="dot dot-blue"></div>
-                    </div>
-                    TERSEDIA UNTUK PELUANG BARU
+                <div class="status-badge">
+                    <div class="status-beacon"></div>
+                    TERSEDIA UNTUK KONSULTASI & PERAN ENTERPRISE
                 </div>
 
                 <h1 class="hero-title">
-                    Enterprise Solutions Architect <br>& <i>Tech Lead</i>
+                    Enterprise Solutions Architect <br>& <span class="title-accent">Tech Lead</span>
                 </h1>
 
                 <p class="hero-desc">
-                    Arsitek sistem enterprise berskala nasional dengan rekam jejak di perbankan, fintech, layanan
-                    publik, dan kesehatan. Spesialis otomatisasi backend-to-frontend untuk keputusan lebih cepat dan
-                    operasional lebih efisien.
+                    Arsitek sistem enterprise berskala nasional dengan rekam jejak teruji di perbankan, fintech, layanan
+                    publik, dan kesehatan. Spesialis otomatisasi backend-to-frontend, Rule Engine, dan robotika SLIK
+                    untuk akselerasi keputusan bisnis dan efisiensi operasional.
                 </p>
 
+                <div class="hero-badges-strip">
+                    <div class="hero-pill"><i data-lucide="shield-check"></i> Sistem Perbankan Live</div>
+                    <div class="hero-pill"><i data-lucide="bot"></i> Autonomous SLIK OJK</div>
+                    <div class="hero-pill"><i data-lucide="layers"></i> High-Throughput Core API</div>
+                </div>
+
                 <div class="hero-actions">
-                    <a href="#proyek" class="btn btn-dark">
-                        Lihat Portofolio <i data-lucide="arrow-down" style="width: 16px;"></i>
+                    <a href="#proyek" class="btn btn-primary">
+                        Jelajahi Portofolio <i data-lucide="arrow-down" style="width: 16px; height: 16px;"></i>
                     </a>
-                    <a href="#kontak" class="btn btn-outline">
-                        <i data-lucide="mail" style="width: 16px; color: var(--primary);"></i> Hubungi Saya
+                    <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                        <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> Chat WhatsApp
+                    </a>
+                    <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                        class="btn btn-outline" title="Kirim Email Langsung">
+                        <i data-lucide="mail" style="width: 16px; height: 16px; color: var(--primary);"></i> Kirim Email
                     </a>
                 </div>
             </div>
 
-            <!-- Identity Card -->
-            <div class="id-card fade-in" style="transition-delay: 0.2s;">
-                <div class="id-avatar">JA</div>
-                <h2 class="id-name">Jamiko Arshal</h2>
-                <span class="id-role">SOLUTIONS ARCHITECT & TECH LEAD</span>
+            <!-- Executive Identity Card with Direct Email & WhatsApp Click -->
+            <div class="id-card-wrapper fade-in" style="transition-delay: 0.15s;">
+                <div class="id-card">
+                    <div class="id-card-header">
+                        <div class="id-profile-group">
+                            <div class="id-avatar-box">JA</div>
+                            <div class="id-header-info">
+                                <h3>Jamiko Arshal</h3>
+                                <span class="id-role-tag">Solutions Architect & Tech Lead</span>
+                            </div>
+                        </div>
+                        <div class="architect-seal">
+                            <i data-lucide="check-circle-2" style="width: 13px; height: 13px;"></i> Verified
+                        </div>
+                    </div>
 
-                <div class="id-list">
-                    <div class="id-item">
-                        <span class="id-label">Perusahaan</span>
-                        <span class="id-value highlight">PT. Skyworx Indonesia</span>
-                    </div>
-                    <div class="id-item">
-                        <span class="id-label">Lokasi</span>
-                        <span class="id-value">Padang, Indonesia</span>
-                    </div>
-                    <div class="id-item">
-                        <span class="id-label">Email</span>
-                        <span class="id-value" style="color: var(--primary);">arshaljamiko@gmail.com</span>
-                    </div>
-                    <div class="id-item">
-                        <span class="id-label">Telp</span>
-                        <span class="id-value">0822-8748-3950</span>
-                    </div>
-                    <div class="id-item">
-                        <span class="id-label">Pendidikan</span>
-                        <span class="id-value">S1 Sistem Informasi</span>
-                    </div>
-                    <div class="id-item">
-                        <span class="id-label">Status</span>
-                        <span class="id-value success">
-                            <div class="dot dot-green"></div> Aktif Bekerja
-                        </span>
+                    <div class="id-list">
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="building-2"></i> Perusahaan</span>
+                            <span class="id-value highlight">PT. Skyworx Indonesia</span>
+                        </div>
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="map-pin"></i> Lokasi</span>
+                            <span class="id-value">Padang, Indonesia</span>
+                        </div>
+
+                        <!-- Direct Click: Send Email -->
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="mail"></i> Email</span>
+                            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                                    class="id-action-link"
+                                    title="Klik untuk langsung membuka aplikasi Email">
+                                    <span>arshaljamiko@gmail.com</span>
+                                    <i data-lucide="send" class="action-icon"></i>
+                                </a>
+                                <button class="id-copy-mini-btn"
+                                    onclick="copyToClipboard('arshaljamiko@gmail.com', 'Alamat email berhasil disalin!')"
+                                    title="Salin email ke clipboard">
+                                    <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Direct Click: Send WhatsApp -->
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="phone"></i> Telp / WA</span>
+                            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="id-action-link wa-link"
+                                    title="Klik untuk langsung chat di WhatsApp">
+                                    <span>0822-8748-3950</span>
+                                    <i data-lucide="message-circle" class="action-icon"></i>
+                                </a>
+                                <button class="id-copy-mini-btn"
+                                    onclick="copyToClipboard('0822-8748-3950', 'Nomor telepon berhasil disalin!')"
+                                    title="Salin nomor ke clipboard">
+                                    <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="graduation-cap"></i> Pendidikan</span>
+                            <span class="id-value">S1 Sistem Informasi</span>
+                        </div>
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="activity"></i> Status</span>
+                            <span class="id-value success">
+                                <span class="micro-dot"></span> Aktif Bekerja (IT Supervisor)
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Block -->
-        <div class="stats-block fade-in" id="pengalaman">
-            <div class="stat-item">
-                <div class="stat-num">7<span>+</span></div>
-                <div class="stat-label">Tahun Pengalaman Pengembangan</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">8<span>+</span></div>
-                <div class="stat-label">Sistem Enterprise Aktif & Live</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">10<span>+</span></div>
-                <div class="stat-label">Klien Institusi Bank & Korporat</div>
-            </div>
-            <div class="stat-item" style="border: none;">
-                <div class="stat-num">3</div>
-                <div class="stat-label">Peran: Dev → Senior → Supervisor</div>
+        <!-- Executive Stats Block -->
+        <div class="stats-block-wrapper fade-in" id="pengalaman-stats">
+            <div class="stats-block">
+                <div class="stat-item">
+                    <div class="stat-num">7<span>+</span></div>
+                    <div class="stat-label">Tahun Rekam Jejak Engineering</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">8<span>+</span></div>
+                    <div class="stat-label">Sistem Enterprise Aktif & Live</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">10<span>+</span></div>
+                    <div class="stat-label">Institusi Bank & Korporat Klien</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Evolusi Peran: Dev → Senior → Supervisor</div>
+                </div>
             </div>
         </div>
 
-        <!-- Ecosystem Spotlight -->
-        <div id="proyek">
+        <!-- Ecosystem Section -->
+        <section id="proyek">
             <div class="section-header fade-in">
-                <h2>Ekosistem Perbankan Utama</h2>
-            </div>
-
-            <div class="fade-in" style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; margin-bottom: 4rem; text-align: center;">
-                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--dark); margin-bottom: 1rem;">Kesatuan Arsitektur Terintegrasi</h3>
-                <p style="font-size: 1.05rem; color: var(--gray-500); max-width: 800px; margin: 0 auto 2rem; line-height: 1.6;">
-                    Keempat pilar di bawah ini bukanlah aplikasi terpisah, melainkan <strong>satu kesatuan arsitektur yang saling menopang</strong> untuk men-<i>deliver</i> produk perbankan masif seperti CBAS dan LOS.
+                <div class="section-tag">Arsitektur Terintegrasi</div>
+                <h2 class="section-title">Ekosistem Perbankan Utama</h2>
+                <p class="section-subtitle">
+                    Kombinasi 4 pilar arsitektur yang saling terhubung secara reaktif untuk men-<i>deliver</i> solusi
+                    perbankan masif, compliance OJK, dan efisiensi pemrosesan kredit.
                 </p>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                    <span style="background: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); font-weight: 600; font-size: 0.9rem; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.02);"><i data-lucide="database" style="width:14px; margin-right:6px; display:inline-block; vertical-align:middle;"></i> Central Core API <span style="color: var(--gray-400); font-weight:400; font-size:0.8rem; margin-left:8px;">Core Banking</span></span>
-                    <span style="background: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); font-weight: 600; font-size: 0.9rem; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.02);"><i data-lucide="bot" style="width:14px; margin-right:6px; display:inline-block; vertical-align:middle;"></i> Autonomous RPA Matrix <span style="color: var(--gray-400); font-weight:400; font-size:0.8rem; margin-left:8px;">Scraper Engine</span></span>
-                    <span style="background: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); font-weight: 600; font-size: 0.9rem; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.02);"><i data-lucide="layout" style="width:14px; margin-right:6px; display:inline-block; vertical-align:middle;"></i> Dynamic UI Engine <span style="color: var(--gray-400); font-weight:400; font-size:0.8rem; margin-left:8px;">Platform Form/UI</span></span>
-                </div>
             </div>
 
-            <!-- Spotlight 1: Dynamic Builder -->
-            <div class="spotlight-card fade-in">
-                <div>
-                    <div class="spot-label"><i data-lucide="sparkles" style="width: 16px;"></i> INNOVATION SPOTLIGHT
+            <!-- System Topology Banner -->
+            <div class="topology-card fade-in">
+                <div class="topology-header">
+                    <h3>Kesatuan Arsitektur Terintegrasi</h3>
+                    <p>
+                        Pilar-pilar di bawah ini bukanlah aplikasi terpisah yang berdiri sendiri, melainkan
+                        <strong>satu kesatuan topologi arsitektur yang saling menopang</strong> untuk mengeksekusi
+                        produk perbankan kritikal seperti <strong>CBAS</strong> dan <strong>LOS</strong>.
+                    </p>
+                </div>
+
+                <div class="topology-pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Central Core API</h4>
+                            <span>Tier 1: Core Banking Engine</span>
+                        </div>
                     </div>
-                    <h3 class="spot-title">Dynamic UI Engine <span style="font-weight:400; font-size:1rem; color:var(--gray-400); display:block; margin-top:0.3rem;">Auto-Layout Builder Platform</span></h3>
-                    <p class="spot-desc">
-                        Mesin revolusioner yang mentransformasi metadata backend menjadi antarmuka dinamis secara instan
-                        — menghilangkan kebutuhan menulis kode manual untuk Form atau DataTable. Satu metadata, seribu
-                        tampilan.
-                    </p>
-                </div>
-                <div class="stack-box">
-                    <div class="stack-title">CORE STACK</div>
-                    <ul class="stack-list">
-                        <li>Spring Boot Core</li>
-                        <li>Vue Dynamic Rendering</li>
-                        <li>Reactive Identity Security</li>
-                        <li>Auto Schema Generator</li>
-                    </ul>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Autonomous RPA Matrix</h4>
+                            <span>Tier 2: Scraper Engine</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Dynamic UI Engine</h4>
+                            <span>Tier 3: Platform Form / UI</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Spotlight 2: SLIK Core -->
-            <div class="spotlight-card fade-in">
-                <div>
-                    <div class="spot-label"><i data-lucide="database" style="width: 16px;"></i> ENTERPRISE BACKEND</div>
-                    <h3 class="spot-title">Central Core API <span style="font-weight:400; font-size:1rem; color:var(--gray-400); display:block; margin-top:0.3rem;">SLIK Core Processing Engine</span></h3>
-                    <p class="spot-desc">
-                        Jantung ekosistem pemroses data skala besar. Mengandalkan Rule Engine tingkat lanjut agar ribuan
-                        regulasi OJK bisa dieksekusi secara otomatis dan dinamis tanpa memodifikasi kode inti.
-                    </p>
-                </div>
-                <div class="stack-box">
-                    <div class="stack-title">CORE STACK</div>
-                    <ul class="stack-list">
-                        <li>Java 21 Spring Boot</li>
-                        <li>Drools Rule Engine</li>
-                        <li>Flowable BPMN</li>
-                        <li>Blaze-Persistence</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Spotlight Cards -->
+            <div class="spotlights-wrapper">
 
-            <!-- Spotlight 3: RPA Robot -->
-            <div class="spotlight-card fade-in">
-                <div>
-                    <div class="spot-label"><i data-lucide="bot" style="width: 16px;"></i> AUTONOMOUS RPA</div>
-                    <h3 class="spot-title">Autonomous RPA Matrix <span style="font-weight:400; font-size:1rem; color:var(--gray-400); display:block; margin-top:0.3rem;">Engine Robot Data Aggregator</span></h3>
-                    <p class="spot-desc">
-                        Robot otomatis (crawler) yang menavigasi portal OJK secara otonom. Menggunakan Computer Vision
-                        untuk melewati hambatan visual dan mengirim data konsumen langsung ke sistem inti.
-                    </p>
+                <!-- Spotlight 1: Dynamic Builder -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> INNOVATION SPOTLIGHT · FRONTEND AUTO-LAYOUT
+                        </div>
+                        <h3 class="spot-title">
+                            Dynamic UI Engine
+                            <span class="spot-subheading">Auto-Layout Builder Platform</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Mesin revolusioner yang mentransformasi metadata backend menjadi antarmuka dinamis secara
+                            instan — menghilangkan kebutuhan menulis kode manual untuk Form atau DataTable. Satu skema
+                            metadata mampu merefleksikan ribuan tampilan antarmuka perbankan dengan keamanan role-based
+                            terpadu.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="server"></i> Spring Boot Core</li>
+                            <li><i data-lucide="layout-template"></i> Vue Dynamic Rendering</li>
+                            <li><i data-lucide="shield-check"></i> Reactive Identity Security</li>
+                            <li><i data-lucide="code-2"></i> Auto Schema Generator</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stack-box">
-                    <div class="stack-title">CORE STACK</div>
-                    <ul class="stack-list">
-                        <li>Selenium v4 & Playwright</li>
-                        <li>OpenCV (Computer Vision)</li>
-                        <li>AShot Visual Audit</li>
-                        <li>Java RPA</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Spotlight 4: CBAS -->
-            <div class="spotlight-card fade-in">
-                <div>
-                    <div class="spot-label"><i data-lucide="monitor" style="width: 16px;"></i> CLIENT PORTAL</div>
-                    <h3 class="spot-title">CBAS | Credit Bureau Application System (Robotic SLIK)</h3>
-                    <p class="spot-desc">
-                        Antarmuka utama (portal) yang di-generate langsung oleh Dynamic Builder. Mengintegrasikan
-                        teknologi real-time WebSocket dan media player canggih untuk dashboard klien perbankan yang
-                        elegan.
-                    </p>
+                <!-- Spotlight 2: Central Core API -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="database" style="width: 14px; height: 14px;"></i> ENTERPRISE BACKEND · SLIK PROCESSING
+                        </div>
+                        <h3 class="spot-title">
+                            Central Core API
+                            <span class="spot-subheading">SLIK Core Processing Engine</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Jantung ekosistem pemroses data skala besar. Mengandalkan Rule Engine tingkat lanjut agar
+                            ribuan regulasi OJK dan verifikasi scoring kredit nasabah dapat dieksekusi secara otomatis,
+                            deterministik, dan dinamis tanpa harus memodifikasi kode inti backend.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="cpu"></i> Java 21 Spring Boot</li>
+                            <li><i data-lucide="git-merge"></i> Drools Rule Engine</li>
+                            <li><i data-lucide="workflow"></i> Flowable BPMN</li>
+                            <li><i data-lucide="database"></i> Blaze-Persistence</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stack-box">
-                    <div class="stack-title">CORE STACK</div>
-                    <ul class="stack-list">
-                        <li>Vue 3 & Vite</li>
-                        <li>Socket.IO (Real-time)</li>
-                        <li>Tailwind CSS</li>
-                        <li>Shaka Player / Uppy</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!-- CBAS Testimonial Section -->
-        <div id="cbas-testimonial" class="fade-in"
-            style="margin-bottom: 6rem; background: #f0f7ff; border-radius: 20px; padding: 4rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; border: 1px solid rgba(0, 85, 255, 0.1);">
-            <div style="flex: 1; min-width: 300px;">
-                <div style="font-size: 4rem; color: var(--primary); line-height: 1; margin-bottom: 1rem; opacity: 0.3;">
-                    "</div>
-                <h3
-                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--dark); margin-bottom: 2rem; line-height: 1.4;">
-                    Solusi software <span style="color: var(--primary);">CBAS</span> dari PT Skyworx Indonesia sangat
-                    mudah digunakan dan sesuai dengan kebutuhan bisnis kami.
+                <!-- Spotlight 3: RPA Robot -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="bot" style="width: 14px; height: 14px;"></i> AUTONOMOUS RPA · ROBOTIC AGGREGATOR
+                        </div>
+                        <h3 class="spot-title">
+                            Autonomous RPA Matrix
+                            <span class="spot-subheading">Engine Robot Data Aggregator</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Robot otomatis (crawler) berkecepatan tinggi yang menavigasi portal OJK secara otonom.
+                            Dilengkapi kemampuan Computer Vision untuk menembus tantangan visual, captcha interaktif,
+                            dan mengirim data profil kredit konsumen langsung ke dalam sistem inti perbankan.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="terminal"></i> Selenium v4 & Playwright</li>
+                            <li><i data-lucide="eye"></i> OpenCV (Computer Vision)</li>
+                            <li><i data-lucide="check-square"></i> AShot Visual Audit</li>
+                            <li><i data-lucide="code"></i> Java High-Performance RPA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spotlight 4: CBAS Portal -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="monitor" style="width: 14px; height: 14px;"></i> CLIENT PORTAL · ROBOTIC SLIK
+                        </div>
+                        <h3 class="spot-title">
+                            CBAS | Credit Bureau Application System
+                            <span class="spot-subheading">Robotic SLIK Management Platform</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Antarmuka utama (portal) yang di-generate langsung oleh Dynamic Builder. Mengintegrasikan
+                            teknologi real-time WebSocket dan media player canggih untuk menyuguhkan dashboard klien
+                            perbankan yang responsif, visualisasi data kredit komprehensif, dan pemantauan pergerakan robot.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="layout"></i> Vue 3 & Vite</li>
+                            <li><i data-lucide="zap"></i> Socket.IO (Real-time Stream)</li>
+                            <li><i data-lucide="palette"></i> Modern CSS System</li>
+                            <li><i data-lucide="play-circle"></i> Shaka Player / Uppy Media</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Executive Institutional Endorsement (CBAS Testimonial) -->
+        <div id="cbas-testimonial" class="testimonial-container fade-in">
+            <div>
+                <div class="testi-quote-mark">
+                    <i data-lucide="quote" style="width: 22px; height: 22px;"></i>
+                </div>
+                <h3 class="testi-headline">
+                    "Solusi software <span class="highlight-name">CBAS</span> dari PT Skyworx Indonesia sangat mudah
+                    digunakan dan 100% presisi sesuai dengan kebutuhan operasional bisnis kami."
                 </h3>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <strong style="color: var(--dark); font-size: 1.1rem;">Nadar Satria</strong>
-                    <span style="color: var(--gray-500); font-size: 0.9rem;">Credit Retail & Commercial Dept Head</span>
-                    <span style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">PT Sunindo Kookmin Best
-                        Finance</span>
+                <div class="testi-author-info">
+                    <div class="testi-author-avatar">NS</div>
+                    <div class="testi-author-meta">
+                        <strong>Nadar Satria</strong>
+                        <span class="role">Credit Retail & Commercial Dept Head</span>
+                        <span class="company">PT Sunindo Kookmin Best Finance</span>
+                    </div>
                 </div>
             </div>
 
-            <div
-                style="flex: 1; min-width: 300px; background: #fff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <h4
-                    style="font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem;">
-                    Keunggulan CBAS | Credit Bureau Application System (Robotic SLIK)
-                </h4>
-                <ul
-                    style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem;">
-                    <li style="display: flex; align-items: center; gap: 1rem;">
-                        <div
-                            style="width: 24px; height: 24px; border-radius: 50%; background: #10b981; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;">
-                            ✓</div>
-                        <span style="font-weight: 600; color: var(--gray-800); font-size: 0.95rem;">Mudah digunakan
-                            (User Friendly)</span>
+            <div class="testi-side-card">
+                <div class="testi-side-title">
+                    Keunggulan Teruji CBAS (Robotic SLIK)
+                </div>
+                <ul class="testi-bullets">
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Mudah digunakan (User Friendly Interface)</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 1rem;">
-                        <div
-                            style="width: 24px; height: 24px; border-radius: 50%; background: #10b981; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;">
-                            ✓</div>
-                        <span style="font-weight: 600; color: var(--gray-800); font-size: 0.95rem;">Fitur 100% Sesuai
-                            Kebutuhan Bisnis</span>
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Fitur 100% Sesuai Kebutuhan Bisnis Bank</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 1rem;">
-                        <div
-                            style="width: 24px; height: 24px; border-radius: 50%; background: #10b981; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;">
-                            ✓</div>
-                        <span style="font-weight: 600; color: var(--gray-800); font-size: 0.95rem;">Integrasi Sistem
-                            Sangat Mudah</span>
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Integrasi Sistem Sangat Cepat & Aman</span>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <!-- CBAS Case Study Section -->
-        <div id="cbas-case-study" class="fade-in" style="margin-bottom: 6rem;">
+        <!-- Featured Case Study 1: CBAS -->
+        <section id="cbas-case-study" class="case-study-card fade-in">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 01</div>
+                <h3>CBAS | Credit Bureau Application System</h3>
+                <p>
+                    Platform Robotic Process Automation (RPA) cerdas yang terintegrasi <i>deep-level</i> dengan portal SLIK
+                    OJK untuk mengotomatisasi pencarian identitas, pemantauan riwayat kredit, hingga ekstraksi dokumen
+                    secara instan.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="target" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan CBAS
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h5>Eliminasi Human Error</h5>
+                    <p>Robot RPA menavigasi dan membaca data portal OJK secara mandiri tanpa risiko kekeliruan input manual.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h5>Efisiensi Waktu Drastis</h5>
+                    <p>Proses pengecekan skor kredit SLIK yang sebelumnya memakan waktu berjam-jam kini tuntas dalam hitungan detik.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="file-spreadsheet"></i>
+                    </div>
+                    <h5>Otomatisasi Laporan</h5>
+                    <p>Sistem secara otomatis merangkum hasil tarikan data ke dalam format siap pakai: PDF, Excel, dan TXT terenkripsi.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h5>Monitoring Real-time</h5>
+                    <p>Transparansi penuh melalui dashboard interaktif untuk memantau status aktivitas robot dan antrean request langsung.</p>
+                </div>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End CBAS (Robotic SLIK)
+            </div>
+
+            <div class="pipeline-grid">
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">1</div>
+                    <div class="pipeline-text">
+                        <h5>Penginputan Data Awal</h5>
+                        <p>Pengguna atau sistem eksternal memasukkan parameter identitas nasabah yang akan ditarik datanya.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">2</div>
+                    <div class="pipeline-text">
+                        <h5>Eksekusi Engine Robot</h5>
+                        <p>Robot RPA otomatis login ke web OJK, menavigasi menu, dan mengisi formulir parameter pencarian.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">3</div>
+                    <div class="pipeline-text">
+                        <h5>Live Monitoring</h5>
+                        <p>Klien dapat memantau progres pergerakan robot secara visual dan real-time lewat antarmuka web.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">4</div>
+                    <div class="pipeline-text">
+                        <h5>Ekstraksi Data (Scraping)</h5>
+                        <p>Setelah hasil ditemukan di portal OJK, robot menarik dan melakukan <i>parsing</i> mendalam terhadap data SLIK.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">5</div>
+                    <div class="pipeline-text">
+                        <h5>Output Dokumen Multi-Format</h5>
+                        <p>Sistem mengonversi hasil mentah menjadi dokumen terstruktur siap pakai (PDF resmi, Excel analitik, dan TXT).</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">6</div>
+                    <div class="pipeline-text">
+                        <h5>Integrasi Kesimpulan Akhir</h5>
+                        <p>Data SLIK terstruktur diserahkan kembali ke dashboard CBAS atau diteruskan otomatis ke sistem LOS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Study 2: LOS -->
+        <section id="los" class="case-study-card fade-in">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 02</div>
+                <h3>Loan Origination System (LOS)</h3>
+                <p>
+                    Sistem perbankan inti yang mengotomatisasi siklus pembiayaan dan kredit secara menyeluruh dari hulu ke hilir,
+                    memastikan kecepatan verifikasi, mitigasi risiko yang presisi, dan kepatuhan penuh regulasi perbankan.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan LOS
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="clock-4"></i>
+                    </div>
+                    <h5>Proses Lebih Cepat</h5>
+                    <p>Otomatisasi workflow digital memangkas birokrasi manual dan mempercepat keputusan persetujuan kredit nasabah.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="crosshair"></i>
+                    </div>
+                    <h5>Keputusan Lebih Akurat</h5>
+                    <p>Integrasi analitik multi-sumber dan Rule Engine membantu penilaian profil risiko kredit secara objektif dan konsisten.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="shield-alert"></i>
+                    </div>
+                    <h5>Kepatuhan Regulasi Terjaga</h5>
+                    <p>Menjamin kepatuhan standar OJK dengan audit trail menyeluruh dan kontrol otorisasi berjenjang yang aman.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h5>Pengalaman Nasabah Prima</h5>
+                    <p>Pengalaman digital yang transparan dan efisien, memungkinkan pelacakan progres pembiayaan secara langsung.</p>
+                </div>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End LOS
+            </div>
+
+            <div class="pipeline-grid">
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">1</div>
+                    <div class="pipeline-text">
+                        <h5>Pengajuan Kredit</h5>
+                        <p>Nasabah mengajukan permohonan kredit melalui kanal digital terintegrasi atau agen lapangan perbankan.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">2</div>
+                    <div class="pipeline-text">
+                        <h5>Pengumpulan Data & Dokumen</h5>
+                        <p>Sistem secara otomatis mengumpulkan, mengenali, dan memverifikasi dokumen persyaratan pendukung.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">3</div>
+                    <div class="pipeline-text">
+                        <h5>Analisis & Penilaian Kredit</h5>
+                        <p>Rule Engine dan model analitik memproses data historis untuk mengukur kelayakan batas pembiayaan.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">4</div>
+                    <div class="pipeline-text">
+                        <h5>Keputusan Kredit</h5>
+                        <p>Persetujuan dilakukan secara otomatis berbasis scoring aturan atau dialihkan ke komite kredit sesuai limit.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">5</div>
+                    <div class="pipeline-text">
+                        <h5>Dokumentasi & Perjanjian</h5>
+                        <p>Pembuatan kontrak digital otomatis dengan integrasi tanda tangan elektronik resmi berstandar hukum.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card">
+                    <div class="pipeline-step-badge">6</div>
+                    <div class="pipeline-text">
+                        <h5>Pencairan Dana</h5>
+                        <p>Instruksi pencairan dana dieksekusi secara aman dan instan langsung ke rekening nasabah terpilih.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Enterprise Deployments -->
+        <section class="fade-in">
             <div class="section-header">
-                <h2>Featured Case Study</h2>
+                <div class="section-tag">Portofolio Produksi</div>
+                <h2 class="section-title">Implementasi & Deployments Lainnya</h2>
+                <p class="section-subtitle">
+                    Solusi kustom berskala besar yang dirancang dan dioperasikan untuk institusi terkemuka di Indonesia.
+                </p>
             </div>
 
-            <div
-                style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 3rem;">
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <h3
-                        style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem;">
-                        CBAS | Credit Bureau Application System</h3>
-                    <p style="font-size: 1.1rem; color: var(--gray-500); max-width: 700px; margin: 0 auto;">Platform
-                        Robotic Process Automation (RPA) cerdas yang terintegrasi <i>deep-level</i> dengan SLIK OJK untuk
-                        mengotomatisasi pencarian, monitoring, hingga ekstraksi data kredit nasabah.</p>
-                </div>
-
-                <h4
-                    style="font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                    Kenapa CBAS Sangat Penting?</h4>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                    <!-- 4 Benefit Cards -->
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">🤖</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Eliminasi Human Error</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Robot RPA menarik dan membaca data web OJK secara mandiri tanpa kesalahan input manual.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">⚡</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Efisiensi Waktu Drastis</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Proses pengecekan SLIK yang tadinya lama kini dipangkas menjadi hitungan detik.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">📊</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Otomatisasi Laporan</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Sistem otomatis merangkum hasil tarikan ke dalam format siap pakai: PDF, Excel, dan TXT.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">📡</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Monitoring Real-time</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Transparansi penuh melalui <i>dashboard</i> untuk memantau status pergerakan robot secara langsung.</p>
-                    </div>
-                </div>
-
-                <h4
-                    style="font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                    Proses End-to-End CBAS (Robotic SLIK)</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-                    <!-- 6 Steps -->
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            1</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Penginputan Data Awal</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Pengguna atau sistem luar memasukkan parameter identitas nasabah untuk ditarik datanya.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            2</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Eksekusi Engine Robot</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Robot RPA otomatis login ke web OJK, menavigasi menu, dan mengisi parameter pencarian.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            3</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Live Monitoring</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Klien dapat memantau progres pergerakan robot secara visual dan real-time lewat antarmuka web.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            4</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Ekstraksi Data (Scraping)</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Setelah hasil ditemukan di portal OJK, robot menarik dan melakukan <i>parsing</i> data SLIK.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            5</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Output Dokumen Multi-Format</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Sistem otomatis mengkonversi hasil mentah menjadi <i>file</i> standar (PDF, Excel, dan TXT).</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            6</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Integrasi Kesimpulan Akhir</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Data SLIK terstruktur diserahkan kembali ke <i>dashboard</i> CBAS atau diteruskan ke sistem LOS.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- LOS Case Study Section -->
-        <div id="los" class="fade-in" style="margin-bottom: 6rem;">
-            <div class="section-header">
-                <h2>Featured Case Study</h2>
-            </div>
-
-            <div
-                style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 3rem;">
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <h3
-                        style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem;">
-                        Loan Origination System (LOS)</h3>
-                    <p style="font-size: 1.1rem; color: var(--gray-500); max-width: 700px; margin: 0 auto;">Sistem
-                        perbankan inti yang mengotomatisasi siklus kredit end-to-end, memastikan kecepatan, akurasi, dan
-                        kepatuhan regulasi.</p>
-                </div>
-
-                <h4
-                    style="font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                    Kenapa LOS Sangat Penting?</h4>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                    <!-- 4 Benefit Cards -->
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">⏱️</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Proses Lebih Cepat</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Otomatisasi workflow
-                            mengurangi proses manual dan mempercepat waktu persetujuan kredit.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">🎯</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Keputusan Lebih Akurat</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Integrasi data &
-                            analitik membantu penilaian risiko yang lebih akurat dan konsisten.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">🛡️</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Kepatuhan Terjaga</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Mendukung compliance
-                            dengan audit trail lengkap dan kontrol risiko yang lebih baik.</p>
-                    </div>
-                    <div
-                        style="background: #fff; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                        <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">⭐</div>
-                        <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Pengalaman Nasabah</h5>
-                        <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;">Proses digital yang
-                            mudah, transparan, dan dapat dipantau secara real-time.</p>
-                    </div>
-                </div>
-
-                <h4
-                    style="font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                    Proses End-to-End LOS</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-                    <!-- 6 Steps -->
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            1</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Pengajuan Kredit</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Nasabah mengajukan
-                                kredit melalui kanal digital atau offline.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            2</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Pengumpulan Data & Dokumen</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Sistem mengumpulkan
-                                dan memverifikasi data serta dokumen pendukung.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            3</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Analisis & Penilaian Kredit</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">AI & rule engine
-                                menganalisis data untuk menilai kelayakan dan risiko kredit.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            4</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Keputusan Kredit</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Persetujuan kredit
-                                dilakukan otomatis atau oleh petugas sesuai kebijakan.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            5</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Dokumentasi & Perjanjian</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Pembuatan kontrak
-                                digital dan tanda tangan elektronik.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 12px; border: 1px solid var(--gray-200);">
-                        <div
-                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
-                            6</div>
-                        <div>
-                            <h5 style="font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; font-size: 0.9rem;">
-                                Pencairan Dana</h5>
-                            <p style="font-size: 0.8rem; color: var(--gray-500); line-height: 1.5;">Dana dicairkan ke
-                                rekening nasabah secara cepat dan aman.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portofolio Lengkap -->
-        <div class="fade-in" style="margin-bottom: 5rem;">
-            <div class="section-header">
-                <h2>Deployments Lainnya</h2>
-            </div>
             <div class="deploy-grid">
                 <div class="dep-card">
-                    <div class="dep-client">BCA FINANCE</div>
-                    <div class="dep-title">Litecore BCAF</div>
-                    <div class="dep-desc">Unified Customer Info System yang mengkonsolidasikan jutaan data rekaman
-                        pengguna.</div>
-                </div>
-                <div class="dep-card">
-                    <div class="dep-client">PEGADAIAN</div>
-                    <div class="dep-title">Pegadaian Canme</div>
-                    <div class="dep-desc">Sistem aplikasi produk berbasis QR Code dengan respons real-time berskala
-                        nasional.</div>
-                </div>
-                <div class="dep-card">
-                    <div class="dep-client">PENDIDIKAN</div>
-                    <div class="dep-title">System Absensi WA</div>
-                    <div class="dep-desc">Pelacakan absensi menggunakan QR Code yang terintegrasi langsung dengan
-                        WhatsApp Gateway.</div>
-                </div>
-                <div class="dep-card">
-                    <div class="dep-client">HEALTHCARE (PMI)</div>
-                    <div class="dep-title">SIMRS Mitra</div>
-                    <div class="dep-desc">Platform manajemen Rumah Sakit skala penuh dan pemetaan agrikultur cerdas.
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">BCA FINANCE</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Litecore BCAF</h4>
+                        <p class="dep-desc">
+                            Unified Customer Info System berskala tinggi yang mengonsolidasikan jutaan rekaman data profil
+                            konsumen untuk analitik pembiayaan cepat dan aman.
+                        </p>
                     </div>
                 </div>
+
                 <div class="dep-card">
-                    <div class="dep-client">DINAS PENDIDIKAN KOTA PADANG</div>
-                    <div class="dep-title">SIGUPENDA</div>
-                    <div class="dep-desc">Platform manajemen pendidikan untuk data kepegawaian dan penggajian seluruh
-                        guru dan tenaga kependidikan honorer di lingkungan Dinas Pendidikan Kota Padang.</div>
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PEGADAIAN</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Pegadaian Canme</h4>
+                        <p class="dep-desc">
+                            Sistem aplikasi produk berbasis QR Code dengan respons real-time berskala nasional untuk efisiensi
+                            layanan nasabah di jaringan kantor cabang.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="dep-card">
-                    <div class="dep-client">PERTANIAN (SIHI)</div>
-                    <div class="dep-title">SIHI</div>
-                    <div class="dep-desc">Sistem Informasi Hortikultura Indonesia, platform manajemen untuk data
-                        pertanian dan agrikultur cerdas.</div>
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PENDIDIKAN</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">System Absensi WA</h4>
+                        <p class="dep-desc">
+                            Pelacakan kehadiran cerdas menggunakan QR Code dinamis yang terhubung langsung dengan WhatsApp
+                            Gateway untuk notifikasi otomatis seketika.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">HEALTHCARE (PMI)</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIMRS Mitra</h4>
+                        <p class="dep-desc">
+                            Platform manajemen Rumah Sakit skala penuh untuk pengelolaan rekam medis terpadu, antrean pasien,
+                            farmasi, dan integrasi penagihan klaim.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">DINAS PENDIDIKAN KOTA PADANG</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIGUPENDA</h4>
+                        <p class="dep-desc">
+                            Platform manajemen data kepegawaian dan otomasi penggajian seluruh guru serta tenaga kependidikan
+                            honorer di lingkungan Dinas Pendidikan Kota Padang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PERTANIAN (SIHI)</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIHI</h4>
+                        <p class="dep-desc">
+                            Sistem Informasi Hortikultura Indonesia, platform manajemen data pertanian nasional dan analitik
+                            pemetaan agrikultur cerdas berbasis geospasial.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Career Log -->
-        <div id="pengalaman" class="fade-in" style="margin-bottom: 5rem;">
+        <!-- Career Log / Timeline -->
+        <section id="pengalaman" class="timeline-section fade-in">
             <div class="section-header">
-                <h2>Jejak Karier</h2>
-            </div>
-            <div class="timeline">
-                <div class="time-item">
-                    <div class="time-dot"></div>
-                    <div class="time-role">IT Supervisor</div>
-                    <div class="time-meta">Jun 2024 - Present • PT Skyworx Indonesia</div>
-                    <div class="time-desc">Memimpin tim pengembang perangkat lunak, merancang arsitektur sistem
-                        enterprise, mengelola pipeline CI/CD, serta memastikan skalabilitas dan keamanan aplikasi
-                        berskala nasional.</div>
-                </div>
-                <div class="time-item">
-                    <div class="time-dot"></div>
-                    <div class="time-role">Software Programmer</div>
-                    <div class="time-meta">Jun 2023 - Jun 2024 • PT Skyworx Indonesia</div>
-                    <div class="time-desc">Membangun sistem perbankan inti (Core Banking), merancang robot web scraper
-                        otomatis (RPA), dan mengelola migrasi data raksasa untuk institusi finansial kelas atas.</div>
-                </div>
-                <div class="time-item">
-                    <div class="time-dot"></div>
-                    <div class="time-role">IT Specialist (Honorer)</div>
-                    <div class="time-meta">Sep 2016 - Mei 2023 • Dinas Pendidikan Kota Padang</div>
-                    <div class="time-desc">Pengembang utama platform SIGUPENDA yang digunakan secara masif untuk
-                        mengelola data dan penggajian seluruh staf honorer di penjuru kota.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skills Section -->
-        <div id="keahlian">
-            <div class="section-header fade-in">
-                <h2>KEAHLIAN TEKNIS</h2>
+                <div class="section-tag">Jejak Profesional</div>
+                <h2 class="section-title">Riwayat Karier & Kepemimpinan</h2>
+                <p class="section-subtitle">
+                    Perjalanan dedikasi dalam rekayasa perangkat lunak dan arsitektur sistem enterprise selama lebih dari 7 tahun.
+                </p>
             </div>
 
-            <div class="skills-grid fade-in">
-                <div class="skill-card active">
-                    <div class="skill-icon">☕</div>
+            <div class="timeline-wrap">
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">IT Supervisor</div>
+                            <span class="time-period-badge">Jun 2024 — Sekarang</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> PT Skyworx Indonesia
+                        </div>
+                        <p class="time-desc">
+                            Memimpin tim rekayasa perangkat lunak, merancang arsitektur sistem enterprise perbankan skala nasional,
+                            mengorkestrasi pipeline CI/CD, mengawasi standar penulisan kode, serta memastikan skalabilitas,
+                            stabilitas performa, dan compliance keamanan siber.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">Software Programmer</div>
+                            <span class="time-period-badge">Jun 2023 — Jun 2024</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> PT Skyworx Indonesia
+                        </div>
+                        <p class="time-desc">
+                            Membangun sistem perbankan inti (Core Banking), merancang robot web scraper otomatis (RPA) berbasis
+                            Computer Vision, dan mengeksekusi migrasi data relasional raksasa untuk institusi finansial kelas atas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">IT Specialist (Honorer)</div>
+                            <span class="time-period-badge">Sep 2016 — Mei 2023</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> Dinas Pendidikan Kota Padang
+                        </div>
+                        <p class="time-desc">
+                            Inisiator dan pengembang utama platform SIGUPENDA yang digunakan secara masif di seluruh kota Padang
+                            untuk verifikasi administrasi dan penggajian ribuan staf honorer sekolah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="keahlian" class="fade-in">
+            <div class="section-header">
+                <div class="section-tag">Kompetensi Utama</div>
+                <h2 class="section-title">Keahlian & Ekosistem Teknologi</h2>
+                <p class="section-subtitle">
+                    Rangkaian teknologi yang dikuasai secara mendalam untuk merancang arsitektur enterprise modern.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="coffee" style="width: 24px; height: 24px;"></i>
+                    </div>
                     <h4 class="skill-title">Java Spring Boot</h4>
-                    <p class="skill-desc">Backend Core</p>
+                    <p class="skill-desc">Enterprise Backend Core</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">💚</div>
-                    <h4 class="skill-title">Vue</h4>
-                    <p class="skill-desc">Frontend</p>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="layout-template" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Vue.js Ecosystem</h4>
+                    <p class="skill-desc">Dynamic Reactive Frontend</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🐘</div>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="database" style="width: 24px; height: 24px;"></i>
+                    </div>
                     <h4 class="skill-title">PostgreSQL & MSSQL</h4>
-                    <p class="skill-desc">Database</p>
+                    <p class="skill-desc">Relational & Big Data</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🐘</div>
-                    <h4 class="skill-title">Laravel / CodeIgniter</h4>
-                    <p class="skill-desc">PHP Framework</p>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="layers" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Laravel & CodeIgniter</h4>
+                    <p class="skill-desc">Rapid Web Platform</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🐳</div>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="box" style="width: 24px; height: 24px;"></i>
+                    </div>
                     <h4 class="skill-title">Docker & DevOps</h4>
-                    <p class="skill-desc">Infrastructure</p>
+                    <p class="skill-desc">Container & Cloud Infra</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="cpu" style="width: 24px; height: 24px;"></i>
+                    </div>
                     <h4 class="skill-title">Playwright & Selenium</h4>
-                    <p class="skill-desc">RPA / Automation</p>
+                    <p class="skill-desc">RPA & Data Automation</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🔐</div>
-                    <h4 class="skill-title">Identity Security</h4>
-                    <p class="skill-desc">Auth & Authorization</p>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="lock" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Identity & Security</h4>
+                    <p class="skill-desc">RBAC, JWT & OAuth2</p>
                 </div>
+
                 <div class="skill-card">
-                    <div class="skill-icon">🔀</div>
-                    <h4 class="skill-title">Git & Jenkins</h4>
-                    <p class="skill-desc">CI/CD</p>
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="git-branch" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Git & Jenkins CI/CD</h4>
+                    <p class="skill-desc">Automated Delivery</p>
                 </div>
             </div>
-        </div>
+        </section>
 
     </main>
 
-    <!-- The Architect Quote Section (from User Reference) -->
+    <!-- The Architect Quote Section (Executive Obsidian) -->
     <section class="quote-section">
         <div class="watermark">ARCHITECT</div>
         <div class="container">
             <div class="quote-content fade-in">
+                <div class="quote-badge">
+                    <i data-lucide="compass" style="width: 14px; height: 14px;"></i> Engineering Philosophy
+                </div>
                 <p class="quote-text">
-                    "Saya tidak menulis kode. Saya merancang <strong>sistem yang berpikir</strong> — agar tim yang
-                    datang setelah saya bisa berlari lebih cepat."
+                    "Saya tidak sekadar menulis baris kode. Saya merancang <strong>sistem yang berpikir</strong> — agar
+                    organisasi dan tim yang datang setelah saya dapat berlari jauh lebih cepat dan aman."
                 </p>
-                <div class="quote-author">– JAMIKO ARSHAL</div>
-                <div class="quote-action">
-                    <a href="#kontak" class="btn-gold-dark">
-                        REKRUT SAYA <i data-lucide="arrow-up-right" style="width: 18px;"></i>
-                    </a>
+                <div class="quote-author-row">
+                    <div class="quote-author">
+                        SOLUTIONS ARCHITECT · <span>JAMIKO ARSHAL</span>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20ingin%20berdiskusi%20mengenai%20kebutuhan%20arsitektur%20sistem%20enterprise."
+                            target="_blank" rel="noopener noreferrer" class="btn-gold-executive">
+                            Inisiasi Diskusi via WhatsApp <i data-lucide="arrow-up-right" style="width: 18px; height: 18px;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Dark Footer (from User Reference) -->
+    <!-- Executive Footer -->
     <footer id="kontak">
         <div class="container fade-in">
             <div class="footer-top">
-                <!-- Left: Bio & Contact -->
+                <!-- Left Column -->
                 <div>
-                    <div class="footer-logo">JAMIKO<span>.</span></div>
+                    <div class="footer-logo-row">
+                        <div class="logo-symbol">JA</div>
+                        <div class="footer-logo-text">JAMIKO<span>.</span>ARSHAL</div>
+                    </div>
                     <p class="footer-bio">
-                        Enterprise Solutions Architect & Tech Lead yang membangun sistem dan otomatisasi berskala nasional
-                        sejak 2016.
+                        Enterprise Solutions Architect & Tech Lead yang berfokus pada arsitektur sistem perbankan berkinerja
+                        tinggi, otomatisasi data OJK berskala masif, dan kepemimpinan engineering sejak 2016.
                     </p>
 
-                    <h4 class="footer-heading" style="margin-top: 3rem;">KONTAK</h4>
+                    <h4 class="footer-heading">HUBUNGI LANGSUNG</h4>
                     <div class="footer-contact-list">
-                        <div class="contact-row">
-                            <i data-lucide="mail" style="width: 16px;"></i>
-                            <span>arshaljamiko@gmail.com</span>
-                        </div>
-                        <div class="contact-row">
-                            <i data-lucide="smartphone" style="width: 16px;"></i>
-                            <span>0822-8748-3950</span>
-                        </div>
-                        <div class="contact-row">
-                            <i data-lucide="building-2" style="width: 16px;"></i>
+                        <!-- Direct Email Link in Footer -->
+                        <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                            class="contact-row" title="Klik untuk langsung kirim Email">
+                            <div class="contact-icon-box"><i data-lucide="mail" style="width: 16px; height: 16px;"></i></div>
+                            <span>arshaljamiko@gmail.com <i data-lucide="arrow-up-right" style="width: 12px; height: 12px; margin-left: 4px; opacity: 0.6;"></i></span>
+                        </a>
+
+                        <!-- Direct WhatsApp Link in Footer -->
+                        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                            target="_blank" rel="noopener noreferrer"
+                            class="contact-row wa-footer" title="Klik untuk langsung chat di WhatsApp">
+                            <div class="contact-icon-box"><i data-lucide="message-circle" style="width: 16px; height: 16px; color: #10b981;"></i></div>
+                            <span>0822-8748-3950 (WhatsApp Langsung) <i data-lucide="arrow-up-right" style="width: 12px; height: 12px; margin-left: 4px; opacity: 0.6;"></i></span>
+                        </a>
+
+                        <div class="contact-row" style="cursor: default;">
+                            <div class="contact-icon-box"><i data-lucide="building-2" style="width: 16px; height: 16px;"></i></div>
                             <span>PT. Skyworx Indonesia</span>
                         </div>
-                        <div class="contact-row">
-                            <i data-lucide="map-pin" style="width: 16px; color: #e11d48;"></i>
-                            <span>Padang, Sumatera Barat</span>
+
+                        <div class="contact-row" style="cursor: default;">
+                            <div class="contact-icon-box"><i data-lucide="map-pin" style="width: 16px; height: 16px; color: #ef4444;"></i></div>
+                            <span>Padang, Sumatera Barat, Indonesia</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Navigation -->
+                <!-- Right Column: Navigation -->
                 <div>
-                    <h4 class="footer-heading">NAVIGASI</h4>
+                    <h4 class="footer-heading">NAVIGASI SITUS</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="#proyek">Flagship Project</a></li>
-                        <li><a href="#proyek">Portfolio Lengkap</a></li>
-                        <li><a href="#keahlian">Karier & Skills</a></li>
+                        <li><a href="#proyek"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Ekosistem Perbankan Utama</a></li>
+                        <li><a href="#cbas-case-study"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: CBAS (Robotic SLIK)</a></li>
+                        <li><a href="#los"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: Loan Origination System</a></li>
+                        <li><a href="#pengalaman"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Riwayat Karier & Kepemimpinan</a></li>
+                        <li><a href="#keahlian"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Keahlian Teknis</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Bottom Copyright Bar -->
+            <!-- Bottom Bar -->
             <div class="footer-bottom">
-                <div>© 2026 Jamiko Arshal · Semua sistem live & terverifikasi</div>
-                <div>Padang, Indonesia</div>
+                <div class="footer-verified-badge">
+                    <i data-lucide="shield-check"></i>
+                    <span>© 2026 Jamiko Arshal · Seluruh implementasi sistem terverifikasi & aktif</span>
+                </div>
+                <div>Padang, Sumatera Barat, Indonesia</div>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Quick Controls (WhatsApp & Smooth Back-To-Top) -->
+    <div class="floating-controls">
+        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+            target="_blank" rel="noopener noreferrer" class="floating-wa-btn"
+            title="Chat WhatsApp dengan Jamiko Arshal">
+            <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
+            <span class="wa-tooltip">Chat WhatsApp Langsung</span>
+        </a>
+
+        <button id="backToTopBtn" class="back-to-top" title="Kembali ke atas secara mulus" aria-label="Kembali ke atas">
+            <i data-lucide="arrow-up" style="width: 22px; height: 22px;"></i>
+        </button>
+    </div>
+
+    <!-- Toast Notification for Copying Actions -->
+    <div id="copy-toast">
+        <i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--success);"></i>
+        <span id="toast-message">Teks berhasil disalin!</span>
+    </div>
+
+    <!-- Interactive Scripts with Lenis Smooth Scrolling Engine -->
     <script>
+        // Initialize Lucide Vector Icons
         lucide.createIcons();
 
-        // Intersection Observer for fade-in animations
+        // 1. Initialize Lenis Smooth Scroll Engine
+        let lenisInstance = null;
+        if (typeof Lenis !== 'undefined') {
+            lenisInstance = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 1.5,
+                wheelMultiplier: 0.95
+            });
+
+            function raf(time) {
+                lenisInstance.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        // 2. Smooth Scroll for all internal anchor links (#)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        if (lenisInstance) {
+                            lenisInstance.scrollTo(targetEl, { offset: -70 });
+                        } else {
+                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                } else if (targetId === '#') {
+                    e.preventDefault();
+                    if (lenisInstance) {
+                        lenisInstance.scrollTo(0);
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // 3. Scroll Progress Bar & Floating Back-To-Top Button
+        const progressBar = document.getElementById('scroll-progress-bar');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const nav = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            // Update top progress bar
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+
+            // Navbar Scrolled Effect
+            if (scrollTop > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Back-To-Top Button Appearance
+            if (scrollTop > 350) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Back-To-Top click event
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                if (lenisInstance) {
+                    lenisInstance.scrollTo(0, { duration: 1.2 });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // 4. Intersection Observer for Smooth Fade-Up Animations
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.08
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1617,15 +3227,117 @@
             observer.observe(el);
         });
 
-        // Sticky Navbar logic
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
+        // 5. Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                });
+            });
+        }
+
+        // 6. Copy to Clipboard Utility with Feedback Toast
+        function copyToClipboard(text, customMessage) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(customMessage || 'Berhasil disalin ke clipboard!');
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('copy-toast');
+            const toastMsg = document.getElementById('toast-message');
+            if (toast && toastMsg) {
+                toastMsg.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2800);
             }
+        }
+
+        // 7. Dynamic Card Animation Engine: Zoom In/Out, Fade In/Out, 3D Tilt & Cursor Spotlight
+        const animatableCardSelectors = [
+            '.pillar-card',
+            '.spotlight-card',
+            '.benefit-card',
+            '.pipeline-card',
+            '.dep-card',
+            '.time-card',
+            '.skill-card',
+            '.testi-side-card',
+            '.stat-item'
+        ];
+
+        const allTargetCards = document.querySelectorAll(animatableCardSelectors.join(', '));
+
+        allTargetCards.forEach(card => {
+            card.classList.add('card-zoom-fade');
+
+            // Mouse-tracking spotlight illumination
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
         });
+
+        // Staggered Cascade IntersectionObserver: Triggers smooth Zoom-In/Out + Fade-In/Out
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Zoom In & Fade In
+                    entry.target.classList.add('card-in-view');
+                } else {
+                    // Zoom Out & Fade Out (when scrolled out of view)
+                    entry.target.classList.remove('card-in-view');
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '50px 0px -40px 0px',
+            threshold: 0.08
+        });
+
+        allTargetCards.forEach(card => {
+            // Apply ripple stagger delay based on sibling index in parent grid
+            const parent = card.parentElement;
+            if (parent) {
+                const siblings = Array.from(parent.children).filter(c => c.classList.contains('card-zoom-fade'));
+                const idx = siblings.indexOf(card);
+                if (idx !== -1) {
+                    card.style.transitionDelay = `${(idx % 6) * 0.08}s`;
+                }
+            }
+            cardObserver.observe(card);
+        });
+
+        // Interactive 3D Card Tilt for Hero Identity Card
+        const idCard = document.querySelector('.id-card');
+        if (idCard) {
+            idCard.addEventListener('mousemove', (e) => {
+                const rect = idCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -7;
+                const rotateY = ((x - centerX) / centerX) * 7;
+                idCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-5px) scale(1.02)`;
+            });
+
+            idCard.addEventListener('mouseleave', () => {
+                idCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+            });
+        }
     </script>
 </body>
 
