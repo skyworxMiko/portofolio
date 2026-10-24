@@ -23,44 +23,109 @@
 
     <style>
         :root {
-            /* Palette: High-End Enterprise Slate, Deep Cobalt, Champagne Gold */
-            --bg-canvas: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-card-subtle: #f1f5f9;
-            --bg-dark: #070a13;
-            --bg-dark-elevated: #0f172a;
-            --bg-dark-card: #141e33;
+            /* ==========================================================
+               THEME: Executive Obsidian & Glassmorphism (Default Dark)
+               ========================================================== */
+            --bg-canvas: #060913;
+            --bg-canvas-subtle: #0b1120;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(22, 34, 64, 0.92);
+            --bg-card-subtle: rgba(15, 23, 42, 0.5);
+            --bg-card-solid: #0d1527;
+            --bg-surface-elevated: #0f172a;
+            --bg-dark: #03060d;
 
-            --primary: #1d4ed8;
-            --primary-hover: #1e40af;
-            --primary-light: #eff6ff;
-            --primary-subtle: rgba(29, 78, 216, 0.08);
-            --primary-border: rgba(37, 99, 235, 0.2);
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: rgba(59, 130, 246, 0.14);
+            --primary-subtle: rgba(59, 130, 246, 0.08);
+            --primary-border: rgba(59, 130, 246, 0.35);
 
-            --accent-gold: #d97706;
-            --accent-gold-light: #fef3c7;
-            --accent-gold-border: rgba(217, 119, 6, 0.25);
-            --accent-cyan: #0284c7;
+            --accent-gold: #fbbf24;
+            --accent-gold-light: rgba(251, 191, 36, 0.14);
+            --accent-gold-border: rgba(251, 191, 36, 0.32);
+            --accent-cyan: #38bdf8;
+            --accent-cyan-light: rgba(56, 189, 248, 0.14);
+            --accent-cyan-border: rgba(56, 189, 248, 0.32);
 
-            --success: #059669;
-            --success-light: #ecfdf5;
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.14);
+            --success-border: rgba(16, 185, 129, 0.32);
 
-            --text-dark: #0b1120;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --text-light: #94a3b8;
+            --text-dark: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-light: #64748b;
 
-            --border-light: #e2e8f0;
-            --border-focus: #cbd5e1;
+            --border-light: rgba(255, 255, 255, 0.09);
+            --border-medium: rgba(255, 255, 255, 0.16);
+            --border-focus: rgba(59, 130, 246, 0.45);
 
             --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
             --font-serif: 'Playfair Display', Georgia, serif;
 
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.35);
+            --shadow-card: 0 20px 45px -15px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+            --shadow-hover: 0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 2px 1px rgba(59, 130, 246, 0.4);
+            --shadow-glow: 0 0 35px rgba(59, 130, 246, 0.25);
+
+            --card-backdrop: blur(16px);
+            --grid-dot-color: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(6, 9, 19, 0.85);
+            --nav-scrolled-bg: rgba(6, 9, 19, 0.96);
+            --nav-border: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ==========================================================
+           THEME: Executive Institutional Light (Toggle Mode)
+           ========================================================== */
+        [data-theme="light"] {
+            --bg-canvas: #f8fafc;
+            --bg-canvas-subtle: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #ffffff;
+            --bg-card-subtle: #f8fafc;
+            --bg-card-solid: #ffffff;
+            --bg-surface-elevated: #f1f5f9;
+            --bg-dark: #070a13;
+
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --primary-light: #eff6ff;
+            --primary-subtle: rgba(29, 78, 216, 0.08);
+            --primary-border: rgba(37, 99, 235, 0.25);
+
+            --accent-gold: #d97706;
+            --accent-gold-light: #fef3c7;
+            --accent-gold-border: rgba(217, 119, 6, 0.25);
+            --accent-cyan: #0284c7;
+            --accent-cyan-light: rgba(2, 132, 199, 0.1);
+            --accent-cyan-border: rgba(2, 132, 199, 0.25);
+
+            --success: #059669;
+            --success-light: #ecfdf5;
+            --success-border: rgba(5, 150, 105, 0.25);
+
+            --text-dark: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --border-focus: #94a3b8;
+
             --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-            --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-            --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.09), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
-            --shadow-glow: 0 0 30px rgba(29, 78, 216, 0.18);
+            --shadow-card: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+            --shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+            --shadow-glow: 0 0 30px rgba(29, 78, 216, 0.15);
+
+            --card-backdrop: none;
+            --grid-dot-color: rgba(148, 163, 184, 0.2);
+            --nav-bg: rgba(248, 250, 252, 0.85);
+            --nav-scrolled-bg: rgba(255, 255, 255, 0.96);
+            --nav-border: rgba(226, 232, 240, 0.8);
         }
 
         * {
@@ -79,7 +144,7 @@
             font-family: var(--font-sans);
             color: var(--text-body);
             background-color: var(--bg-canvas);
-            background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+            background-image: radial-gradient(var(--grid-dot-color) 1px, transparent 1px); transition: background-color 0.3s ease, color 0.3s ease;
             background-size: 28px 28px;
             line-height: 1.65;
             overflow-x: hidden;
@@ -115,11 +180,21 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100vw;
-            height: 680px;
-            background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.03) 45%, transparent 70%);
+            width: 100%;
+            max-width: 1100px;
+            height: 440px;
+            background: radial-gradient(circle at 50% -10%, rgba(59, 130, 246, 0.18) 0%, rgba(14, 165, 233, 0.08) 40%, transparent 70%);
             pointer-events: none;
             z-index: 0;
+            opacity: 0.6;
+            filter: blur(40px);
+            overflow: hidden;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .ambient-mesh {
+            background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.03) 45%, transparent 70%);
+            opacity: 0.5;
         }
 
         /* Navigation */
@@ -130,18 +205,18 @@
             right: 0;
             z-index: 1000;
             padding: 1.25rem 0;
-            background: rgba(248, 250, 252, 0.75);
+            background: var(--nav-bg);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            border-bottom: 1px solid var(--nav-border);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         nav.scrolled {
             padding: 0.85rem 0;
-            background: rgba(255, 255, 255, 0.92);
-            border-bottom: 1px solid rgba(203, 213, 225, 0.8);
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+            background: var(--nav-scrolled-bg);
+            border-bottom: 1px solid var(--nav-border);
+            box-shadow: var(--shadow-subtle);
         }
 
         .nav-inner {
@@ -245,6 +320,57 @@
             width: 100%;
         }
 
+        
+        /* Theme Switcher Button */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-subtle);
+            flex-shrink: 0;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-border);
+            transform: translateY(-2px);
+            color: var(--primary);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+        }
+
+        .theme-icon {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Default Dark Mode: Show Sun icon, Hide Moon icon */
+        .theme-toggle-btn .sun-icon {
+            display: block;
+            color: var(--accent-gold);
+        }
+        .theme-toggle-btn .moon-icon {
+            display: none;
+        }
+
+        /* Light Mode: Show Moon icon, Hide Sun icon */
+        [data-theme="light"] .theme-toggle-btn .sun-icon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle-btn .moon-icon {
+            display: block;
+            color: #334155;
+        }
+
         .nav-actions {
             display: flex;
             align-items: center;
@@ -321,15 +447,15 @@
         }
 
         .btn-outline {
-            background: #ffffff;
+            background: var(--bg-card);
             color: var(--text-dark);
             border: 1px solid var(--border-light);
             box-shadow: var(--shadow-subtle);
         }
 
         .btn-outline:hover {
-            border-color: var(--border-focus);
-            background: #f8fafc;
+            border-color: var(--primary-border);
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
             color: var(--primary);
         }
@@ -349,7 +475,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.65rem;
-            background: #ffffff;
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
             padding: 0.45rem 1rem;
             border-radius: 50px;
@@ -436,7 +562,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--bg-card-subtle);
             border: 1px solid var(--border-light);
             padding: 0.35rem 0.85rem;
             border-radius: 6px;
@@ -473,8 +599,10 @@
 
         .id-card {
             position: relative;
-            background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
             border-radius: 20px;
             padding: 2.25rem;
             box-shadow: var(--shadow-card);
@@ -703,14 +831,16 @@
         }
 
         .stats-block {
-            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
             border-radius: 20px;
             padding: 3.5rem 3rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            box-shadow: var(--shadow-card);
             position: relative;
             overflow: hidden;
         }
@@ -722,13 +852,13 @@
             left: 20%;
             width: 400px;
             height: 100%;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .stat-item {
             position: relative;
-            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid var(--border-light);
             padding-right: 2rem;
         }
 
@@ -740,7 +870,7 @@
         .stat-num {
             font-size: clamp(2.8rem, 4vw, 3.8rem);
             font-weight: 800;
-            color: #ffffff;
+            color: var(--text-dark);
             line-height: 1;
             margin-bottom: 0.6rem;
             display: flex;
@@ -749,14 +879,14 @@
         }
 
         .stat-num span {
-            color: var(--accent-gold);
+            color: var(--primary);
             font-size: 2rem;
-            font-weight: 400;
+            font-weight: 600;
             margin-left: 4px;
         }
 
         .stat-label {
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 0.84rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -808,7 +938,9 @@
 
         /* Architecture Topology */
         .topology-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 20px;
             padding: 3rem;
@@ -856,12 +988,12 @@
 
         /* Architecture Interconnection Matrix */
         .architecture-matrix-box {
-            background: #0b1120;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-light);
             border-radius: 16px;
             padding: 2rem;
             margin-top: 2rem;
-            color: #e2e8f0;
+            color: var(--text-body);
             position: relative;
             overflow: hidden;
         }
@@ -873,7 +1005,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, #38bdf8 0%, #1d4ed8 50%, #d97706 100%);
+            background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--primary) 50%, var(--accent-gold) 100%);
         }
 
         .matrix-header {
@@ -900,9 +1032,9 @@
             font-family: var(--font-mono);
             font-size: 0.72rem;
             font-weight: 700;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: var(--accent-cyan);
+            background: var(--accent-cyan-light);
+            border: 1px solid var(--accent-cyan-border);
             padding: 0.25rem 0.65rem;
             border-radius: 6px;
         }
@@ -914,8 +1046,8 @@
         }
 
         .matrix-item {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
             border-radius: 12px;
             padding: 1.35rem;
             display: flex;
@@ -925,9 +1057,10 @@
         }
 
         .matrix-item:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(56, 189, 248, 0.4);
+            background: var(--bg-card-hover);
+            border-color: var(--primary-border);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-subtle);
         }
 
         .matrix-route {
@@ -937,7 +1070,7 @@
             font-family: var(--font-mono);
             font-size: 0.82rem;
             font-weight: 700;
-            color: #38bdf8;
+            color: var(--primary);
             flex-wrap: wrap;
         }
 
@@ -948,7 +1081,7 @@
 
         .matrix-desc {
             font-size: 0.88rem;
-            color: #94a3b8;
+            color: var(--text-muted);
             line-height: 1.6;
         }
 
@@ -961,7 +1094,9 @@
         }
 
         .psm-module-card {
-            background: var(--bg-canvas);
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 14px;
             padding: 1.6rem;
@@ -971,7 +1106,7 @@
         }
 
         .psm-module-card:hover {
-            background: #ffffff;
+            background: var(--bg-card-hover);
             border-color: var(--primary-border);
             box-shadow: var(--shadow-subtle);
             transform: translateY(-4px);
@@ -1030,7 +1165,9 @@
         }
 
         .pillar-card {
-            background: var(--bg-canvas);
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 14px;
             padding: 1.5rem;
@@ -1041,7 +1178,7 @@
         }
 
         .pillar-card:hover {
-            background: #ffffff;
+            background: var(--bg-card-hover);
             border-color: var(--primary-border);
             box-shadow: var(--shadow-subtle);
             transform: translateY(-3px);
@@ -1084,7 +1221,9 @@
         }
 
         .spotlight-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 20px;
             padding: 2.75rem;
@@ -1188,7 +1327,7 @@
             font-size: 0.92rem;
             font-weight: 600;
             color: var(--text-dark);
-            background: #ffffff;
+            background: var(--bg-card-subtle);
             border: 1px solid var(--border-light);
             padding: 0.6rem 0.9rem;
             border-radius: 8px;
@@ -1204,11 +1343,13 @@
         /* Executive Testimonial Section */
         .testimonial-container {
             margin-bottom: 6rem;
-            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
             border-radius: 24px;
             padding: 4rem;
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            box-shadow: var(--shadow-card);
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
@@ -1224,9 +1365,10 @@
             left: 20px;
             font-family: var(--font-serif);
             font-size: 16rem;
-            color: rgba(255, 255, 255, 0.03);
+            color: var(--border-light);
             line-height: 1;
             pointer-events: none;
+            opacity: 0.4;
         }
 
         .testi-quote-mark {
@@ -1236,8 +1378,8 @@
             width: 44px;
             height: 44px;
             border-radius: 10px;
-            background: rgba(217, 119, 6, 0.15);
-            border: 1px solid rgba(217, 119, 6, 0.3);
+            background: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold-border);
             color: var(--accent-gold);
             margin-bottom: 1.75rem;
         }
@@ -1245,7 +1387,7 @@
         .testi-headline {
             font-size: clamp(1.4rem, 2.5vw, 1.95rem);
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-dark);
             margin-bottom: 2rem;
             line-height: 1.45;
             letter-spacing: -0.02em;
@@ -1265,26 +1407,26 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: #1e293b;
+            background: var(--bg-surface-elevated);
             border: 2px solid var(--accent-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            color: #ffffff;
+            color: var(--text-dark);
             font-size: 1.1rem;
         }
 
         .testi-author-meta strong {
             display: block;
-            color: #ffffff;
+            color: var(--text-dark);
             font-size: 1.1rem;
             font-weight: 700;
         }
 
         .testi-author-meta .role {
             display: block;
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 0.88rem;
         }
 
@@ -1299,22 +1441,22 @@
         }
 
         .testi-side-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-light);
             border-radius: 18px;
             padding: 2.25rem;
-            backdrop-filter: blur(12px);
+            backdrop-filter: var(--card-backdrop);
         }
 
         .testi-side-title {
             font-size: 0.82rem;
             font-weight: 800;
-            color: #cbd5e1;
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .testi-bullets {
@@ -1330,7 +1472,7 @@
             gap: 0.85rem;
             font-size: 0.95rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-body);
         }
 
         .testi-check-icon {
@@ -1347,13 +1489,15 @@
 
         /* Featured Case Studies */
         .case-study-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 24px;
             padding: 3.5rem;
             box-shadow: var(--shadow-card);
             margin-bottom: 5rem;
-            transition: all 0.3s ease;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .case-study-hero {
@@ -1405,27 +1549,27 @@
         }
 
         .case-badge.badge-cyan {
-            background: rgba(2, 132, 199, 0.08);
-            color: #0284c7;
-            border-color: rgba(2, 132, 199, 0.24);
+            background: var(--accent-cyan-light);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan-border);
         }
 
         .case-badge.badge-blue {
-            background: rgba(29, 78, 216, 0.08);
-            color: #1d4ed8;
-            border-color: rgba(29, 78, 216, 0.24);
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: var(--primary-border);
         }
 
         .case-badge.badge-emerald {
-            background: rgba(5, 150, 105, 0.08);
-            color: #059669;
-            border-color: rgba(5, 150, 105, 0.24);
+            background: var(--success-light);
+            color: var(--success);
+            border-color: var(--success-border);
         }
 
         .case-badge.badge-amber {
-            background: rgba(217, 119, 6, 0.08);
-            color: #d97706;
-            border-color: rgba(217, 119, 6, 0.24);
+            background: var(--accent-gold-light);
+            color: var(--accent-gold);
+            border-color: var(--accent-gold-border);
         }
 
         .case-study-hero h3 {
@@ -1463,7 +1607,9 @@
         }
 
         .benefit-card {
-            background: var(--bg-canvas);
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 14px;
             padding: 1.5rem;
@@ -1471,7 +1617,7 @@
         }
 
         .benefit-card:hover {
-            background: #ffffff;
+            background: var(--bg-card-hover);
             border-color: var(--primary-border);
             box-shadow: var(--shadow-subtle);
             transform: translateY(-4px);
@@ -1511,7 +1657,9 @@
         }
 
         .pipeline-card {
-            background: var(--bg-canvas);
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 14px;
             padding: 1.5rem;
@@ -1523,7 +1671,7 @@
         }
 
         .pipeline-card:hover {
-            background: #ffffff;
+            background: var(--bg-card-hover);
             border-color: var(--primary-border);
             box-shadow: var(--shadow-subtle);
             transform: translateY(-3px);
@@ -1567,7 +1715,9 @@
         }
 
         .dep-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 16px;
             padding: 2rem;
@@ -1663,13 +1813,15 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: #ffffff;
+            background: var(--bg-canvas);
             border: 4px solid var(--primary);
             box-shadow: 0 0 0 4px var(--primary-light);
         }
 
         .time-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 16px;
             padding: 2rem;
@@ -1741,7 +1893,9 @@
         }
 
         .skill-card {
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             border-radius: 16px;
             padding: 1.75rem 1.5rem;
@@ -1796,15 +1950,15 @@
             letter-spacing: 0.05em;
         }
 
-        /* Executive Architect Quote Section (Dark Obsidian) */
+        /* Executive Architect Quote Section */
         .quote-section {
-            background: linear-gradient(135deg, #050810 0%, #0b1120 100%);
-            padding: 8rem 0;
+            background: var(--bg-canvas-subtle);
+            padding: 7rem 0;
             position: relative;
             overflow: hidden;
             margin-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .watermark {
@@ -1815,11 +1969,12 @@
             font-family: var(--font-sans);
             font-size: clamp(6rem, 16vw, 15rem);
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.02);
+            color: var(--border-light);
             pointer-events: none;
             white-space: nowrap;
             letter-spacing: 0.1em;
             user-select: none;
+            opacity: 0.35;
         }
 
         .quote-content {
@@ -1838,8 +1993,8 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--accent-gold);
-            background: rgba(217, 119, 6, 0.1);
-            border: 1px solid rgba(217, 119, 6, 0.25);
+            background: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold-border);
             padding: 0.35rem 0.9rem;
             border-radius: 50px;
             margin-bottom: 2rem;
@@ -1848,7 +2003,7 @@
         .quote-text {
             font-family: var(--font-serif);
             font-size: clamp(2.1rem, 4vw, 3.4rem);
-            color: #ffffff;
+            color: var(--text-dark);
             line-height: 1.32;
             margin-bottom: 2rem;
             font-style: italic;
@@ -1872,7 +2027,7 @@
             flex-wrap: wrap;
             gap: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-light);
         }
 
         .quote-author {
@@ -1880,11 +2035,11 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #94a3b8;
+            color: var(--text-muted);
         }
 
         .quote-author span {
-            color: #ffffff;
+            color: var(--text-dark);
             margin-left: 0.5rem;
         }
 
@@ -2119,7 +2274,9 @@
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: #ffffff;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
             border: 1px solid var(--border-light);
             color: var(--text-dark);
             display: flex;
@@ -2187,48 +2344,53 @@
             transform: translateY(0) scale(1);
         }
 
-        /* --- Card Animation Suite: Smooth Fade In/Out & Zoom In/Out --- */
+        /* --- Card Animation Suite: Smooth Fade In & Refined Hover --- */
         .card-zoom-fade {
             opacity: 0;
-            transform: translateY(35px) scale(0.92);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
                         box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                         border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
             position: relative;
-            overflow: hidden;
         }
 
-        /* In Viewport: Smooth Zoom-In & Fade-In */
+        /* In Viewport: Smooth Fade-In and Position */
         .card-zoom-fade.card-in-view {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
         }
 
-        /* Hover Zoom In & Glow Elevation */
+        /* Hover: Refined Elevation (No scale distortion that overlaps adjacent cards) */
         .card-zoom-fade.card-in-view:hover {
-            transform: translateY(-8px) scale(1.025);
-            border-color: rgba(37, 99, 235, 0.45);
-            box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.12), 0 0 30px rgba(37, 99, 235, 0.16);
+            transform: translateY(-6px);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-hover);
             z-index: 2;
         }
 
-        /* Interactive Cursor-Tracking Radial Spotlight */
+        /* Interactive Cursor-Tracking Radial Spotlight Behind Content */
         .card-zoom-fade::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: inherit;
-            background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.1), transparent 60%);
+            background: radial-gradient(400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), var(--primary-light), transparent 65%);
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.35s ease;
-            z-index: 1;
+            z-index: 0;
         }
 
         .card-zoom-fade:hover::before {
             opacity: 1;
+        }
+
+        /* Ensure all direct card children stay crisply above the spotlight layer */
+        .card-zoom-fade > * {
+            position: relative;
+            z-index: 1;
         }
 
         /* Micro-zoom on Card Icons when card is hovered */
@@ -2362,7 +2524,9 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: #ffffff;
+                background: var(--nav-scrolled-bg);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
                 padding: 1.5rem 2rem;
                 border-bottom: 1px solid var(--border-light);
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -2471,6 +2635,10 @@
             </div>
 
             <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Ganti Tema Tampilan" title="Ganti Mode Gelap / Terang">
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                </button>
                 <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
                     target="_blank" rel="noopener noreferrer" class="btn btn-wa">
                     <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> Chat WhatsApp
@@ -2892,7 +3060,7 @@
         </div>
 
         <!-- Featured Case Study 1: CBAS & ENGINE ROBOT -->
-        <section id="cbas-case-study" class="case-study-card card-zoom-fade fade-in">
+        <section id="cbas-case-study" class="case-study-card fade-in">
             <div class="case-study-hero">
                 <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 01</div>
                 <div class="case-badge-group">
@@ -3006,7 +3174,7 @@
         </section>
 
         <!-- Featured Case Study 2: LOS -->
-        <section id="los" class="case-study-card card-zoom-fade fade-in">
+        <section id="los" class="case-study-card fade-in">
             <div class="case-study-hero">
                 <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 02</div>
                 <div class="case-badge-group">
@@ -3120,7 +3288,7 @@
         </section>
 
         <!-- Dedicated Showcase: Trans Padang (Trans Padang) -->
-        <section id="psm-transpadang" class="case-study-card card-zoom-fade fade-in" style="margin-top: 3.5rem;">
+        <section id="psm-transpadang" class="case-study-card fade-in" style="margin-top: 3.5rem;">
             <div class="case-study-hero">
                 <div class="section-tag" style="justify-content: center;">Sistem Kontrol Transportasi Publik Kota</div>
                 <div class="case-badge-group">
@@ -3601,6 +3769,29 @@
 
     <!-- Interactive Scripts with Lenis Smooth Scrolling Engine -->
     <script>
+        // Theme Engine: Interactive Dark Obsidian & Light Institutional Switcher
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const savedTheme = localStorage.getItem('theme_preference') || 'dark';
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme_preference', theme);
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Apply theme immediately
+        applyTheme(savedTheme);
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+            });
+        }
+
         // Initialize Lucide Vector Icons
         lucide.createIcons();
 
@@ -3755,8 +3946,7 @@
             '.dep-card',
             '.time-card',
             '.skill-card',
-            '.testi-side-card',
-            '.stat-item'
+            '.testi-side-card'
         ];
 
         const allTargetCards = document.querySelectorAll(animatableCardSelectors.join(', '));

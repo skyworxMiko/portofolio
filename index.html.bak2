@@ -1,0 +1,3996 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamiko Arshal | Enterprise Solutions Architect & Tech Lead</title>
+    <meta name="description"
+        content="Portofolio Jamiko Arshal - Enterprise Solutions Architect & Tech Lead spesialis arsitektur perbankan, otomatisasi SLIK OJK, Core API, dan sistem enterprise nasional.">
+
+    <!-- Fonts: Plus Jakarta Sans for sleek enterprise tech & JetBrains Mono for technical specifications -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Vector Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Lenis Smooth Scroll Engine -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <style>
+        :root {
+            /* ==========================================================
+               THEME: Executive Obsidian & Glassmorphism (Default Dark)
+               ========================================================== */
+            --bg-canvas: #060913;
+            --bg-canvas-subtle: #0b1120;
+            --bg-card: rgba(15, 23, 42, 0.72);
+            --bg-card-hover: rgba(24, 36, 68, 0.88);
+            --bg-card-subtle: rgba(15, 23, 42, 0.52);
+            --bg-dark: #03060d;
+            --bg-dark-elevated: #090d1a;
+            --bg-dark-card: #0d1527;
+
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: rgba(59, 130, 246, 0.16);
+            --primary-subtle: rgba(59, 130, 246, 0.09);
+            --primary-border: rgba(59, 130, 246, 0.35);
+
+            --accent-gold: #fbbf24;
+            --accent-gold-light: rgba(251, 191, 36, 0.16);
+            --accent-gold-border: rgba(251, 191, 36, 0.32);
+            --accent-cyan: #38bdf8;
+            --accent-cyan-light: rgba(56, 189, 248, 0.16);
+            --accent-cyan-border: rgba(56, 189, 248, 0.32);
+
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.16);
+            --success-border: rgba(16, 185, 129, 0.32);
+
+            --text-dark: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-light: #64748b;
+
+            --border-light: rgba(255, 255, 255, 0.09);
+            --border-focus: rgba(59, 130, 246, 0.45);
+
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-serif: 'Playfair Display', Georgia, serif;
+
+            --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.4);
+            --shadow-card: 0 20px 45px -15px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+            --shadow-hover: 0 25px 50px -12px rgba(59, 130, 246, 0.3), 0 0 2px 1px rgba(59, 130, 246, 0.45);
+            --shadow-glow: 0 0 35px rgba(59, 130, 246, 0.28);
+
+            --card-backdrop: blur(16px);
+            --grid-dot-color: rgba(255, 255, 255, 0.06);
+            --nav-bg: rgba(6, 9, 19, 0.82);
+            --nav-scrolled-bg: rgba(6, 9, 19, 0.95);
+        }
+
+        /* ==========================================================
+           THEME: Executive Institutional Light (Toggle Mode)
+           ========================================================== */
+        [data-theme="light"] {
+            --bg-canvas: #f8fafc;
+            --bg-canvas-subtle: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #ffffff;
+            --bg-card-subtle: #f8fafc;
+            --bg-dark: #070a13;
+            --bg-dark-elevated: #0f172a;
+            --bg-dark-card: #141e33;
+
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --primary-light: #eff6ff;
+            --primary-subtle: rgba(29, 78, 216, 0.08);
+            --primary-border: rgba(37, 99, 235, 0.2);
+
+            --accent-gold: #d97706;
+            --accent-gold-light: #fef3c7;
+            --accent-gold-border: rgba(217, 119, 6, 0.25);
+            --accent-cyan: #0284c7;
+            --accent-cyan-light: rgba(2, 132, 199, 0.1);
+            --accent-cyan-border: rgba(2, 132, 199, 0.25);
+
+            --success: #059669;
+            --success-light: #ecfdf5;
+            --success-border: rgba(5, 150, 105, 0.25);
+
+            --text-dark: #0b1120;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+
+            --border-light: #e2e8f0;
+            --border-focus: #cbd5e1;
+
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+            --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.09), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+            --shadow-glow: 0 0 30px rgba(29, 78, 216, 0.18);
+
+            --card-backdrop: none;
+            --grid-dot-color: rgba(148, 163, 184, 0.22);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --nav-scrolled-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-body);
+            background-color: var(--bg-canvas);
+            background-image: radial-gradient(var(--grid-dot-color) 1px, transparent 1px); transition: background-color 0.3s ease, color 0.3s ease;
+            background-size: 28px 28px;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* Top Reading Progress Bar */
+        #scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #1d4ed8 0%, #0284c7 50%, #d97706 100%);
+            z-index: 10001;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+            transition: width 0.08s ease-out;
+        }
+
+        ::selection {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Ambient Lighting Header Mesh */
+        .ambient-mesh {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 780px;
+            background: radial-gradient(circle at 50% -10%, rgba(59, 130, 246, 0.22) 0%, rgba(14, 165, 233, 0.12) 35%, rgba(99, 102, 241, 0.05) 55%, transparent 75%);
+            pointer-events: none;
+            z-index: 0;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .ambient-mesh {
+            background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.03) 45%, transparent 70%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            background: rgba(248, 250, 252, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
+            padding: 0.85rem 0;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-symbol {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.4rem 0.25rem;
+            white-space: nowrap;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-cyan) 100%);
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        
+        /* Theme Switcher Button */
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-subtle);
+            flex-shrink: 0;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-border);
+            transform: translateY(-2px);
+            color: var(--primary);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+        }
+
+        .theme-icon {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Default Dark Mode: Show Sun icon, Hide Moon icon */
+        .theme-toggle-btn .sun-icon {
+            display: block;
+            color: var(--accent-gold);
+        }
+        .theme-toggle-btn .moon-icon {
+            display: none;
+        }
+
+        /* Light Mode: Show Moon icon, Hide Sun icon */
+        [data-theme="light"] .theme-toggle-btn .sun-icon {
+            display: none;
+        }
+        [data-theme="light"] .theme-toggle-btn .moon-icon {
+            display: block;
+            color: #334155;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Buttons System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+
+        .btn-dark {
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-dark:hover {
+            background: #020617;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(29, 78, 216, 0.35);
+            color: #ffffff;
+        }
+
+        .btn-wa {
+            background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+        }
+
+        .btn-wa:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: var(--bg-card);
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--border-focus);
+            background: #f8fafc;
+            transform: translateY(-2px);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 8rem 0 5rem;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+            margin-bottom: 1.75rem;
+        }
+
+        .status-beacon {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+        }
+
+        .status-beacon::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background-color: rgba(16, 185, 129, 0.4);
+            animation: pulse-ring 2s infinite cubic-bezier(0.24, 0, 0.38, 1);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.9;
+            }
+
+            70% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.12;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.035em;
+        }
+
+        .hero-title .title-accent {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-desc {
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            margin-bottom: 2.25rem;
+            line-height: 1.8;
+            max-width: 92%;
+        }
+
+        .hero-badges-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-light);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-body);
+        }
+
+        .hero-pill i {
+            color: var(--primary);
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Executive Identity Card */
+        .id-card-wrapper {
+            position: relative;
+        }
+
+        .id-card-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(217, 119, 6, 0.08) 100%);
+            border-radius: 24px;
+            filter: blur(16px);
+            z-index: 0;
+        }
+
+        .id-card {
+            position: relative;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2.25rem;
+            box-shadow: var(--shadow-card);
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .id-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .id-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .id-profile-group {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .id-avatar-box {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .id-avatar-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+        }
+
+        .id-header-info h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .id-header-info .id-role-tag {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+
+        .architect-seal {
+            background: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold-border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .id-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .id-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(241, 245, 249, 1);
+            font-size: 0.92rem;
+        }
+
+        .id-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .id-label {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .id-label i {
+            color: var(--text-light);
+            width: 16px;
+            height: 16px;
+        }
+
+        .id-value {
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: right;
+        }
+
+        .id-value.highlight {
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.2rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        /* Interactive Direct Action Links for Email & WhatsApp */
+        .id-action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 8px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .id-action-link:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+        }
+
+        .id-action-link.wa-link {
+            color: #059669;
+            background: #ecfdf5;
+            border-color: rgba(5, 150, 105, 0.25);
+        }
+
+        .id-action-link.wa-link:hover {
+            background: #059669;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+        }
+
+        .id-action-link .action-icon {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        .id-action-link:hover .action-icon {
+            transform: translate(2px, -2px);
+        }
+
+        .id-copy-mini-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem;
+            color: var(--text-light);
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .id-copy-mini-btn:hover {
+            color: var(--primary);
+            background: rgba(15, 23, 42, 0.06);
+            transform: scale(1.1);
+        }
+
+        .id-value.success {
+            color: var(--success);
+            background: var(--success-light);
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .id-value.success .micro-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--success);
+        }
+
+        /* Executive Stats Block */
+        .stats-block-wrapper {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 6rem;
+        }
+
+        .stats-block {
+            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 3.5rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 400px;
+            height: 100%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .stat-item {
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding-right: 2rem;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .stat-num {
+            font-size: clamp(2.8rem, 4vw, 3.8rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: baseline;
+            letter-spacing: -0.04em;
+        }
+
+        .stat-num span {
+            color: var(--accent-gold);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.84rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.5;
+        }
+
+        /* Section Shared Headers */
+        .section-header {
+            margin-bottom: 3.5rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 18px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-top: 0.75rem;
+        }
+
+        /* Architecture Topology */
+        .topology-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topology-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-cyan) 50%, var(--accent-gold) 100%);
+        }
+
+        .topology-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .topology-header h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .topology-header p {
+            font-size: 1.02rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .topology-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        /* Architecture Interconnection Matrix */
+        .architecture-matrix-box {
+            background: #0b1120;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .architecture-matrix-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8 0%, #1d4ed8 50%, #d97706 100%);
+        }
+
+        .matrix-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .matrix-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .matrix-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .matrix-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: all 0.25s ease;
+        }
+
+        .matrix-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .matrix-route {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #38bdf8;
+            flex-wrap: wrap;
+        }
+
+        .matrix-route .route-arrow {
+            color: var(--accent-gold);
+            font-weight: 800;
+        }
+
+        .matrix-desc {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Trans Padang Modules Grid */
+        .psm-modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .psm-module-card {
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.6rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .psm-module-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-4px);
+        }
+
+        .psm-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(2, 132, 199, 0.1);
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.1rem;
+        }
+
+        .psm-module-card h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .psm-module-card p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .psm-module-card.span-wide {
+            grid-column: span 2;
+        }
+
+        .psm-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: auto;
+            padding-top: 0.9rem;
+        }
+
+        .psm-tag {
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            padding: 0.22rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(2, 132, 199, 0.08);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(2, 132, 199, 0.22);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .pillar-card {
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pillar-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-3px);
+        }
+
+        .pillar-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pillar-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .pillar-info span {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Innovation Spotlight Grid */
+        .spotlights-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .spotlight-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2.75rem;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 2.5rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .spotlight-card:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .spot-tier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .spot-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        .spot-title .spot-subheading {
+            font-weight: 500;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.3rem;
+            letter-spacing: normal;
+        }
+
+        .spot-desc {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+
+        .stack-box {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stack-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stack-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--primary);
+        }
+
+        .stack-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .stack-list li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-light);
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+        }
+
+        .stack-list li i {
+            color: var(--primary);
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Executive Testimonial Section */
+        .testimonial-container {
+            margin-bottom: 6rem;
+            background: linear-gradient(135deg, #070a13 0%, #0f172a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 4rem;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-container::after {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: var(--font-serif);
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.03);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testi-quote-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            color: var(--accent-gold);
+            margin-bottom: 1.75rem;
+        }
+
+        .testi-headline {
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+        }
+
+        .testi-headline .highlight-name {
+            color: var(--accent-gold);
+        }
+
+        .testi-author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testi-author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1e293b;
+            border: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .testi-author-meta strong {
+            display: block;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .testi-author-meta .role {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.88rem;
+        }
+
+        .testi-author-meta .company {
+            display: block;
+            color: var(--accent-gold);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.2rem;
+        }
+
+        .testi-side-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            padding: 2.25rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .testi-side-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testi-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .testi-bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .testi-check-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--success);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Featured Case Studies */
+        .case-study-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 5rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-hero {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 3.5rem;
+        }
+
+        /* Executive Case Study Badges */
+        .case-badge-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            margin: 0.85rem auto 1.35rem auto;
+            flex-wrap: wrap;
+        }
+
+        .case-badge,
+        .spot-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.38rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            border: 1px solid transparent;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            white-space: nowrap;
+        }
+
+        .case-badge:hover,
+        .spot-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-badge i,
+        .spot-badge i {
+            width: 14px;
+            height: 14px;
+            stroke-width: 2.2;
+            flex-shrink: 0;
+        }
+
+        .case-badge.badge-cyan {
+            background: rgba(2, 132, 199, 0.08);
+            color: #0284c7;
+            border-color: rgba(2, 132, 199, 0.24);
+        }
+
+        .case-badge.badge-blue {
+            background: rgba(29, 78, 216, 0.08);
+            color: #1d4ed8;
+            border-color: rgba(29, 78, 216, 0.24);
+        }
+
+        .case-badge.badge-emerald {
+            background: rgba(5, 150, 105, 0.08);
+            color: #059669;
+            border-color: rgba(5, 150, 105, 0.24);
+        }
+
+        .case-badge.badge-amber {
+            background: rgba(217, 119, 6, 0.08);
+            color: #d97706;
+            border-color: rgba(217, 119, 6, 0.24);
+        }
+
+        .case-study-hero h3 {
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .case-study-hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .benefits-section-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .benefit-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .benefit-card h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Pipeline Workflow (6 Steps) */
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .pipeline-card {
+            background: var(--bg-card-subtle);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pipeline-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-3px);
+        }
+
+        .pipeline-step-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.88rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+        }
+
+        .pipeline-text h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+        }
+
+        .pipeline-text p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Other Deployments Grid */
+        .deploy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .dep-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dep-card:hover {
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .dep-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .dep-client-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .dep-status-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--success);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .dep-status-live .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--success);
+        }
+
+        .dep-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .dep-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Career Timeline */
+        .timeline-section {
+            margin-bottom: 6rem;
+        }
+
+        .timeline-wrap {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 2px solid var(--border-light);
+            margin-left: 1rem;
+        }
+
+        .time-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        .time-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .time-dot-node {
+            position: absolute;
+            left: -3.05rem;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-canvas);
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .time-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .time-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-focus);
+            transform: translateY(-3px);
+        }
+
+        .time-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-role-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .time-period-badge {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+        }
+
+        .time-company-tag {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .time-company-tag i {
+            color: var(--primary);
+            width: 15px;
+            height: 15px;
+        }
+
+        .time-desc {
+            font-size: 0.98rem;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+
+        /* Technical Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 6rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-border);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .skill-card:hover .skill-icon-wrap {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+        }
+
+        .skill-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-desc {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Executive Architect Quote Section (Dark Obsidian) */
+        .quote-section {
+            background: linear-gradient(135deg, #050810 0%, #0b1120 100%);
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-sans);
+            font-size: clamp(6rem, 16vw, 15rem);
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: 0.1em;
+            user-select: none;
+        }
+
+        .quote-content {
+            position: relative;
+            z-index: 2;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .quote-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+        }
+
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: clamp(2.1rem, 4vw, 3.4rem);
+            color: #ffffff;
+            line-height: 1.32;
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .quote-text strong {
+            font-style: normal;
+            font-weight: 800;
+            color: var(--accent-gold);
+            background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .quote-author-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quote-author {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #94a3b8;
+        }
+
+        .quote-author span {
+            color: #ffffff;
+            margin-left: 0.5rem;
+        }
+
+        .btn-gold-executive {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #ffffff;
+            padding: 1rem 2.2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-gold-executive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(217, 119, 6, 0.4);
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+        }
+
+        /* Formal Executive Footer */
+        footer {
+            background-color: var(--bg-dark);
+            padding: 6rem 0 2.5rem;
+            color: #94a3b8;
+            position: relative;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-logo-text span {
+            color: var(--accent-gold);
+        }
+
+        .footer-bio {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            max-width: 440px;
+            margin-bottom: 2.5rem;
+            color: #94a3b8;
+        }
+
+        .footer-heading {
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: fit-content;
+        }
+
+        .contact-row:hover {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .contact-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            transition: all 0.2s ease;
+        }
+
+        .contact-row:hover .contact-icon-box {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .contact-row.wa-footer:hover .contact-icon-box {
+            background: #059669;
+            color: #ffffff;
+            border-color: #059669;
+        }
+
+        .footer-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-nav-list a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-nav-list a:hover {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .footer-verified-badge i {
+            color: var(--success);
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Floating Quick Controls (WhatsApp & Back-to-Top) */
+        .floating-controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            z-index: 999;
+        }
+
+        .floating-wa-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #10b981;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .floating-wa-btn:hover {
+            background: #059669;
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 12px 28px rgba(5, 150, 105, 0.45);
+            color: #ffffff;
+        }
+
+        .wa-tooltip {
+            position: absolute;
+            right: 64px;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(10px);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-wa-btn:hover .wa-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .back-to-top {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            backdrop-filter: var(--card-backdrop);
+            -webkit-backdrop-filter: var(--card-backdrop);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Toast Notification for Copy Action */
+        #copy-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.85rem 1.4rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        #copy-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Smooth Reveal Animation System */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(32px) scale(0.985);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* --- Card Animation Suite: Smooth Fade In/Out & Zoom In/Out --- */
+        .card-zoom-fade {
+            opacity: 0;
+            transform: translateY(35px) scale(0.92);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* In Viewport: Smooth Zoom-In & Fade-In */
+        .card-zoom-fade.card-in-view {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Hover Zoom In & Glow Elevation */
+        .card-zoom-fade.card-in-view:hover {
+            transform: translateY(-8px) scale(1.025);
+            border-color: rgba(37, 99, 235, 0.45);
+            box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.12), 0 0 30px rgba(37, 99, 235, 0.16);
+            z-index: 2;
+        }
+
+        /* Interactive Cursor-Tracking Radial Spotlight */
+        .card-zoom-fade::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.1), transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: 1;
+        }
+
+        .card-zoom-fade:hover::before {
+            opacity: 1;
+        }
+
+        /* Micro-zoom on Card Icons when card is hovered */
+        .card-zoom-fade:hover .pillar-icon-box,
+        .card-zoom-fade:hover .benefit-icon-box,
+        .card-zoom-fade:hover .skill-icon-wrap,
+        .card-zoom-fade:hover .contact-icon-box {
+            transform: scale(1.15) rotate(4deg);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-zoom-fade:hover .pipeline-step-badge {
+            transform: scale(1.15);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.45);
+            transition: all 0.3s ease;
+        }
+
+        /* Floating levitation for Identity Card */
+        @keyframes idCardLevitate {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        .id-card-wrapper {
+            position: relative;
+            perspective: 1200px;
+            animation: idCardLevitate 6s ease-in-out infinite;
+        }
+
+        .id-card-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .id-card {
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+            transform-style: preserve-3d;
+        }
+
+        .id-card:hover {
+            box-shadow: 0 25px 50px -10px rgba(15, 23, 42, 0.15), 0 0 35px rgba(37, 99, 235, 0.2);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        /* Responsive Media Queries */
+        @media(max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 6.5rem;
+                gap: 3.5rem;
+            }
+
+            .stats-block {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                padding: 2.5rem;
+            }
+
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .spotlight-card {
+                grid-template-columns: 1fr;
+            }
+
+            .topology-pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .psm-modules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .deploy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+
+        @media(max-width: 1280px) {
+            .nav-links {
+                gap: 0.85rem;
+            }
+
+            .nav-links a {
+                font-size: 0.78rem;
+                padding: 0.35rem 0.15rem;
+            }
+
+            .btn-wa {
+                padding: 0.55rem 0.95rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media(max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--nav-scrolled-bg);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 1.5rem 2rem;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                gap: 1.25rem;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .stats-block {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 1.5rem;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .topology-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .psm-modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .psm-module-card.span-wide {
+                grid-column: span 1;
+            }
+
+            .case-study-card {
+                padding: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deploy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quote-author-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .floating-controls {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .wa-tooltip {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress-bar"></div>
+    <div class="ambient-mesh"></div>
+
+    <!-- Navigation Header -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo-wrap">
+                <div class="logo-symbol">JA</div>
+                <div class="logo-text">
+                    <span class="logo-title">Jamiko Arshal</span>
+                    <span class="logo-subtitle">Solutions Architect</span>
+                </div>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#proyek">EKOSISTEM</a>
+                <a href="#cbas-case-study">SLIK OJK</a>
+                <a href="#los">LOS CORE</a>
+                <a href="#psm-transpadang">TRANS PADANG</a>
+                <a href="#pengalaman">PENGALAMAN</a>
+                <a href="#keahlian">KEAHLIAN</a>
+                <a href="#kontak">KONTAK</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Ganti Tema Tampilan" title="Ganti Mode Gelap / Terang">
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                </button>
+                <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                    target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                    <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i> Chat WhatsApp
+                </a>
+                <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle Navigation">
+                    <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <div class="status-beacon"></div>
+                    TERSEDIA UNTUK KONSULTASI & PERAN ENTERPRISE
+                </div>
+
+                <h1 class="hero-title">
+                    Enterprise Solutions Architect <br>& <span class="title-accent">Tech Lead</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Arsitek sistem enterprise berskala nasional dengan rekam jejak teruji di perbankan, fintech, layanan
+                    publik, dan kesehatan. Spesialis otomatisasi backend-to-frontend, Rule Engine, dan robotika SLIK
+                    untuk akselerasi keputusan bisnis dan efisiensi operasional.
+                </p>
+
+                <div class="hero-badges-strip">
+                    <div class="hero-pill"><i data-lucide="bot"></i> Engine Automation Playwrigth (SLIK OJK)</div>
+                    <div class="hero-pill"><i data-lucide="layers"></i> Loan Origination System & CBAS</div>
+                    <div class="hero-pill"><i data-lucide="layout"></i> UI/UX Dynamic & Workflow BPMN</div>
+                    <div class="hero-pill"><i data-lucide="bus"></i> Trans Padang</div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#proyek" class="btn btn-primary">
+                        Jelajahi Portofolio <i data-lucide="arrow-down" style="width: 16px; height: 16px;"></i>
+                    </a>
+                    <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                        <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> Chat WhatsApp
+                    </a>
+                    <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                        class="btn btn-outline" title="Kirim Email Langsung">
+                        <i data-lucide="mail" style="width: 16px; height: 16px; color: var(--primary);"></i> Kirim Email
+                    </a>
+                </div>
+            </div>
+
+            <!-- Executive Identity Card with Direct Email & WhatsApp Click -->
+            <div class="id-card-wrapper fade-in" style="transition-delay: 0.15s;">
+                <div class="id-card">
+                    <div class="id-card-header">
+                        <div class="id-profile-group">
+                            <div class="id-avatar-box">JA</div>
+                            <div class="id-header-info">
+                                <h3>Jamiko Arshal</h3>
+                                <span class="id-role-tag">Solutions Architect & Tech Lead</span>
+                            </div>
+                        </div>
+                        <div class="architect-seal">
+                            <i data-lucide="check-circle-2" style="width: 13px; height: 13px;"></i> Verified
+                        </div>
+                    </div>
+
+                    <div class="id-list">
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="building-2"></i> Perusahaan</span>
+                            <span class="id-value highlight">PT. Skyworx Indonesia</span>
+                        </div>
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="map-pin"></i> Lokasi</span>
+                            <span class="id-value">Padang, Indonesia</span>
+                        </div>
+
+                        <!-- Direct Click: Send Email -->
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="mail"></i> Email</span>
+                            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                                    class="id-action-link"
+                                    title="Klik untuk langsung membuka aplikasi Email">
+                                    <span>arshaljamiko@gmail.com</span>
+                                    <i data-lucide="send" class="action-icon"></i>
+                                </a>
+                                <button class="id-copy-mini-btn"
+                                    onclick="copyToClipboard('arshaljamiko@gmail.com', 'Alamat email berhasil disalin!')"
+                                    title="Salin email ke clipboard">
+                                    <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Direct Click: Send WhatsApp -->
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="phone"></i> Telp / WA</span>
+                            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="id-action-link wa-link"
+                                    title="Klik untuk langsung chat di WhatsApp">
+                                    <span>0822-8748-3950</span>
+                                    <i data-lucide="message-circle" class="action-icon"></i>
+                                </a>
+                                <button class="id-copy-mini-btn"
+                                    onclick="copyToClipboard('0822-8748-3950', 'Nomor telepon berhasil disalin!')"
+                                    title="Salin nomor ke clipboard">
+                                    <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="graduation-cap"></i> Pendidikan</span>
+                            <span class="id-value">S1 Sistem Informasi</span>
+                        </div>
+                        <div class="id-item">
+                            <span class="id-label"><i data-lucide="activity"></i> Status</span>
+                            <span class="id-value success">
+                                <span class="micro-dot"></span> Aktif Bekerja (IT Supervisor)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Stats Block -->
+        <div class="stats-block-wrapper fade-in" id="pengalaman-stats">
+            <div class="stats-block">
+                <div class="stat-item">
+                    <div class="stat-num">7<span>+</span></div>
+                    <div class="stat-label">Tahun Rekam Jejak Engineering</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">8<span>+</span></div>
+                    <div class="stat-label">Sistem Enterprise Aktif & Live</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">10<span>+</span></div>
+                    <div class="stat-label">Institusi Bank & Korporat Klien</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Evolusi Peran: Dev → Senior → Supervisor</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ecosystem Section -->
+        <section id="proyek">
+            <div class="section-header fade-in">
+                <div class="section-tag">Arsitektur Terintegrasi & Pipeline Ekosistem</div>
+                <h2 class="section-title">Ekosistem 4-Core Perbankan</h2>
+                <p class="section-subtitle">
+                    Arsitektur multi-engine berskala enterprise yang mengintegrasikan otomatisasi antarmuka, orkestrasi
+                    workflow dinamis, permohonan kredit (LOS), dan robotika SLIK OJK dari hulu ke hilir.
+                </p>
+            </div>
+
+            <!-- System Topology Banner -->
+            <div class="topology-card fade-in">
+                <div class="topology-header">
+                    <h3>Kesatuan Arsitektur Terintegrasi 4-Core</h3>
+                    <p>
+                        Keempat pilar backend di bawah ini dirancang saling menopang dan terintegrasi secara reaktif untuk
+                        mengeksekusi produk perbankan berskala masif seperti <strong>CBAS</strong> dan <strong>LOS</strong>.
+                    </p>
+                </div>
+
+                <div class="topology-pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>UI/UX Dynamic</h4>
+                            <span>UI/UX & Form Generator</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="workflow"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Workflow BPMN</h4>
+                            <span>Dynamic BPMN Orchestrator</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>Loan Origination System</h4>
+                            <span>Loan Origination Core</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon-box">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <div class="pillar-info">
+                            <h4>CBAS ➔ ENGINE-ROBOT</h4>
+                            <span>SLIK OJK & iDeb Parser</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architecture Interconnection Matrix -->
+                <div class="architecture-matrix-box">
+                    <div class="matrix-header">
+                        <div class="matrix-title">
+                            <i data-lucide="network"></i> Matriks Hubungan & Aliran Data Antar-Sistem
+                        </div>
+                        <span class="matrix-badge">INTERCONNECTED TOPOLOGY</span>
+                    </div>
+
+                    <div class="matrix-grid">
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>CBAS</span>
+                                <span class="route-arrow">➔</span>
+                                <span>Engine Automation Playwrigth</span>
+                            </div>
+                            <p class="matrix-desc">
+                                CBAS mengorkestrasi robot perayap web OJK untuk pengajuan, approval, dan download file iDeb terenkripsi. Berkas iDeb yang diterima langsung diekstrak oleh CBAS menjadi laporan PDF resmi dan data terstruktur JSON scoring.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>Loan Origination System</span>
+                                <span class="route-arrow">➔</span>
+                                <span>CBAS</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Saat nasabah mengajukan pinjaman kredit di LOS, petugas perbankan dapat menginput debitur baru dari nol atau menarik data debitur secara instan dari CBAS yang telah dilengkapi scoring risiko SLIK.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>Workflow BPMN</span>
+                                <span class="route-arrow">➔</span>
+                                <span>Loan Origination System</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Seluruh alur proses bisnis perbankan, hierarki persetujuan bertingkat (approval), dan transisi status kredit di LOS dikendalikan secara dinamis dari workflow yang dibuat dan dikonfigurasi langsung oleh pengguna.
+                            </p>
+                        </div>
+
+                        <div class="matrix-item">
+                            <div class="matrix-route">
+                                <span>UI/UX Dynamic</span>
+                                <span class="route-arrow">➔</span>
+                                <span>LOS & CBAS (Frontend UI/UX)</span>
+                            </div>
+                            <p class="matrix-desc">
+                                Seluruh antarmuka pengguna (Dynamic Form, DataTable analitik, validasi input) pada project CBAS dan LOS digenerate dan dikonfigurasi terpusat dari Auto-Layout. Frontend berperan sebagai lapisan UI/UX rendering responsif.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spotlight Cards -->
+            <div class="spotlights-wrapper">
+
+                <!-- Spotlight 1: UI/UX Dynamic -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="layout-template" style="width: 14px; height: 14px;"></i> CORE ENGINE · UNIVERSAL UI/UX AUTO-LAYOUT
+                        </div>
+                        <h3 class="spot-title">
+                            UI/UX Dynamic
+                            <span class="spot-subheading">Dynamic Layout & Form Configuration Platform (Powers CBAS & LOS)</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Mesin sentral yang mengatur dan mengonfigurasi seluruh antarmuka untuk proyek <strong>CBAS</strong> dan <strong>Loan Origination System</strong>. Semua formulir input dinamis, DataTable interaktif, skema validasi, serta aturan tampilan diatur terpusat di Auto-Layout tanpa coding manual per halaman. Lapisan Frontend bertindak sebagai UI/UX renderer yang menyajikan antarmuka dinamis dan responsif secara real-time.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="server"></i> Spring Boot Core API</li>
+                            <li><i data-lucide="code-2"></i> Auto Layout Schema Generator</li>
+                            <li><i data-lucide="layout"></i> Dynamic Form & DataTable Config</li>
+                            <li><i data-lucide="palette"></i> Frontend Reactive UI/UX Layer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spotlight 2: Workflow BPMN -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="workflow" style="width: 14px; height: 14px;"></i> PROCESS ORCHESTRATION · BUSINESS PROCESS ENGINE
+                        </div>
+                        <h3 class="spot-title">
+                            Workflow BPMN
+                            <span class="spot-subheading">Configurable Dynamic Workflow Engine (Orchestrator for Loan Origination System)</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Mesin penggerak alur kerja dinamis yang menopang seluruh proses bisnis perbankan pada <strong>Loan Origination System</strong>. Setiap tahapan pengajuan pembiayaan, verifikasi kepatuhan, matriks persetujuan berjenjang (*multi-tier approval*), hingga keputusan komite kredit bersumber dari alur kerja yang dirancang sendiri oleh user secara visual tanpa perlu memodifikasi kode inti backend.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="git-merge"></i> Java Spring Boot Core</li>
+                            <li><i data-lucide="cpu"></i> BPMN Workflow Engine</li>
+                            <li><i data-lucide="check-circle"></i> Dynamic Approval Matrix</li>
+                            <li><i data-lucide="shield-check"></i> Enterprise Audit Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spotlight 3: CBAS & Engine Automation Playwrigth -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="bot" style="width: 14px; height: 14px;"></i> AUTONOMOUS RPA · SLIK OJK & iDeb EXTRACTOR
+                        </div>
+                        <h3 class="spot-title">
+                            CBAS ➔ Engine Automation Playwrigth
+                            <span class="spot-subheading">Robotic SLIK Scraper & Automated iDeb Data Extractor (PDF & JSON Scoring)</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Sistem robotika perbankan otonom berkecepatan tinggi. <strong>CBAS</strong> berkolaborasi dengan robot web scraper <strong>Engine Automation Playwrigth</strong> untuk menavigasi portal OJK secara mandiri — mengeksekusi pengajuan debitur, approval otorisasi, dan mendownload berkas iDeb (Informasi Debitur). CBAS kemudian mengekstrak data iDeb tersebut menjadi dokumen laporan PDF resmi dan format terstruktur JSON scoring siap pakai.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="terminal"></i> Selenium v4 & Playwright RPA</li>
+                            <li><i data-lucide="eye"></i> OpenCV Computer Vision</li>
+                            <li><i data-lucide="file-text"></i> iDeb Parsing & PDF Generator</li>
+                            <li><i data-lucide="activity"></i> Structured JSON Scoring Matrix</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spotlight 4: Loan Origination System -->
+                <div class="spotlight-card fade-in">
+                    <div>
+                        <div class="spot-tier-badge">
+                            <i data-lucide="layers" style="width: 14px; height: 14px;"></i> ENTERPRISE CORE · LOAN ORIGINATION SYSTEM
+                        </div>
+                        <h3 class="spot-title">
+                            Loan Origination System
+                            <span class="spot-subheading">Loan Origination System (Connected to CBAS Ingestion & Dynamic Workflow)</span>
+                        </h3>
+                        <p class="spot-desc">
+                            Platform inti pemrosesan siklus kredit perbankan komprehensif. Ketika nasabah mengajukan pinjaman, analis perbankan dapat menginput data debitur dari awal atau cukup sekali klik menarik profil debitur langsung dari <strong>CBAS</strong> yang telah memuat hasil scoring dan riwayat kredit lengkap. Seluruh proses pengajuan berjalan di atas alur kerja <strong>Workflow BPMN</strong> dan dirender dinamis via <strong>UI/UX Dynamic</strong>.
+                        </p>
+                    </div>
+                    <div class="stack-box">
+                        <div class="stack-title">Core Technology Stack</div>
+                        <ul class="stack-list">
+                            <li><i data-lucide="server"></i> Java 21 Spring Boot</li>
+                            <li><i data-lucide="database"></i> CBAS Scoring Ingestion Connector</li>
+                            <li><i data-lucide="workflow"></i> Workflow Engine Listener</li>
+                            <li><i data-lucide="lock"></i> Reactive Identity & RBAC</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Executive Institutional Endorsement (CBAS Testimonial) -->
+        <div id="cbas-testimonial" class="testimonial-container fade-in">
+            <div>
+                <div class="testi-quote-mark">
+                    <i data-lucide="quote" style="width: 22px; height: 22px;"></i>
+                </div>
+                <h3 class="testi-headline">
+                    "Solusi software <span class="highlight-name">CBAS</span> dari PT Skyworx Indonesia sangat mudah
+                    digunakan dan 100% presisi sesuai dengan kebutuhan operasional bisnis kami."
+                </h3>
+                <div class="testi-author-info">
+                    <div class="testi-author-avatar">NS</div>
+                    <div class="testi-author-meta">
+                        <strong>Nadar Satria</strong>
+                        <span class="role">Credit Retail & Commercial Dept Head</span>
+                        <span class="company">PT Sunindo Kookmin Best Finance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-side-card">
+                <div class="testi-side-title">
+                    Keunggulan Teruji CBAS (Robotic SLIK)
+                </div>
+                <ul class="testi-bullets">
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Mudah digunakan (User Friendly Interface)</span>
+                    </li>
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Fitur 100% Sesuai Kebutuhan Bisnis Bank</span>
+                    </li>
+                    <li class="testi-bullet-item">
+                        <div class="testi-check-icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                        <span>Integrasi Sistem Sangat Cepat & Aman</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Featured Case Study 1: CBAS & ENGINE ROBOT -->
+        <section id="cbas-case-study" class="case-study-card card-zoom-fade fade-in">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 01</div>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="bot"></i> Engine Automation Playwrigth
+                    </span>
+                    <span class="case-badge badge-blue">
+                        <i data-lucide="file-check"></i> CBAS
+                    </span>
+                    <span class="case-badge badge-emerald">
+                        <i data-lucide="shield-check"></i> SLIK OJK Automation
+                    </span>
+                </div>
+                <h3>CBAS ➔ Engine Automation Playwrigth</h3>
+                <p>
+                    Arsitektur otomasi biro kredit perbankan berkinerja tinggi. <strong>CBAS</strong> bertindak sebagai orkestrator bisnis SLIK OJK yang terhubung langsung dengan <strong>Engine Automation Playwrigth</strong>—mesin robotik otonom yang bertugas melakukan <i>web scraping</i> portal OJK untuk siklus pengajuan debitur, pemrosesan persetujuan (approval), hingga download file iDeb terenkripsi. Berkas iDeb yang didapatkan kemudian diekstrak secara otomatis oleh CBAS guna menghasilkan dokumen ringkasan PDF analitik resmi dan payload data JSON scoring kredit terstruktur yang siap dikonsumsi langsung oleh sistem perbankan.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="target" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan CBAS (Robotic SLIK OJK)
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h5>Otomasi Web Scraping OJK</h5>
+                    <p><strong>Engine Automation Playwrigth</strong> menavigasi web OJK secara mandiri untuk pengisian formulir pengajuan debitur dan tahapan approval tanpa risiko human error.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="file-down"></i>
+                    </div>
+                    <h5>Download & Ekstraksi File iDeb</h5>
+                    <p>Mengunduh file iDeb resmi OJK dan mengekstrak seluruh rekaman kredit menjadi laporan PDF analitik resmi serta payload JSON scoring terstruktur.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <h5>Penyedia Scoring Siap Pakai untuk LOS</h5>
+                    <p>Hasil scoring dan profil debitur yang diproses CBAS siap ditarik langsung secara instan oleh sistem pembiayaan <strong>Loan Origination System</strong> dengan satu kali klik.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h5>Live Monitoring & Status Approval</h5>
+                    <p>Transparansi penuh melalui pemantauan status antrean robot, progres pengajuan di portal OJK, serta verifikasi approval secara real-time.</p>
+                </div>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End: CBAS ➔ Engine Robot ➔ Ekstraksi PDF & JSON
+            </div>
+
+            <div class="pipeline-grid">
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">1</div>
+                    <div class="pipeline-text">
+                        <h5>Input Parameter Permohonan</h5>
+                        <p>User memasukkan identitas debitur melalui form dinamis CBAS yang dikonfigurasi via <strong>UI/UX Dynamic</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">2</div>
+                    <div class="pipeline-text">
+                        <h5>Eksekusi Web Scraping OJK</h5>
+                        <p><strong>Engine Automation Playwrigth</strong> otomatis login ke portal OJK, menavigasi menu, dan mengisi parameter formulir pencarian debitur.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">3</div>
+                    <div class="pipeline-text">
+                        <h5>Approval & Live Monitoring</h5>
+                        <p>Robot memantau antrean dan mengeksekusi tahapan approval kuota pencarian iDeb di portal OJK secara transparan.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">4</div>
+                    <div class="pipeline-text">
+                        <h5>Download File Arsip iDeb</h5>
+                        <p>Setelah pengajuan disetujui di portal OJK, engine robot secara otomatis mengunduh berkas file iDeb resmi terenkripsi.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">5</div>
+                    <div class="pipeline-text">
+                        <h5>Ekstraksi Data (PDF & JSON)</h5>
+                        <p><strong>CBAS</strong> mengekstrak file iDeb tersebut menjadi berkas laporan PDF resmi dan struktur payload JSON scoring.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">6</div>
+                    <div class="pipeline-text">
+                        <h5>Kesiapan Ingesti ke Loan Origination System</h5>
+                        <p>Data scoring dan profil kredit siap dikonsumsi langsung secara otomatis oleh sistem <strong>Loan Origination System</strong> untuk proses kredit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Study 2: LOS -->
+        <section id="los" class="case-study-card card-zoom-fade fade-in">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Studi Kasus Unggulan 02</div>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-blue">
+                        <i data-lucide="layers"></i> Loan Origination System
+                    </span>
+                    <span class="case-badge badge-amber">
+                        <i data-lucide="workflow"></i> Powered by Workflow BPMN
+                    </span>
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="layout"></i> UI via UI/UX Dynamic
+                    </span>
+                </div>
+                <h3>Loan Origination System</h3>
+                <p>
+                    Platform perbankan inti yang mengotomatisasi siklus pembiayaan dan kredit secara menyeluruh dari hulu ke hilir. Sistem ini terintegrasi erat dengan <strong>CBAS</strong>: ketika nasabah mengajukan permohonan pinjaman, petugas perbankan dapat menginput data debitur dari awal lagi atau cukup sekali klik menarik data debitur langsung dari CBAS yang telah memuat informasi scoring iDeb lengkap. Seluruh proses bisnis pengajuan bersumber dari workflow dinamis yang dibuat langsung oleh user pada <strong>Workflow BPMN</strong>, sedangkan seluruh antarmuka frontend (form input dan datatable) dihasilkan serta dikonfigurasi terpusat dari <strong>UI/UX Dynamic</strong>.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Nilai Strategis & Keunggulan Ekosistem LOS
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <h5>Dual-Mode Ingesti Debitur</h5>
+                    <p>Opsi fleksibel bagi analis perbankan: input debitur baru dari awal atau sekali klik tarik profil debitur beserta scoring langsung dari CBAS.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="workflow"></i>
+                    </div>
+                    <h5>Alur Bisnis Dinamis (Workflow)</h5>
+                    <p>Semua proses bisnis, hierarki otorisasi, dan tahapan approval kredit 100% bersumber dari skema workflow yang dikonfigurasi langsung oleh user.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h5>UI/UX Terpusat (Auto-Layout)</h5>
+                    <p>Seluruh antarmuka formulir permohonan dan datatable administrasi diatur konfigurasinya dari UI/UX Dynamic tanpa penulisan kode ulang.</p>
+                </div>
+
+                <div class="benefit-card card-zoom-fade">
+                    <div class="benefit-icon-box">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h5>Mitigasi Risiko & Audit Trail</h5>
+                    <p>Kombinasi scoring CBAS dan alur workflow menjamin kepatuhan regulasi OJK dengan log audit trail yang transparan dan anti-manipulasi.</p>
+                </div>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i> Alur Proses End-to-End Pemrosesan Kredit (LOS)
+            </div>
+
+            <div class="pipeline-grid">
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">1</div>
+                    <div class="pipeline-text">
+                        <h5>Permohonan & Seleksi Debitur</h5>
+                        <p>User dapat menginput debitur baru dari awal atau langsung menarik data debitur yang sudah memiliki informasi scoring dari <strong>CBAS</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">2</div>
+                    <div class="pipeline-text">
+                        <h5>Render Form Dinamis (Auto-Layout)</h5>
+                        <p>Formulir pengajuan kredit, validasi data diri, dan persyaratan dokumen dirender secara otomatis dari konfigurasi <strong>UI/UX Dynamic</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">3</div>
+                    <div class="pipeline-text">
+                        <h5>Eksekusi Alur Kerja (Workflow)</h5>
+                        <p>Pengajuan diproses mengikuti alur bisnis yang telah dibuat oleh user di <strong>Workflow BPMN</strong>, termasuk validasi limit dan penugasan analis.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">4</div>
+                    <div class="pipeline-text">
+                        <h5>Analisis Scoring & Keputusan Kredit</h5>
+                        <p>Analisis kelayakan kredit berdasarkan scoring iDeb CBAS dan rekomendasi sistem diteruskan ke komite kredit sesuai matriks wewenang.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">5</div>
+                    <div class="pipeline-text">
+                        <h5>Dokumentasi & Kontrak Digital</h5>
+                        <p>Penerbitan surat persetujuan kredit (SPK) otomatis dan penandatanganan akad perjanjian pinjaman secara elektronik resmi.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-card card-zoom-fade">
+                    <div class="pipeline-step-badge">6</div>
+                    <div class="pipeline-text">
+                        <h5>Pencairan Dana & Integrasi Core</h5>
+                        <p>Instruksi pencairan fasilitas pinjaman dieksekusi secara instan, aman, dan tercatat otomatis ke sistem pembukuan inti perbankan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Showcase: Trans Padang (Trans Padang) -->
+        <section id="psm-transpadang" class="case-study-card card-zoom-fade fade-in" style="margin-top: 3.5rem;">
+            <div class="case-study-hero">
+                <div class="section-tag" style="justify-content: center;">Sistem Kontrol Transportasi Publik Kota</div>
+                <div class="case-badge-group">
+                    <span class="case-badge badge-cyan">
+                        <i data-lucide="bus"></i> Trans Padang
+                    </span>
+                    <span class="case-badge badge-emerald">
+                        <i data-lucide="check-circle"></i> Live BRT Production System
+                    </span>
+                    <span class="case-badge badge-amber">
+                        <i data-lucide="map-pin"></i> Trans Padang
+                    </span>
+                </div>
+                <h3>Trans Padang | Sistem Controlling Transportasi Bus Trans Padang</h3>
+                <p>
+                    Platform <i>backend & central controlling</i> operasional armada Bus Rapid Transit (Trans Padang) skala metropolitan. Dirancang untuk mengawasi dan mengendalikan mobilitas transportasi publik secara terintegrasi—mengakomodir presensi personel operasional, pencatatan ketepatan jadwal armada (timetable), rekonsiliasi settlement multi-metode pembayaran dan kategori tarif, audit jarak tempuh (KM) ritase operasional, hingga inspeksi kepatuhan Standar Pelayanan Minimal (SPM) harian.
+                </p>
+            </div>
+
+            <div class="benefits-section-title">
+                <i data-lucide="layers" style="width: 16px; height: 16px;"></i> 5 Modul Inti Operasional Trans Padang Trans Padang
+            </div>
+
+            <div class="psm-modules-grid">
+                <!-- Modul 1: Absensi -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="user-check"></i>
+                    </div>
+                    <h5>1. Presensi & Absensi Kru</h5>
+                    <p>
+                        Pencatatan absensi digital dan verifikasi kehadiran seluruh kru operasional Bus Trans Padang (sopir, pramugara/pramugari, serta pengawas lapangan) dengan validasi shift kerja harian, lokasi pos tugas, dan rekapitulasi kehadiran real-time.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Validasi Shift Kru</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Sopir & Pramugara</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Log Presensi Real-time</span>
+                    </div>
+                </div>
+
+                <!-- Modul 2: Timetable -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h5>2. Timetable Kedatangan & Keberangkatan</h5>
+                    <p>
+                        Pencatatan presisi waktu datang (arrival) dan waktu berangkat (departure) armada bus di setiap halte dan terminal koridor secara real-time guna memastikan kepatuhan jarak waktu antar-bus (headway) dan ketepatan jadwal perjalanan bagi masyarakat.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Waktu Datang & Berangkat</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Kepatuhan Headway</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Log Halte Koridor</span>
+                    </div>
+                </div>
+
+                <!-- Modul 3: Settlement Transaksi -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <h5>3. Settlement Transaksi Multi-Pembayaran</h5>
+                    <p>
+                        Rekonsiliasi otomatis dan pencatatan transaksi tiket bus nontunai (QRIS, Kartu Debit, Kartu Kredit) dengan diferensiasi perhitungan tarif resmi yang fleksibel untuk 3 kategori penumpang: <strong>Lansia</strong>, <strong>Umum</strong>, dan <strong>Pelajar</strong>.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> QRIS / Debit / CC</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Tarif Lansia, Umum & Pelajar</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Auto Rekonsiliasi</span>
+                    </div>
+                </div>
+
+                <!-- Modul 4: KM -->
+                <div class="psm-module-card card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="gauge"></i>
+                    </div>
+                    <h5>4. Pencatatan KM Bus & Ritase Operasional</h5>
+                    <p>
+                        Pencatatan dan audit kilometer tempuh (KM) armada bus pada setiap ritase perjalanan rute koridor sebagai dasar akurat perhitungan pembayaran subsidi Biaya Operasional Kendaraan (BOK rupiah/KM) dan jadwal perawatan armada.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Audit KM per Ritase</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Verifikasi Biaya (Rp/KM)</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Utilisasi Armada</span>
+                    </div>
+                </div>
+
+                <!-- Modul 5: SPM dan Checklist Harian -->
+                <div class="psm-module-card span-wide card-zoom-fade">
+                    <div class="psm-icon-box">
+                        <i data-lucide="clipboard-check"></i>
+                    </div>
+                    <h5>5. SPM & Checklist Harian (Kondisi Bus, Atribut, Pramugara, Sopir & Halte)</h5>
+                    <p>
+                        Sistem audit kepatuhan Standar Pelayanan Minimal (SPM) harian terpadu: verifikasi kelaikan teknis & fisik bus, kelengkapan atribut keselamatan kendaraan, kesiapan seragam & etika kru (sopir dan pramugara), serta kebersihan dan kelaikan fasilitas fisik halte di sepanjang koridor operasional Bus Trans Padang.
+                    </p>
+                    <div class="psm-tags-row">
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Standar Pelayanan Minimal (SPM)</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Pengecekan Fisik & Kelaikan Bus</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Atribut Bus, Sopir & Pramugara</span>
+                        <span class="psm-tag"><i data-lucide="check" style="width: 11px; height: 11px;"></i> Kesiapan & Kebersihan Halte</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Enterprise Deployments -->
+        <section class="fade-in">
+            <div class="section-header">
+                <div class="section-tag">Portofolio Produksi</div>
+                <h2 class="section-title">Implementasi & Deployments Produksi</h2>
+                <p class="section-subtitle">
+                    Solusi kustom berskala besar yang dirancang dan dioperasikan untuk institusi terkemuka di Indonesia.
+                </p>
+            </div>
+
+            <div class="deploy-grid">
+                <!-- Highlight: Trans Padang Trans Padang -->
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">TRANSPORTASI PUBLIK · TRANS PADANG</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Trans Padang Trans Padang BRT</h4>
+                        <p class="dep-desc">
+                            Sistem controlling terpadu armada Bus Trans Padang yang mengakomodir absensi kru, timetable keberangkatan & kedatangan, settlement transaksi pembayaran (QRIS, Debit, CC untuk kategori lansia, umum, pelajar), audit KM armada, serta checklist SPM harian (bus, atribut kru, dan halte).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">BCA FINANCE</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Litecore BCAF</h4>
+                        <p class="dep-desc">
+                            Unified Customer Info System berskala tinggi yang mengonsolidasikan jutaan rekaman data profil
+                            konsumen untuk analitik pembiayaan cepat dan aman.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PEGADAIAN</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">Pegadaian Canme</h4>
+                        <p class="dep-desc">
+                            Sistem aplikasi produk berbasis QR Code dengan respons real-time berskala nasional untuk efisiensi
+                            layanan nasabah di jaringan kantor cabang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PENDIDIKAN</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">System Absensi WA</h4>
+                        <p class="dep-desc">
+                            Pelacakan kehadiran cerdas menggunakan QR Code dinamis yang terhubung langsung dengan WhatsApp
+                            Gateway untuk notifikasi otomatis seketika.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">HEALTHCARE (PMI)</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIMRS Mitra</h4>
+                        <p class="dep-desc">
+                            Platform manajemen Rumah Sakit skala penuh untuk pengelolaan rekam medis terpadu, antrean pasien,
+                            farmasi, dan integrasi penagihan klaim.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">DINAS PENDIDIKAN KOTA PADANG</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIGUPENDA</h4>
+                        <p class="dep-desc">
+                            Platform manajemen data kepegawaian dan otomasi penggajian seluruh guru serta tenaga kependidikan
+                            honorer di lingkungan Dinas Pendidikan Kota Padang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dep-card card-zoom-fade">
+                    <div>
+                        <div class="dep-header">
+                            <span class="dep-client-tag">PERTANIAN (SIHI)</span>
+                            <span class="dep-status-live"><span class="dot"></span> Live</span>
+                        </div>
+                        <h4 class="dep-title">SIHI</h4>
+                        <p class="dep-desc">
+                            Sistem Informasi Hortikultura Indonesia, platform manajemen data pertanian nasional dan analitik
+                            pemetaan agrikultur cerdas berbasis geospasial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Log / Timeline -->
+        <section id="pengalaman" class="timeline-section fade-in">
+            <div class="section-header">
+                <div class="section-tag">Jejak Profesional</div>
+                <h2 class="section-title">Riwayat Karier & Kepemimpinan</h2>
+                <p class="section-subtitle">
+                    Perjalanan dedikasi dalam rekayasa perangkat lunak dan arsitektur sistem enterprise selama lebih dari 7 tahun.
+                </p>
+            </div>
+
+            <div class="timeline-wrap">
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">IT Supervisor</div>
+                            <span class="time-period-badge">Jun 2024 — Sekarang</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> PT Skyworx Indonesia
+                        </div>
+                        <p class="time-desc">
+                            Memimpin tim rekayasa perangkat lunak, merancang arsitektur sistem enterprise perbankan skala nasional,
+                            mengorkestrasi pipeline CI/CD, mengawasi standar penulisan kode, serta memastikan skalabilitas,
+                            stabilitas performa, dan compliance keamanan siber.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">Software Programmer</div>
+                            <span class="time-period-badge">Jun 2023 — Jun 2024</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> PT Skyworx Indonesia
+                        </div>
+                        <p class="time-desc">
+                            Membangun sistem perbankan inti (Core Banking), merancang robot web scraper otomatis (RPA) berbasis
+                            Computer Vision, dan mengeksekusi migrasi data relasional raksasa untuk institusi finansial kelas atas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item">
+                    <div class="time-dot-node"></div>
+                    <div class="time-card">
+                        <div class="time-header-row">
+                            <div class="time-role-title">IT Specialist (Honorer)</div>
+                            <span class="time-period-badge">Sep 2016 — Mei 2023</span>
+                        </div>
+                        <div class="time-company-tag">
+                            <i data-lucide="building"></i> Dinas Pendidikan Kota Padang
+                        </div>
+                        <p class="time-desc">
+                            Inisiator dan pengembang utama platform SIGUPENDA yang digunakan secara masif di seluruh kota Padang
+                            untuk verifikasi administrasi dan penggajian ribuan staf honorer sekolah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="keahlian" class="fade-in">
+            <div class="section-header">
+                <div class="section-tag">Kompetensi Utama</div>
+                <h2 class="section-title">Keahlian & Ekosistem Teknologi</h2>
+                <p class="section-subtitle">
+                    Rangkaian teknologi yang dikuasai secara mendalam untuk merancang arsitektur enterprise modern.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="coffee" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Java Spring Boot</h4>
+                    <p class="skill-desc">Enterprise Backend Core</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="layout-template" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Vue.js Ecosystem</h4>
+                    <p class="skill-desc">Dynamic Reactive Frontend</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="database" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">PostgreSQL & MSSQL</h4>
+                    <p class="skill-desc">Relational & Big Data</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="layers" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Laravel & CodeIgniter</h4>
+                    <p class="skill-desc">Rapid Web Platform</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="box" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Docker & DevOps</h4>
+                    <p class="skill-desc">Container & Cloud Infra</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="cpu" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Playwright & Selenium</h4>
+                    <p class="skill-desc">RPA & Data Automation</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="lock" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Identity & Security</h4>
+                    <p class="skill-desc">RBAC, JWT & OAuth2</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i data-lucide="git-branch" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4 class="skill-title">Git & Jenkins CI/CD</h4>
+                    <p class="skill-desc">Automated Delivery</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- The Architect Quote Section (Executive Obsidian) -->
+    <section class="quote-section">
+        <div class="watermark">ARCHITECT</div>
+        <div class="container">
+            <div class="quote-content fade-in">
+                <div class="quote-badge">
+                    <i data-lucide="compass" style="width: 14px; height: 14px;"></i> Engineering Philosophy
+                </div>
+                <p class="quote-text">
+                    "Saya tidak sekadar menulis baris kode. Saya merancang <strong>sistem yang berpikir</strong> — agar
+                    organisasi dan tim yang datang setelah saya dapat berlari jauh lebih cepat dan aman."
+                </p>
+                <div class="quote-author-row">
+                    <div class="quote-author">
+                        SOLUTIONS ARCHITECT · <span>JAMIKO ARSHAL</span>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20ingin%20berdiskusi%20mengenai%20kebutuhan%20arsitektur%20sistem%20enterprise."
+                            target="_blank" rel="noopener noreferrer" class="btn-gold-executive">
+                            Inisiasi Diskusi via WhatsApp <i data-lucide="arrow-up-right" style="width: 18px; height: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Footer -->
+    <footer id="kontak">
+        <div class="container fade-in">
+            <div class="footer-top">
+                <!-- Left Column -->
+                <div>
+                    <div class="footer-logo-row">
+                        <div class="logo-symbol">JA</div>
+                        <div class="footer-logo-text">JAMIKO<span>.</span>ARSHAL</div>
+                    </div>
+                    <p class="footer-bio">
+                        Enterprise Solutions Architect & Tech Lead yang berfokus pada arsitektur sistem perbankan berkinerja
+                        tinggi, otomatisasi data OJK berskala masif, dan kepemimpinan engineering sejak 2016.
+                    </p>
+
+                    <h4 class="footer-heading">HUBUNGI LANGSUNG</h4>
+                    <div class="footer-contact-list">
+                        <!-- Direct Email Link in Footer -->
+                        <a href="mailto:arshaljamiko@gmail.com?subject=Inquiry%20Enterprise%20Solutions%20Architect&body=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem."
+                            class="contact-row" title="Klik untuk langsung kirim Email">
+                            <div class="contact-icon-box"><i data-lucide="mail" style="width: 16px; height: 16px;"></i></div>
+                            <span>arshaljamiko@gmail.com <i data-lucide="arrow-up-right" style="width: 12px; height: 12px; margin-left: 4px; opacity: 0.6;"></i></span>
+                        </a>
+
+                        <!-- Direct WhatsApp Link in Footer -->
+                        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+                            target="_blank" rel="noopener noreferrer"
+                            class="contact-row wa-footer" title="Klik untuk langsung chat di WhatsApp">
+                            <div class="contact-icon-box"><i data-lucide="message-circle" style="width: 16px; height: 16px; color: #10b981;"></i></div>
+                            <span>0822-8748-3950 (WhatsApp Langsung) <i data-lucide="arrow-up-right" style="width: 12px; height: 12px; margin-left: 4px; opacity: 0.6;"></i></span>
+                        </a>
+
+                        <div class="contact-row" style="cursor: default;">
+                            <div class="contact-icon-box"><i data-lucide="building-2" style="width: 16px; height: 16px;"></i></div>
+                            <span>PT. Skyworx Indonesia</span>
+                        </div>
+
+                        <div class="contact-row" style="cursor: default;">
+                            <div class="contact-icon-box"><i data-lucide="map-pin" style="width: 16px; height: 16px; color: #ef4444;"></i></div>
+                            <span>Padang, Sumatera Barat, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Navigation -->
+                <div>
+                    <h4 class="footer-heading">NAVIGASI SITUS</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#proyek"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Ekosistem Perbankan Utama</a></li>
+                        <li><a href="#cbas-case-study"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: CBAS (Robotic SLIK)</a></li>
+                        <li><a href="#los"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Case Study: Loan Origination System</a></li>
+                        <li><a href="#psm-transpadang"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Controlling Trans Padang (Trans Padang)</a></li>
+                        <li><a href="#pengalaman"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Riwayat Karier & Kepemimpinan</a></li>
+                        <li><a href="#keahlian"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Keahlian Teknis</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-verified-badge">
+                    <i data-lucide="shield-check"></i>
+                    <span>© 2026 Jamiko Arshal · Seluruh implementasi sistem terverifikasi & aktif</span>
+                </div>
+                <div>Padang, Sumatera Barat, Indonesia</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Controls (WhatsApp & Smooth Back-To-Top) -->
+    <div class="floating-controls">
+        <a href="https://wa.me/6282287483950?text=Halo%20Jamiko,%20saya%20tertarik%20untuk%20berdiskusi%20terkait%20solusi%20arsitektur%20sistem%20enterprise."
+            target="_blank" rel="noopener noreferrer" class="floating-wa-btn"
+            title="Chat WhatsApp dengan Jamiko Arshal">
+            <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
+            <span class="wa-tooltip">Chat WhatsApp Langsung</span>
+        </a>
+
+        <button id="backToTopBtn" class="back-to-top" title="Kembali ke atas secara mulus" aria-label="Kembali ke atas">
+            <i data-lucide="arrow-up" style="width: 22px; height: 22px;"></i>
+        </button>
+    </div>
+
+    <!-- Toast Notification for Copying Actions -->
+    <div id="copy-toast">
+        <i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--success);"></i>
+        <span id="toast-message">Teks berhasil disalin!</span>
+    </div>
+
+    <!-- Interactive Scripts with Lenis Smooth Scrolling Engine -->
+    <script>
+        // Theme Engine: Interactive Dark Obsidian & Light Institutional Switcher
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const savedTheme = localStorage.getItem('theme_preference') || 'dark';
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme_preference', theme);
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Apply theme immediately
+        applyTheme(savedTheme);
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+            });
+        }
+
+        // Initialize Lucide Vector Icons
+        lucide.createIcons();
+
+        // 1. Initialize Lenis Smooth Scroll Engine
+        let lenisInstance = null;
+        if (typeof Lenis !== 'undefined') {
+            lenisInstance = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 1.5,
+                wheelMultiplier: 0.95
+            });
+
+            function raf(time) {
+                lenisInstance.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        // 2. Smooth Scroll for all internal anchor links (#)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        if (lenisInstance) {
+                            lenisInstance.scrollTo(targetEl, { offset: -70 });
+                        } else {
+                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                } else if (targetId === '#') {
+                    e.preventDefault();
+                    if (lenisInstance) {
+                        lenisInstance.scrollTo(0);
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // 3. Scroll Progress Bar & Floating Back-To-Top Button
+        const progressBar = document.getElementById('scroll-progress-bar');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const nav = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            // Update top progress bar
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+
+            // Navbar Scrolled Effect
+            if (scrollTop > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Back-To-Top Button Appearance
+            if (scrollTop > 350) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Back-To-Top click event
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                if (lenisInstance) {
+                    lenisInstance.scrollTo(0, { duration: 1.2 });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // 4. Intersection Observer for Smooth Fade-Up Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.08
+        };
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // 5. Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                });
+            });
+        }
+
+        // 6. Copy to Clipboard Utility with Feedback Toast
+        function copyToClipboard(text, customMessage) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(customMessage || 'Berhasil disalin ke clipboard!');
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('copy-toast');
+            const toastMsg = document.getElementById('toast-message');
+            if (toast && toastMsg) {
+                toastMsg.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2800);
+            }
+        }
+
+        // 7. Dynamic Card Animation Engine: Zoom In/Out, Fade In/Out, 3D Tilt & Cursor Spotlight
+        const animatableCardSelectors = [
+            '.pillar-card',
+            '.spotlight-card',
+            '.benefit-card',
+            '.pipeline-card',
+            '.psm-module-card',
+            '.dep-card',
+            '.time-card',
+            '.skill-card',
+            '.testi-side-card',
+            '.stat-item'
+        ];
+
+        const allTargetCards = document.querySelectorAll(animatableCardSelectors.join(', '));
+
+        allTargetCards.forEach(card => {
+            card.classList.add('card-zoom-fade');
+
+            // Mouse-tracking spotlight illumination
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Staggered Cascade IntersectionObserver: Triggers smooth Zoom-In/Out + Fade-In/Out
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Zoom In & Fade In
+                    entry.target.classList.add('card-in-view');
+                } else {
+                    // Zoom Out & Fade Out (when scrolled out of view)
+                    entry.target.classList.remove('card-in-view');
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '50px 0px -40px 0px',
+            threshold: 0.08
+        });
+
+        allTargetCards.forEach(card => {
+            // Apply ripple stagger delay based on sibling index in parent grid
+            const parent = card.parentElement;
+            if (parent) {
+                const siblings = Array.from(parent.children).filter(c => c.classList.contains('card-zoom-fade'));
+                const idx = siblings.indexOf(card);
+                if (idx !== -1) {
+                    card.style.transitionDelay = `${(idx % 6) * 0.08}s`;
+                }
+            }
+            cardObserver.observe(card);
+        });
+
+        // Interactive 3D Card Tilt for Hero Identity Card
+        const idCard = document.querySelector('.id-card');
+        if (idCard) {
+            idCard.addEventListener('mousemove', (e) => {
+                const rect = idCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -7;
+                const rotateY = ((x - centerX) / centerX) * 7;
+                idCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-5px) scale(1.02)`;
+            });
+
+            idCard.addEventListener('mouseleave', () => {
+                idCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+            });
+        }
+    </script>
+</body>
+
+</html>
